@@ -1,0 +1,9 @@
+pandoc: '2.2'
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles:
+  manual: manual.html
+urls:
+  reference: http://codex.archaeo.science/reference
+  article: http://codex.archaeo.science/articles
+
