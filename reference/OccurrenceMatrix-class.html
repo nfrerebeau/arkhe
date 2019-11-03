@@ -92,7 +92,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/manual.html">Matrix Classes</a>
+      <a href="../articles/manual.html">Manual</a>
     </li>
   </ul>
 </li>
@@ -191,8 +191,6 @@
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='NumericMatrix-class.html'>NumericMatrix</a></p>
-<p>Other abundance matrix: <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-  <code><a href='FrequencyMatrix-class.html'>FrequencyMatrix-class</a></code></p>
 <p>Other matrix: <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
   <code><a href='FrequencyMatrix-class.html'>FrequencyMatrix-class</a></code>,
   <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
@@ -209,11 +207,11 @@
                   <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>byrow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'>## Access</span>
-<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>A1</span>)</div><div class='output co'>#&gt; [1] "d2ec075d-eca9-4388-bb07-7d7594e2d810"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>A1</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 10 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt;  [1] "V1"  "V2"  "V3"  "V4"  "V5"  "V6"  "V7"  "V8"  "V9"  "V10"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>11</span>:<span class='fl'>20</span>] <span class='co'># Set the column names</span>
+<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>A1</span>)</div><div class='output co'>#&gt; [1] "e01bf2be-1b5b-4521-99ff-948ee5555701"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>A1</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 10 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt;  [1] "V1"  "V2"  "V3"  "V4"  "V5"  "V6"  "V7"  "V8"  "V9"  "V10"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>11</span>:<span class='fl'>20</span>] <span class='co'># Set the column names</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>10</span>] <span class='co'># Set the row names</span>
 
 <span class='co'>## Subset</span>
-<span class='no'>A1</span><span class='kw'>[[</span><span class='st'>"id"</span>]] <span class='co'># Get the matrix ID</span></div><div class='output co'>#&gt; [1] "d2ec075d-eca9-4388-bb07-7d7594e2d810"</div><div class='input'><span class='no'>A1</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt;   k  l  m n  o p  q  r s  t
+<span class='no'>A1</span><span class='kw'>[[</span><span class='st'>"id"</span>]] <span class='co'># Get the matrix ID</span></div><div class='output co'>#&gt; [1] "e01bf2be-1b5b-4521-99ff-948ee5555701"</div><div class='input'><span class='no'>A1</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt;   k  l  m n  o p  q  r s  t
 #&gt; A 9  0 10 9  4 4 10  6 6  7
 #&gt; B 4 10  5 1  4 4  0  4 8  9
 #&gt; C 3 10  5 9  2 2  0  7 4  8
