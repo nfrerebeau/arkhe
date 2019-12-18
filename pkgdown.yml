@@ -2,8 +2,8 @@ pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
-  codex: codex.html
+  arkhe: arkhe.html
 urls:
-  reference: http://codex.archaeo.science/reference
-  article: http://codex.archaeo.science/articles
+  reference: http://arkhe.archaeo.science/reference
+  article: http://arkhe.archaeo.science/articles
 

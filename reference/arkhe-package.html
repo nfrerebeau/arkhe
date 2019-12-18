@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Numeric Predicates — predicate-numeric • arkhe</title>
+<title>arkhe: Representation of Archaeological Data — arkhe-package • arkhe</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,15 @@
 
 
 
-<meta property="og:title" content="Numeric Predicates — predicate-numeric" />
-<meta property="og:description" content="Check numeric objects:" />
+<meta property="og:title" content="arkhe: Representation of Archaeological Data — arkhe-package" />
+<meta property="og:description" content="A collection of classes that represent
+    archaeological data. This package provides a set of S4 classes that
+    extend the basic matrix data type (absolute/relative frequency,
+    presence/absence data, co-occurrence matrix, etc.) upon which package
+    developers can build subclasses. It also provides a set of generic
+    methods (mutators and coercion mechanisms) and functions (e.g.
+    predicates). In addition, a few classes of general interest (e.g. that
+    represent stratigraphic relationships) are implemented." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,74 +118,70 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Numeric Predicates</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/predicates.R'><code>R/predicates.R</code></a></small>
-    <div class="hidden name"><code>predicate-numeric.Rd</code></div>
+    <h1>arkhe: Representation of Archaeological Data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/arkhe-package.R'><code>R/arkhe-package.R</code></a></small>
+    <div class="hidden name"><code>arkhe-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Check numeric objects:</p>
+    <p>A collection of classes that represent
+    archaeological data. This package provides a set of S4 classes that
+    extend the basic matrix data type (absolute/relative frequency,
+    presence/absence data, co-occurrence matrix, etc.) upon which package
+    developers can build subclasses. It also provides a set of generic
+    methods (mutators and coercion mechanisms) and functions (e.g.
+    predicates). In addition, a few classes of general interest (e.g. that
+    represent stratigraphic relationships) are implemented.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_odd</span>(<span class='no'>x</span>)
 
-<span class='fu'>is_even</span>(<span class='no'>x</span>)
 
-<span class='fu'>is_positive</span>(<span class='no'>x</span>, <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>is_whole</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='no'>.Machine</span>$<span class='no'>double.eps</span>^<span class='fl'>0.5</span>)
-
-<span class='fu'>is_binary</span>(<span class='no'>x</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> object to be tested.</p></td>
-    </tr>
-    <tr>
-      <th>strict</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should missing values
-(including <code>NaN</code>) be omitted?</p></td>
-    </tr>
-    <tr>
-      <th>tolerance</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> scalar giving the
-tolerance to check within.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>is_odd</code> and <code>is_even</code> check if a number is odd or even,
-respectively.</p>
-<p><code>is_positive</code> checks if an object contains only (strictly) positive
-numbers.</p>
-<p><code>is_binary</code> checks if an object contains only \(0\)s and \(1\)s.</p>
-<p><code>is_whole</code> checks if an object only contains whole numbers.</p>
+    
+<table class='table'>
+<tr><td><strong>Package:</strong></td><td>arkhe</td></tr>
+<tr><td><strong>Type:</strong></td><td>Package</td></tr>
+<tr><td><strong>Version:</strong></td><td>0.2.0</td></tr>
+<tr><td><strong>License:</strong></td><td>GPL-3</td></tr>
+<tr><td><strong>DOI:</strong></td><td><a href='https://doi.org/10.5281/zenodo.3526659'>10.5281/zenodo.3526659</a></td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other predicates: <code><a href='predicate-graph.html'>predicate-graph</a></code>,
-  <code><a href='predicate-matrix.html'>predicate-matrix</a></code>,
-  <code><a href='predicate-scalar.html'>predicate-scalar</a></code>,
-  <code><a href='predicate-trend.html'>predicate-trend</a></code>,
-  <code><a href='predicate-type.html'>predicate-type</a></code>,
-  <code><a href='predicate-utils.html'>predicate-utils</a></code></p></div>
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='http://arkhe.archaeo.science'>http://arkhe.archaeo.science</a></p></li>
+<li><p><a href='http://github.com/nfrerebeau/arkhe'>http://github.com/nfrerebeau/arkhe</a></p></li>
+<li><p><a href='https://cran.r-project.org/package=arkhe'>https://cran.r-project.org/package=arkhe</a></p></li>
+<li><p>Report bugs at <a href='http://github.com/nfrerebeau/arkhe/issues'>http://github.com/nfrerebeau/arkhe/issues</a></p></li>
+</ul>
+
+</div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
     </ul>
 
+    <h2>Author</h2>
+    <p><strong>Full list of authors and contributors</strong> (alphabetic order)</p>
+<table class='table'>
+<tr><td>Nicolas Frerebeau</td><td><em>Université Bordeaux Montaigne, France</em></td></tr>
+</table>
+
+
+<p><strong>Package maintainer</strong></p>
+<p>Nicolas Frerebeau<br />
+<a href='mailto:nicolas.frerebeau@u-bordeaux-montaigne.fr'>nicolas.frerebeau@u-bordeaux-montaigne.fr</a></p>
+<p>IRAMAT-CRP2A (UMR 5060)<br />
+Maison de l'Archéologie<br />
+Université Bordeaux Montaigne<br />
+F-33607 Pessac cedex<br />
+France</p>
   </div>
 </div>
 

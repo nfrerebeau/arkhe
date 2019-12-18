@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Incidence matrix — IncidenceMatrix-class • codex</title>
+<title>Incidence Matrix — IncidenceMatrix-class • arkhe</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Incidence matrix — IncidenceMatrix-class" />
+<meta property="og:title" content="Incidence Matrix — IncidenceMatrix-class" />
 <meta property="og:description" content="An S4 class to represent an incidence (presence/absence) matrix." />
 <meta name="twitter:card" content="summary" />
 
@@ -68,8 +68,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">codex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <a class="navbar-link" href="../index.html">arkhe</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -82,15 +82,18 @@
   </a>
 </li>
 <li>
-  <a href="../articles/codex.html">Get started</a>
+  <a href="../articles/arkhe.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/codex">
+  <a href="https://github.com/nfrerebeau/arkhe">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -108,8 +111,8 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Incidence matrix</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/codex/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a>, <a href='https://github.com/nfrerebeau/codex/blob/master/R/initialize.R'><code>R/initialize.R</code></a></small>
+    <h1>Incidence Matrix</h1>
+    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/initialize.R'><code>R/initialize.R</code></a></small>
     <div class="hidden name"><code>IncidenceMatrix-class.Rd</code></div>
     </div>
 
@@ -156,13 +159,6 @@
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>TODO</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Numeric values are coerced to <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> as by
- <code><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></code>.</p>
     <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
 
     
@@ -179,6 +175,10 @@
 
 <p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl class='dl-horizontal'>
   <dt><code><a href='mutator.html'>get_id(x)</a></code></dt><dd><p>Get the ID of <code>x</code>.</p></dd>
+  <dt><code><a href='chronology.html'>get_dates(x)</a></code> and <code>set_dates(x) &lt;- value</code></dt><dd><p>Get or set
+  the dates of <code>x</code>.</p></dd>
+  <dt><code><a href='geography.html'>get_coordinates(x)</a></code> and <code>set_coordinates(x) &lt;- value</code></dt><dd><p>Get
+  or set the geographical coordinates of <code>x</code>.</p></dd>
  
 </dl>
 
@@ -213,16 +213,16 @@
   An empty index (a comma separated blank) indicates that all
   entries in that dimension are selected.
   Returns an object of the same class as <code>x</code>.</p></dd>
-  <dt><code>x[[i]]</code></dt><dd><p>Extracts informations from a slot selected by
-  subscript <code>i</code>. <code>i</code> should be one of "<code>id</code>" or <code>NULL</code>.</p></dd>
+  <dt><code>x[[i]]</code></dt><dd><p>Extracts a single element selected by subscript
+  <code>i</code>.</p></dd>
  
 </dl>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='LogicalMatrix-class.html'>LogicalMatrix</a>, <a href='SpaceTime-class.html'>SpaceTime</a></p>
-<p>Other matrix: <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-  <code><a href='FrequencyMatrix-class.html'>FrequencyMatrix-class</a></code>,
+    <div class='dont-index'><p><a href='LogicalMatrix-class.html'>LogicalMatrix</a></p>
+<p>Other matrix: <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+  <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
   <code><a href='LogicalMatrix-class.html'>LogicalMatrix-class</a></code>,
   <code><a href='Matrix-class.html'>Matrix-class</a></code>,
   <code><a href='NumericMatrix-class.html'>NumericMatrix-class</a></code>,
@@ -234,22 +234,17 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create an incidence (presence/absence) matrix</span>
 <span class='co'>## Data will be coerced with as.logical()</span>
-<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'>IncidenceMatrix</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>0.3</span>)),
-                      <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>10</span>)
-<span class='co'>## Coerce to a co-occurrence matrix</span>
-<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_occurrence</a></span>(<span class='no'>A</span>)
+<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'>IncidenceMatrix</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>/<span class='fl'>3</span>)), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+
 <span class='co'>## Create a count data matrix</span>
-<span class='no'>C</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>),
-                 <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>byrow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 <span class='co'>## Coerce to presence/absence</span>
-<span class='no'>D</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_incidence</a></span>(<span class='no'>C</span>)</div></pre>
+<span class='no'>C</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_incidence</a></span>(<span class='no'>B</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#matrix-id">Matrix ID</a></li>
       <li><a href="#get-and-set">Get and set</a></li>
       <li><a href="#access">Access</a></li>

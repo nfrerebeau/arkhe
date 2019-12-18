@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • codex</title>
+<title>Function reference • arkhe</title>
 
 
 <!-- jquery -->
@@ -66,8 +66,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">codex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <a class="navbar-link" href="../index.html">arkhe</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -80,15 +80,18 @@
   </a>
 </li>
 <li>
-  <a href="../articles/codex.html">Get started</a>
+  <a href="../articles/arkhe.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/codex">
+  <a href="https://github.com/nfrerebeau/arkhe">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -127,43 +130,43 @@
       <tr>
         
         <td>
-          <p><code><a href="CountMatrix-class.html">CountMatrix()</a></code> </p>
+          <p><code><a href="AbundanceMatrix-class.html">AbundanceMatrix-class</a></code> </p>
         </td>
-        <td><p>Count matrix</p></td>
+        <td><p>Relative Frequency Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="FrequencyMatrix-class.html">FrequencyMatrix()</a></code> </p>
+          <p><code><a href="CountMatrix-class.html">CountMatrix()</a></code> </p>
         </td>
-        <td><p>Frequency matrix</p></td>
+        <td><p>Absolute Frequency Matrix</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="IncidenceMatrix-class.html">IncidenceMatrix()</a></code> </p>
         </td>
-        <td><p>Incidence matrix</p></td>
+        <td><p>Incidence Matrix</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="OccurrenceMatrix-class.html">OccurrenceMatrix-class</a></code> </p>
         </td>
-        <td><p>Co-occurrence matrix</p></td>
+        <td><p>Co-Occurrence Matrix</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="SimilarityMatrix-class.html">SimilarityMatrix-class</a></code> </p>
         </td>
-        <td><p>Similarity matrix</p></td>
+        <td><p>Similarity Matrix</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="StratigraphicMatrix-class.html">StratigraphicMatrix-class</a></code> </p>
         </td>
-        <td><p>Stratigraphy</p></td>
+        <td><p>Stratigraphic Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_frequency()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
+          <p><code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_abundance()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
         </td>
         <td><p>Coerce</p></td>
       </tr>
@@ -177,13 +180,13 @@
       <tr>
         
         <td>
-          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals<-`()</a></code> </p>
+          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">get_method()</a></code> <code><a href="mutator.html">get_units()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals<-`()</a></code> </p>
         </td>
         <td><p>Get or Set Parts of an Object</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="subset.html">`[[`(<i>&lt;SpaceTime&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;CountMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;FrequencyMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;IncidenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;OccurrenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;SimilarityMatrix&gt;</i>)</a></code> </p>
+          <p><code><a href="subset.html">`[<-`(<i>&lt;Matrix&gt;</i>)</a></code> <code><a href="subset.html">`[[<-`(<i>&lt;Matrix&gt;</i>)</a></code> </p>
         </td>
         <td><p>Extract or Replace Parts of an Object</p></td>
       </tr>
@@ -197,97 +200,7 @@
       <tr>
         
         <td>
-          <p><code><a href="CountMatrix-class.html">CountMatrix()</a></code> </p>
-        </td>
-        <td><p>Count matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="FrequencyMatrix-class.html">FrequencyMatrix()</a></code> </p>
-        </td>
-        <td><p>Frequency matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="IncidenceMatrix-class.html">IncidenceMatrix()</a></code> </p>
-        </td>
-        <td><p>Incidence matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="OccurrenceMatrix-class.html">OccurrenceMatrix-class</a></code> </p>
-        </td>
-        <td><p>Co-occurrence matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="SimilarityMatrix-class.html">SimilarityMatrix-class</a></code> </p>
-        </td>
-        <td><p>Similarity matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="StratigraphicMatrix-class.html">StratigraphicMatrix-class</a></code> </p>
-        </td>
-        <td><p>Stratigraphy</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_frequency()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
-        </td>
-        <td><p>Coerce</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals<-`()</a></code> </p>
-        </td>
-        <td><p>Get or Set Parts of an Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-matrix.html">is_square()</a></code> <code><a href="predicate-matrix.html">is_symmetric()</a></code> </p>
-        </td>
-        <td><p>Matrix Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-numeric.html">is_odd()</a></code> <code><a href="predicate-numeric.html">is_even()</a></code> <code><a href="predicate-numeric.html">is_positive()</a></code> <code><a href="predicate-numeric.html">is_whole()</a></code> <code><a href="predicate-numeric.html">is_binary()</a></code> </p>
-        </td>
-        <td><p>Numeric Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-scalar.html">is_scalar_list()</a></code> <code><a href="predicate-scalar.html">is_scalar_atomic()</a></code> <code><a href="predicate-scalar.html">is_scalar_vector()</a></code> <code><a href="predicate-scalar.html">is_scalar_numeric()</a></code> <code><a href="predicate-scalar.html">is_scalar_integer()</a></code> <code><a href="predicate-scalar.html">is_scalar_double()</a></code> <code><a href="predicate-scalar.html">is_scalar_character()</a></code> <code><a href="predicate-scalar.html">is_scalar_logical()</a></code> </p>
-        </td>
-        <td><p>Scalar Type Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-trend.html">is_equal()</a></code> <code><a href="predicate-trend.html">is_increasing()</a></code> <code><a href="predicate-trend.html">is_decreasing()</a></code> <code><a href="predicate-trend.html">is_overlapping()</a></code> </p>
-        </td>
-        <td><p>Numeric Trend Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-type.html">is_list()</a></code> <code><a href="predicate-type.html">is_atomic()</a></code> <code><a href="predicate-type.html">is_vector()</a></code> <code><a href="predicate-type.html">is_numeric()</a></code> <code><a href="predicate-type.html">is_integer()</a></code> <code><a href="predicate-type.html">is_double()</a></code> <code><a href="predicate-type.html">is_character()</a></code> <code><a href="predicate-type.html">is_logical()</a></code> <code><a href="predicate-type.html">is_error()</a></code> </p>
-        </td>
-        <td><p>Type Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="space.html">get_coordinates()</a></code> <code><a href="space.html">`set_coordinates<-`()</a></code> <code><a href="space.html">get_epsg()</a></code> <code><a href="space.html">`set_epsg<-`()</a></code> </p>
-        </td>
-        <td><p>Spatial Information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="subset.html">`[[`(<i>&lt;SpaceTime&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;CountMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;FrequencyMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;IncidenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;OccurrenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;SimilarityMatrix&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Extract or Replace Parts of an Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="time.html">get_dates()</a></code> <code><a href="time.html">`set_dates<-`()</a></code> </p>
+          <p><code><a href="chronology.html">get_dates()</a></code> <code><a href="chronology.html">`set_dates<-`()</a></code> </p>
         </td>
         <td><p>Chronological Information</p></td>
       </tr>
@@ -301,99 +214,9 @@
       <tr>
         
         <td>
-          <p><code><a href="CountMatrix-class.html">CountMatrix()</a></code> </p>
-        </td>
-        <td><p>Count matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="FrequencyMatrix-class.html">FrequencyMatrix()</a></code> </p>
-        </td>
-        <td><p>Frequency matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="IncidenceMatrix-class.html">IncidenceMatrix()</a></code> </p>
-        </td>
-        <td><p>Incidence matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="OccurrenceMatrix-class.html">OccurrenceMatrix-class</a></code> </p>
-        </td>
-        <td><p>Co-occurrence matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="SimilarityMatrix-class.html">SimilarityMatrix-class</a></code> </p>
-        </td>
-        <td><p>Similarity matrix</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="StratigraphicMatrix-class.html">StratigraphicMatrix-class</a></code> </p>
-        </td>
-        <td><p>Stratigraphy</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_frequency()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
-        </td>
-        <td><p>Coerce</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals<-`()</a></code> </p>
-        </td>
-        <td><p>Get or Set Parts of an Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-matrix.html">is_square()</a></code> <code><a href="predicate-matrix.html">is_symmetric()</a></code> </p>
-        </td>
-        <td><p>Matrix Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-numeric.html">is_odd()</a></code> <code><a href="predicate-numeric.html">is_even()</a></code> <code><a href="predicate-numeric.html">is_positive()</a></code> <code><a href="predicate-numeric.html">is_whole()</a></code> <code><a href="predicate-numeric.html">is_binary()</a></code> </p>
-        </td>
-        <td><p>Numeric Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-scalar.html">is_scalar_list()</a></code> <code><a href="predicate-scalar.html">is_scalar_atomic()</a></code> <code><a href="predicate-scalar.html">is_scalar_vector()</a></code> <code><a href="predicate-scalar.html">is_scalar_numeric()</a></code> <code><a href="predicate-scalar.html">is_scalar_integer()</a></code> <code><a href="predicate-scalar.html">is_scalar_double()</a></code> <code><a href="predicate-scalar.html">is_scalar_character()</a></code> <code><a href="predicate-scalar.html">is_scalar_logical()</a></code> </p>
-        </td>
-        <td><p>Scalar Type Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-trend.html">is_equal()</a></code> <code><a href="predicate-trend.html">is_increasing()</a></code> <code><a href="predicate-trend.html">is_decreasing()</a></code> <code><a href="predicate-trend.html">is_overlapping()</a></code> </p>
-        </td>
-        <td><p>Numeric Trend Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predicate-type.html">is_list()</a></code> <code><a href="predicate-type.html">is_atomic()</a></code> <code><a href="predicate-type.html">is_vector()</a></code> <code><a href="predicate-type.html">is_numeric()</a></code> <code><a href="predicate-type.html">is_integer()</a></code> <code><a href="predicate-type.html">is_double()</a></code> <code><a href="predicate-type.html">is_character()</a></code> <code><a href="predicate-type.html">is_logical()</a></code> <code><a href="predicate-type.html">is_error()</a></code> </p>
-        </td>
-        <td><p>Type Predicates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="space.html">get_coordinates()</a></code> <code><a href="space.html">`set_coordinates<-`()</a></code> <code><a href="space.html">get_epsg()</a></code> <code><a href="space.html">`set_epsg<-`()</a></code> </p>
+          <p><code><a href="geography.html">get_coordinates()</a></code> <code><a href="geography.html">`set_coordinates<-`()</a></code> </p>
         </td>
         <td><p>Spatial Information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="subset.html">`[[`(<i>&lt;SpaceTime&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;CountMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;FrequencyMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;IncidenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;OccurrenceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;SimilarityMatrix&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Extract or Replace Parts of an Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="time.html">get_dates()</a></code> <code><a href="time.html">`set_dates<-`()</a></code> </p>
-        </td>
-        <td><p>Chronological Information</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -405,33 +228,69 @@
       <tr>
         
         <td>
-          <p><code><a href="predicate-matrix.html">is_square()</a></code> <code><a href="predicate-matrix.html">is_symmetric()</a></code> </p>
+          <p><code><a href="AbundanceMatrix-class.html">AbundanceMatrix-class</a></code> </p>
         </td>
-        <td><p>Matrix Predicates</p></td>
+        <td><p>Relative Frequency Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="predicate-numeric.html">is_odd()</a></code> <code><a href="predicate-numeric.html">is_even()</a></code> <code><a href="predicate-numeric.html">is_positive()</a></code> <code><a href="predicate-numeric.html">is_whole()</a></code> <code><a href="predicate-numeric.html">is_binary()</a></code> </p>
+          <p><code><a href="CountMatrix-class.html">CountMatrix()</a></code> </p>
         </td>
-        <td><p>Numeric Predicates</p></td>
+        <td><p>Absolute Frequency Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="predicate-scalar.html">is_scalar_list()</a></code> <code><a href="predicate-scalar.html">is_scalar_atomic()</a></code> <code><a href="predicate-scalar.html">is_scalar_vector()</a></code> <code><a href="predicate-scalar.html">is_scalar_numeric()</a></code> <code><a href="predicate-scalar.html">is_scalar_integer()</a></code> <code><a href="predicate-scalar.html">is_scalar_double()</a></code> <code><a href="predicate-scalar.html">is_scalar_character()</a></code> <code><a href="predicate-scalar.html">is_scalar_logical()</a></code> </p>
+          <p><code><a href="IncidenceMatrix-class.html">IncidenceMatrix()</a></code> </p>
         </td>
-        <td><p>Scalar Type Predicates</p></td>
+        <td><p>Incidence Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="predicate-trend.html">is_equal()</a></code> <code><a href="predicate-trend.html">is_increasing()</a></code> <code><a href="predicate-trend.html">is_decreasing()</a></code> <code><a href="predicate-trend.html">is_overlapping()</a></code> </p>
+          <p><code><a href="OccurrenceMatrix-class.html">OccurrenceMatrix-class</a></code> </p>
         </td>
-        <td><p>Numeric Trend Predicates</p></td>
+        <td><p>Co-Occurrence Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="predicate-type.html">is_list()</a></code> <code><a href="predicate-type.html">is_atomic()</a></code> <code><a href="predicate-type.html">is_vector()</a></code> <code><a href="predicate-type.html">is_numeric()</a></code> <code><a href="predicate-type.html">is_integer()</a></code> <code><a href="predicate-type.html">is_double()</a></code> <code><a href="predicate-type.html">is_character()</a></code> <code><a href="predicate-type.html">is_logical()</a></code> <code><a href="predicate-type.html">is_error()</a></code> </p>
+          <p><code><a href="SimilarityMatrix-class.html">SimilarityMatrix-class</a></code> </p>
         </td>
-        <td><p>Type Predicates</p></td>
+        <td><p>Similarity Matrix</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="StratigraphicMatrix-class.html">StratigraphicMatrix-class</a></code> </p>
+        </td>
+        <td><p>Stratigraphic Matrix</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="chronology.html">get_dates()</a></code> <code><a href="chronology.html">`set_dates<-`()</a></code> </p>
+        </td>
+        <td><p>Chronological Information</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_abundance()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
+        </td>
+        <td><p>Coerce</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="geography.html">get_coordinates()</a></code> <code><a href="geography.html">`set_coordinates<-`()</a></code> </p>
+        </td>
+        <td><p>Spatial Information</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">get_method()</a></code> <code><a href="mutator.html">get_units()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals<-`()</a></code> </p>
+        </td>
+        <td><p>Get or Set Parts of an Object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="subset.html">`[<-`(<i>&lt;Matrix&gt;</i>)</a></code> <code><a href="subset.html">`[[<-`(<i>&lt;Matrix&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Extract or Replace Parts of an Object</p></td>
       </tr>
     </tbody>
     </table>

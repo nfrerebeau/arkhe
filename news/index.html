@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Numeric Predicates — predicate-numeric • arkhe</title>
+<title>Changelog • arkhe</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,7 @@
 
 
 
-<meta property="og:title" content="Numeric Predicates — predicate-numeric" />
-<meta property="og:description" content="Check numeric objects:" />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -56,7 +54,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -111,75 +109,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Numeric Predicates</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/predicates.R'><code>R/predicates.R</code></a></small>
-    <div class="hidden name"><code>predicate-numeric.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Check numeric objects:</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>is_odd</span>(<span class='no'>x</span>)
-
-<span class='fu'>is_even</span>(<span class='no'>x</span>)
-
-<span class='fu'>is_positive</span>(<span class='no'>x</span>, <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>is_whole</span>(<span class='no'>x</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='no'>.Machine</span>$<span class='no'>double.eps</span>^<span class='fl'>0.5</span>)
-
-<span class='fu'>is_binary</span>(<span class='no'>x</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> object to be tested.</p></td>
-    </tr>
-    <tr>
-      <th>strict</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should missing values
-(including <code>NaN</code>) be omitted?</p></td>
-    </tr>
-    <tr>
-      <th>tolerance</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> scalar giving the
-tolerance to check within.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p><code>is_odd</code> and <code>is_even</code> check if a number is odd or even,
-respectively.</p>
-<p><code>is_positive</code> checks if an object contains only (strictly) positive
-numbers.</p>
-<p><code>is_binary</code> checks if an object contains only \(0\)s and \(1\)s.</p>
-<p><code>is_whole</code> checks if an object only contains whole numbers.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other predicates: <code><a href='predicate-graph.html'>predicate-graph</a></code>,
-  <code><a href='predicate-matrix.html'>predicate-matrix</a></code>,
-  <code><a href='predicate-scalar.html'>predicate-scalar</a></code>,
-  <code><a href='predicate-trend.html'>predicate-trend</a></code>,
-  <code><a href='predicate-type.html'>predicate-type</a></code>,
-  <code><a href='predicate-utils.html'>predicate-utils</a></code></p></div>
-
+    <div id="arkhe-0-2-0" class="section level2">
+<h2 class="hasAnchor">
+<a href="#arkhe-0-2-0" class="anchor"></a>arkhe 0.2.0</h2>
+<ul>
+<li>Initial version on CRAN.</li>
+</ul>
+</div>
+    <div id="arkhe-0-1-0-release-date-2019-11-03" class="section level2">
+<h2 class="hasAnchor">
+<a href="#arkhe-0-1-0-release-date-2019-11-03" class="anchor"></a>arkhe 0.1.0 (release date: 2019-11-03)</h2>
+<p><a href="https://doi.org/10.5281/zenodo.3526660"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3526660.svg" alt="DOI"></a></p>
+<ul>
+<li>Beta release.</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-    </ul>
-
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#arkhe-0-2-0">0.2.0</a></li>
+        <li><a href="#arkhe-0-1-0-release-date-2019-11-03">0.1.0</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
 

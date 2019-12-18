@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Numeric matrix — NumericMatrix-class • codex</title>
+<title>Numeric Matrix — NumericMatrix-class • arkhe</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Numeric matrix — NumericMatrix-class" />
+<meta property="og:title" content="Numeric Matrix — NumericMatrix-class" />
 <meta property="og:description" content="An S4 class to represent a numeric matrix." />
 <meta name="twitter:card" content="summary" />
 
@@ -68,8 +68,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">codex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <a class="navbar-link" href="../index.html">arkhe</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -82,15 +82,18 @@
   </a>
 </li>
 <li>
-  <a href="../articles/codex.html">Get started</a>
+  <a href="../articles/arkhe.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/codex">
+  <a href="https://github.com/nfrerebeau/arkhe">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -108,8 +111,8 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Numeric matrix</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/codex/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
+    <h1>Numeric Matrix</h1>
+    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
     <div class="hidden name"><code>NumericMatrix-class.Rd</code></div>
     </div>
 
@@ -135,6 +138,10 @@
 
 <p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl class='dl-horizontal'>
   <dt><code><a href='mutator.html'>get_id(x)</a></code></dt><dd><p>Get the ID of <code>x</code>.</p></dd>
+  <dt><code><a href='chronology.html'>get_dates(x)</a></code> and <code>set_dates(x) &lt;- value</code></dt><dd><p>Get or set
+  the dates of <code>x</code>.</p></dd>
+  <dt><code><a href='geography.html'>get_coordinates(x)</a></code> and <code>set_coordinates(x) &lt;- value</code></dt><dd><p>Get
+  or set the geographical coordinates of <code>x</code>.</p></dd>
  
 </dl>
 
@@ -169,16 +176,16 @@
   An empty index (a comma separated blank) indicates that all
   entries in that dimension are selected.
   Returns an object of the same class as <code>x</code>.</p></dd>
-  <dt><code>x[[i]]</code></dt><dd><p>Extracts informations from a slot selected by
-  subscript <code>i</code>. <code>i</code> should be one of "<code>id</code>" or <code>NULL</code>.</p></dd>
+  <dt><code>x[[i]]</code></dt><dd><p>Extracts a single element selected by subscript
+  <code>i</code>.</p></dd>
  
 </dl>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='Matrix-class.html'>Matrix</a></p>
-<p>Other matrix: <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-  <code><a href='FrequencyMatrix-class.html'>FrequencyMatrix-class</a></code>,
+<p>Other matrix: <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+  <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
   <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
   <code><a href='LogicalMatrix-class.html'>LogicalMatrix-class</a></code>,
   <code><a href='Matrix-class.html'>Matrix-class</a></code>,

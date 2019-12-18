@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stratigraphy — StratigraphicMatrix-class • codex</title>
+<title>Stratigraphic Matrix — StratigraphicMatrix-class • arkhe</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Stratigraphy — StratigraphicMatrix-class" />
+<meta property="og:title" content="Stratigraphic Matrix — StratigraphicMatrix-class" />
 <meta property="og:description" content="An S4 class to represent a stratigraphic matrix." />
 <meta name="twitter:card" content="summary" />
 
@@ -68,8 +68,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">codex</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <a class="navbar-link" href="../index.html">arkhe</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -82,15 +82,18 @@
   </a>
 </li>
 <li>
-  <a href="../articles/codex.html">Get started</a>
+  <a href="../articles/arkhe.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/codex">
+  <a href="https://github.com/nfrerebeau/arkhe">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -108,8 +111,8 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stratigraphy</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/codex/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
+    <h1>Stratigraphic Matrix</h1>
+    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
     <div class="hidden name"><code>StratigraphicMatrix-class.Rd</code></div>
     </div>
 
@@ -123,13 +126,81 @@
 
     <p>A stratigraphic matrix represents directed relationships between
  stratigraphic units. A stratigraphic matrix is an adjacency matrix (a non
- symetric square matrix with zeros on its main diagonal), suitable to build
+ symmetric square matrix with zeros on its main diagonal), suitable to build
  a directed acyclic graph (DAG).</p>
+    <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
+
+    
+
+<dl class='dl-horizontal'>
+<dt><code>units</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector giving the stratigraphic unit
+names.</p></dd>
+
+</dl>
+    <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
+
+    
+
+<p>When a matrix is first created, an identifier is generated (UUID v4).
+ This ID is preserved when coercing to another class. Thus, the object ID is
+ unique within the same class, but two objects of different classes can have
+ the same ID. This makes it possible to identify objects representing the
+ same initial data and associate them with the results of specific
+ computations.</p>
+    <h2 class="hasAnchor" id="get-and-set"><a class="anchor" href="#get-and-set"></a>Get and set</h2>
+
+    
+
+<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl class='dl-horizontal'>
+  <dt><code><a href='mutator.html'>get_id(x)</a></code></dt><dd><p>Get the ID of <code>x</code>.</p></dd>
+  <dt><code><a href='chronology.html'>get_dates(x)</a></code> and <code>set_dates(x) &lt;- value</code></dt><dd><p>Get or set
+  the dates of <code>x</code>.</p></dd>
+  <dt><code><a href='geography.html'>get_coordinates(x)</a></code> and <code>set_coordinates(x) &lt;- value</code></dt><dd><p>Get
+  or set the geographical coordinates of <code>x</code>.</p></dd>
+ 
+</dl>
+
+    <h2 class="hasAnchor" id="access"><a class="anchor" href="#access"></a>Access</h2>
+
+    
+
+<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl class='dl-horizontal'>
+  <dt><code><a href='https://rdrr.io/r/base/dim.html'>dim(x)</a></code></dt><dd><p>Returns the dimension of <code>x</code>.</p></dd>
+  <dt><code><a href='https://rdrr.io/r/base/nrow.html'>nrow(x)</a></code></dt><dd><p>Returns the number of rows present in <code>x</code>.</p></dd>
+  <dt><code><a href='https://rdrr.io/r/base/nrow.html'>ncol(x)</a></code></dt><dd><p>Returns the number of columns present in <code>x</code>.</p></dd>
+  <dt><code><a href='https://rdrr.io/r/base/dimnames.html'>dimnames(x)</a></code>, <code>dimnames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
+  the row dimnames of <code>x</code> according to <code>value</code>.</p></dd>
+  <dt><code><a href='https://rdrr.io/r/base/colnames.html'>rownames(x)</a></code>, <code>rownames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
+  the row names of <code>x</code> according to <code>value</code>.</p></dd>
+  <dt><code><a href='https://rdrr.io/r/base/colnames.html'>colnames(x)</a></code>, <code>colnames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
+  the column names of <code>x</code> according to <code>value</code>.</p></dd>
+ 
+</dl>
+
+    <h2 class="hasAnchor" id="subset"><a class="anchor" href="#subset"></a>Subset</h2>
+
+    
+
+<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl class='dl-horizontal'>
+  <dt><code>x[i, j]</code></dt><dd><p>Extracts elements selected by subscripts <code>i</code>
+  and <code>j</code>. Indices are <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>, <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> or
+  <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vectors or empty (missing) or <code>NULL</code>.
+  Numeric values are coerced to <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> as by
+  <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code> (and hence truncated towards zero).
+  Character vectors will be matched to the name of the elements.
+  An empty index (a comma separated blank) indicates that all
+  entries in that dimension are selected.
+  Returns an object of the same class as <code>x</code>.</p></dd>
+  <dt><code>x[[i]]</code></dt><dd><p>Extracts a single element selected by subscript
+  <code>i</code>.</p></dd>
+ 
+</dl>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='LogicalMatrix-class.html'>LogicalMatrix</a></p>
-<p>Other matrix: <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-  <code><a href='FrequencyMatrix-class.html'>FrequencyMatrix-class</a></code>,
+<p>Other matrix: <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+  <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
   <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
   <code><a href='LogicalMatrix-class.html'>LogicalMatrix-class</a></code>,
   <code><a href='Matrix-class.html'>Matrix-class</a></code>,
@@ -159,12 +230,18 @@
   <span class='kw'>dimnames</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"lower"</span>, <span class='st'>"upper"</span>))
 )
 
-<span class='no'>strati</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_stratigraphy</a></span>(<span class='no'>harris</span>)</div></pre>
+<span class='no'>strati</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_stratigraphy</a></span>(<span class='no'>harris</span>)
+<span class='fu'><a href='mutator.html'>get_units</a></span>(<span class='no'>strati</span>)</div><div class='output co'>#&gt; [1] "1" "2" "3" "4" "5" "6" "7" "8" "9"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#details">Details</a></li>
+      <li><a href="#slots">Slots</a></li>
+      <li><a href="#matrix-id">Matrix ID</a></li>
+      <li><a href="#get-and-set">Get and set</a></li>
+      <li><a href="#access">Access</a></li>
+      <li><a href="#subset">Subset</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
