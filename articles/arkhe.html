@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -76,7 +76,7 @@
       <h1>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-02-13</h4>
+            <h4 class="date">2020-02-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nfrerebeau/arkhe/blob/master/vignettes/arkhe.Rmd"><code>vignettes/arkhe.Rmd</code></a></small>
       <div class="hidden name"><code>arkhe.Rmd</code></div>
@@ -113,8 +113,8 @@
 </ul>
 <p><em>It assumes that you keep your data tidy</em>: each variable (taxon/type) must be saved in its own column and each observation (assemblage/sample) must be saved in its own row. Note that missing values are not allowed.</p>
 <p>The internal structure of S4 classes implemented in <strong>arkhe</strong> is depicted in the UML class diagram in the following figure.</p>
-<div id="htmlwidget-0a4aba4deb7a3728b025" style="width:672px;height:672px;" class="nomnoml html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0a4aba4deb7a3728b025">{"x":{"code":"\n  #fill: #FEFEFF\n  #lineWidth: 1\n  #zoom: 4\n  #direction: right\n   [base::matrix||]\n[Matrix|-id: character;+dates: list;+coordinates: list|]\n\n[NumericMatrix||]\n[CountMatrix||]\n[AbundanceMatrix|+totals: numeric|]\n[SimilarityMatrix|+method: character|]\n[OccurrenceMatrix||]\n\n[LogicalMatrix||]\n[IncidenceMatrix||]\n[StratigraphicMatrix||]\n\n[base::matrix] <:- [Matrix]\n\n[Matrix] <:- [NumericMatrix]\n[NumericMatrix] <:- [CountMatrix]\n[NumericMatrix] <:- [AbundanceMatrix]\n[NumericMatrix] <:- [SimilarityMatrix]\n[NumericMatrix] <:- [OccurrenceMatrix]\n\n[Matrix] <:- [LogicalMatrix]\n[LogicalMatrix] <:- [IncidenceMatrix]\n[LogicalMatrix] <:- [StratigraphicMatrix]","svg":false},"evals":[],"jsHooks":[]}</script><div id="numeric-matrix" class="section level2">
+<div id="htmlwidget-657d2c848468c3021a63" style="width:672px;height:672px;" class="nomnoml html-widget"></div>
+<script type="application/json" data-for="htmlwidget-657d2c848468c3021a63">{"x":{"code":"\n  #fill: #FEFEFF\n  #lineWidth: 1\n  #zoom: 4\n  #direction: right\n   [base::matrix||]\n[Matrix|-id: character;+dates: list;+coordinates: list|]\n\n[NumericMatrix||]\n[CountMatrix||]\n[AbundanceMatrix|+totals: numeric|]\n[SimilarityMatrix|+method: character|]\n[OccurrenceMatrix||]\n\n[LogicalMatrix||]\n[IncidenceMatrix||]\n[StratigraphicMatrix||]\n\n[base::matrix] <:- [Matrix]\n\n[Matrix] <:- [NumericMatrix]\n[NumericMatrix] <:- [CountMatrix]\n[NumericMatrix] <:- [AbundanceMatrix]\n[NumericMatrix] <:- [SimilarityMatrix]\n[NumericMatrix] <:- [OccurrenceMatrix]\n\n[Matrix] <:- [LogicalMatrix]\n[LogicalMatrix] <:- [IncidenceMatrix]\n[LogicalMatrix] <:- [StratigraphicMatrix]","svg":false},"evals":[],"jsHooks":[]}</script><div id="numeric-matrix" class="section level2">
 <h2 class="hasAnchor">
 <a href="#numeric-matrix" class="anchor"></a>Numeric matrix</h2>
 <div id="absolute-frequency-matrix-countmatrix" class="section level3">
@@ -164,7 +164,7 @@
 <a class="sourceLine" id="cb2-2" data-line-number="2">## Create a count data matrix</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw"><a href="../reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">100</span>, <span class="ot">TRUE</span>),</a>
 <a class="sourceLine" id="cb2-4" data-line-number="4">            <span class="dt">nrow =</span> <span class="dv">10</span>, <span class="dt">ncol =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; &lt;CountMatrix: 0932c672-6b10-4e78-8069-878e7e45e919&gt;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; &lt;CountMatrix: 1a865618-ca10-4562-a863-1091eb282da0&gt;</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  10 x 10 absolute frequency matrix:</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;    V1 V2 V3 V4 V5 V6 V7 V8 V9 V10</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; 1   2  6  2  3  9  7  9  3  3   6</span></a>
@@ -182,7 +182,7 @@
 <a class="sourceLine" id="cb2-20" data-line-number="20">## Numeric values are coerced to logical as by as.logical</a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="kw"><a href="../reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">100</span>, <span class="ot">TRUE</span>),</a>
 <a class="sourceLine" id="cb2-22" data-line-number="22">                <span class="dt">nrow =</span> <span class="dv">10</span>, <span class="dt">ncol =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; &lt;IncidenceMatrix: e44893ac-d98c-4fac-9513-144a50e1bd7a&gt;</span></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; &lt;IncidenceMatrix: 0c479e5f-844a-4663-9154-159268e3c724&gt;</span></a>
 <a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co">#&gt;  10 x 10 presence/absence data matrix:</span></a>
 <a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">#&gt;       V1    V2    V3    V4    V5    V6    V7    V8    V9   V10</span></a>
 <a class="sourceLine" id="cb2-26" data-line-number="26"><span class="co">#&gt; 1   TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE</span></a>
