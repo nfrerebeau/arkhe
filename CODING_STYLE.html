@@ -67,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -155,13 +155,13 @@ standardize(scale = TRUE, ..., center = TRUE)</code></pre>
 <li>Always validate arguments in a function.</li>
 <li>Specify the namespace of each used function, except if it is from <code>base</code> package.</li>
 </ul>
-<pre class="{r}"><code># GOOD
+<pre class="{r}"><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html"># GOOD
 ggplot2::ggplot()
 dplyr::select()
 
 # BAD 
 ggplot()
-select()</code></pre>
+select()</a></code></pre>
 <ul>
 <li>Do NOT put more than one statement per line. Do NOT use semicolon as termination of the command.</li>
 </ul>

@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -155,14 +155,15 @@ entries in that dimension are selected.</p></td>
     <p>A subsetted object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other mutator: <code><a href='mutator.html'>mutator</a></code></p></div>
+    <div class='dont-index'><p>Other mutator: 
+<code><a href='mutator.html'>mutator</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create a count data matrix</span>
 <span class='no'>A1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 
 <span class='co'>## Access</span>
-<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>A1</span>)</div><div class='output co'>#&gt; [1] "22c2305c-ca61-4323-962c-adf137fd5cea"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>A1</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 10 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>11</span>:<span class='fl'>20</span>] <span class='co'># Set the column names</span>
+<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>A1</span>)</div><div class='output co'>#&gt; [1] "b58a0e95-cf3e-4feb-a8fe-d0f8590b2a4d"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>A1</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 10 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>11</span>:<span class='fl'>20</span>] <span class='co'># Set the column names</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt;  [1] "k" "l" "m" "n" "o" "p" "q" "r" "s" "t"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>10</span>] <span class='co'># Set the row names</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J"</div><div class='input'>
 <span class='co'>## Subset</span>

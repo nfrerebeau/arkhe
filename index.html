@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -140,26 +140,26 @@
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># Data will be coerced with as.logical()</span></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6">quali &lt;-<span class="st"> </span><span class="kw"><a href="reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">100</span>, <span class="ot">TRUE</span>), <span class="dt">nrow =</span> <span class="dv">10</span>, <span class="dt">ncol =</span> <span class="dv">10</span>)</a></code></pre></div>
 <p><strong>arkhe</strong> uses coercing mechanisms (with validation methods) for data type conversions:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">## Create a count matrix</a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">## Create a count matrix</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">A0 &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dt">data =</span> <span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">100</span>, <span class="ot">TRUE</span>), <span class="dt">nrow =</span> <span class="dv">10</span>, <span class="dt">ncol =</span> <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">## Coerce to absolute frequencies</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">## Coerce to absolute frequencies</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5">A1 &lt;-<span class="st"> </span><span class="kw"><a href="reference/coerce.html">as_count</a></span>(A0)</a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">## Coerce to relative frequencies</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">## Coerce to relative frequencies</span></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8">B &lt;-<span class="st"> </span><span class="kw"><a href="reference/coerce.html">as_abundance</a></span>(A1)</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">## Row sums are internally stored before coercing to a frequency matrix</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">## (use get_totals() to get these values)</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">## This allows to restore the source data</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">## Row sums are internally stored before coercing to a frequency matrix</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">## (use get_totals() to get these values)</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">## This allows to restore the source data</span></a>
 <a class="sourceLine" id="cb6-13" data-line-number="13">A2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/coerce.html">as_count</a></span>(B)</a>
 <a class="sourceLine" id="cb6-14" data-line-number="14"><span class="kw"><a href="https://rdrr.io/r/base/all.html">all</a></span>(A1 <span class="op">==</span><span class="st"> </span>A2)</a>
 <a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt; [1] TRUE</span></a>
 <a class="sourceLine" id="cb6-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">## Coerce to presence/absence</a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">## Coerce to presence/absence</span></a>
 <a class="sourceLine" id="cb6-18" data-line-number="18">C &lt;-<span class="st"> </span><span class="kw"><a href="reference/coerce.html">as_incidence</a></span>(A1)</a>
 <a class="sourceLine" id="cb6-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20">## Coerce to a co-occurrence matrix</a>
+<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">## Coerce to a co-occurrence matrix</span></a>
 <a class="sourceLine" id="cb6-21" data-line-number="21">D &lt;-<span class="st"> </span><span class="kw"><a href="reference/coerce.html">as_occurrence</a></span>(A1)</a></code></pre></div>
 <p>Represent stratigraphic relationships:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Principles of Archaeological Stratigraphy, fig. 12</span></a>
