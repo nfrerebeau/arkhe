@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Similarity Matrix — SimilarityMatrix-class • arkhe</title>
+<title>Matrix — GenericMatrix-class • arkhe</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Similarity Matrix — SimilarityMatrix-class" />
-<meta property="og:description" content="An S4 class to represent a (dis)similarity matrix." />
+<meta property="og:title" content="Matrix — GenericMatrix-class" />
+<meta property="og:description" content="A virtual S4 class to represent a matrix. This is the mother class of all
+matrix objects." />
 
 
 
@@ -114,13 +115,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Similarity Matrix</h1>
+    <h1>Matrix</h1>
     <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
-    <div class="hidden name"><code>SimilarityMatrix-class.Rd</code></div>
+    <div class="hidden name"><code>GenericMatrix-class.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>An S4 class to represent a (dis)similarity matrix.</p>
+    <p>A virtual S4 class to represent a matrix. This is the mother class of all
+matrix objects.</p>
     </div>
 
 
@@ -130,8 +132,23 @@
     
 
 <dl>
-<dt><code>method</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the distance
-method used.</p></dd>
+<dt><code>id</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the unique
+identifier of the matrix (UUID v4).</p></dd>
+
+<dt><code>size</code></dt><dd><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the dimension
+of the matrix.</p></dd>
+
+<dt><code>row_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector specifying the row names of
+the matrix.</p></dd>
+
+<dt><code>column_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector specifying the column
+names of the matrix.</p></dd>
+
+<dt><code>dates</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> giving the dates of each assemblage.</p></dd>
+
+<dt><code>coordinates</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> giving the geographical coordinates of
+each assemblage (must considered as experimental and subject to major
+changes in a future release).</p></dd>
 
 </dl>
     <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
@@ -195,14 +212,13 @@ method used.</p></dd>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='DataMatrix-class.html'>NumericMatrix</a></p>
-<p>Other matrix: 
+    <div class='dont-index'><p>Other matrix: 
 <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
 <code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
+<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
 <code><a href='coerce.html'>coerce</a>()</code></p></div>
 

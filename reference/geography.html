@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -37,7 +41,6 @@
 
 <meta property="og:title" content="Spatial Information — geography" />
 <meta property="og:description" content="Deal with spatial information." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -55,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -93,7 +96,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe">
+  <a href="https://github.com/nfrerebeau/arkhe/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -124,10 +127,10 @@
 
 <span class='fu'>set_coordinates</span>(<span class='no'>object</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span>
 
-<span class='co'># S4 method for Matrix</span>
+<span class='co'># S4 method for GenericMatrix</span>
 <span class='fu'>get_coordinates</span>(<span class='no'>object</span>)
 
-<span class='co'># S4 method for Matrix</span>
+<span class='co'># S4 method for GenericMatrix</span>
 <span class='fu'>set_coordinates</span>(<span class='no'>object</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -148,7 +151,7 @@ below).</p></td>
 
     <p>An attempt is made to interpret the argument <code>value</code> in a way suitable
  for geographic coordinates.</p>
-<p>If <code>value</code> is a:</p><dl class='dl-horizontal'>
+<p>If <code>value</code> is a:</p><dl>
   <dt><code>list</code></dt><dd><p>containing components "<code>x</code>", "<code>y</code>" and
   "<code>z</code>", these are used to define coordinates (longitude, latitude and
   elevation, respectively). If "<code>z</code>" is missing, the vertical
@@ -175,62 +178,55 @@ below).</p></td>
 <span class='co'>## Set geographic coordinates as a matrix</span>
 <span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>30</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 <span class='fu'>set_coordinates</span>(<span class='no'>A</span>) <span class='kw'>&lt;-</span> <span class='no'>B</span>
-<span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;   X  Y  Z
-#&gt; A 5 10  2
-#&gt; B 9 10  4
-#&gt; C 7  1  6
-#&gt; D 1  3  4
-#&gt; E 1  8  9
-#&gt; F 4 10  5
-#&gt; G 4  8  6
-#&gt; H 9  3 10
-#&gt; I 2  3  9
-#&gt; J 4  7  9</div><div class='input'>
+<span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;   X  Y Z
+#&gt; A 0  9 8
+#&gt; B 6  1 9
+#&gt; C 2  8 7
+#&gt; D 0  6 6
+#&gt; E 9  0 4
+#&gt; F 8  6 4
+#&gt; G 0  4 8
+#&gt; H 7  9 0
+#&gt; I 3  3 5
+#&gt; J 1 10 2</div><div class='input'>
 <span class='co'>## Set geographic coordinates as a data.frame</span>
 <span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>5</span>, <span class='fl'>TRUE</span>), <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>5</span>, <span class='fl'>TRUE</span>), <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>5</span>, <span class='fl'>TRUE</span>),
                 <span class='kw'>row.names</span> <span class='kw'>=</span> <span class='no'>LETTERS</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>2</span>)])
 <span class='fu'>set_coordinates</span>(<span class='no'>A</span>) <span class='kw'>&lt;-</span> <span class='no'>B</span>
 <span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;    X  Y  Z
-#&gt; A  2  8  5
+#&gt; A  4  5  4
 #&gt; B NA NA NA
-#&gt; C  3  8  5
+#&gt; C  3 10  0
 #&gt; D NA NA NA
-#&gt; E 10  2  8
+#&gt; E  9  4  4
 #&gt; F NA NA NA
-#&gt; G  0  3  8
+#&gt; G  9  3 10
 #&gt; H NA NA NA
-#&gt; I  3  8  3
+#&gt; I 10  5  1
 #&gt; J NA NA NA</div><div class='input'>
 <span class='co'>## Set geographic coordinates as a list</span>
 <span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>X</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>TRUE</span>), <span class='kw'>Y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>TRUE</span>))
 <span class='fu'>set_coordinates</span>(<span class='no'>A</span>) <span class='kw'>&lt;-</span> <span class='no'>B</span>
-<span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;    X  Y  Z
-#&gt; A  7  7 NA
-#&gt; B  5  9 NA
-#&gt; C 10  6 NA
-#&gt; D  7  2 NA
-#&gt; E  2  3 NA
-#&gt; F  6  6 NA
-#&gt; G  9  7 NA
-#&gt; H  9 10 NA
-#&gt; I  6  4 NA
-#&gt; J  5  8 NA</div><div class='input'>
+<span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;   X  Y  Z
+#&gt; A 2  1 NA
+#&gt; B 1  6 NA
+#&gt; C 9  3 NA
+#&gt; D 4  6 NA
+#&gt; E 6  2 NA
+#&gt; F 0  2 NA
+#&gt; G 5 10 NA
+#&gt; H 9  8 NA
+#&gt; I 0  2 NA
+#&gt; J 6  7 NA</div><div class='input'>
 <span class='co'>## Unset geographic coordinates</span>
 <span class='fu'>set_coordinates</span>(<span class='no'>A</span>) <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
 <span class='fu'>get_coordinates</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] X Y Z
-#&gt; &lt;0 lignes&gt; (ou 'row.names' de longueur nulle)</div></pre>
+#&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#note">Note</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -241,7 +237,7 @@ below).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

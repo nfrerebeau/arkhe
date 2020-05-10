@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -37,7 +41,6 @@
 
 <meta property="og:title" content="Extract or Replace Parts of an Object — subset" />
 <meta property="og:description" content="Operators acting on objects to extract or replace parts." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -55,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -93,7 +96,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe">
+  <a href="https://github.com/nfrerebeau/arkhe/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -112,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Extract or Replace Parts of an Object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/extract.R'><code>R/extract.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/subset.R'><code>R/subset.R</code></a></small>
     <div class="hidden name"><code>subset.Rd</code></div>
     </div>
 
@@ -120,11 +123,38 @@
     <p>Operators acting on objects to extract or replace parts.</p>
     </div>
 
-    <pre class="usage"># S4 method for Matrix
-[(x, i, j) <- value
+    <pre class="usage"># S4 method for DataMatrix,missing,missing
+[(x, i, j, ..., drop = TRUE)
 
-# S4 method for Matrix
-[[(x, i, j) <- value</pre>
+# S4 method for DataMatrix,ANY,missing
+[(x, i, j, ..., drop = TRUE)
+
+# S4 method for DataMatrix,missing,ANY
+[(x, i, j, ..., drop = TRUE)
+
+# S4 method for DataMatrix,ANY,ANY
+[(x, i, j, ..., drop = TRUE)
+
+# S4 method for DataMatrix,ANY,missing
+[[(x, i, exact = TRUE)
+
+# S4 method for DataMatrix,ANY,ANY
+[[(x, i, j, ..., exact = TRUE)
+
+# S4 method for DataMatrix,ANY,missing
+[(x, i, j, ...) &lt;- value
+
+# S4 method for DataMatrix,missing,ANY
+[(x, i, j) &lt;- value
+
+# S4 method for DataMatrix,ANY,ANY
+[(x, i, j) &lt;- value
+
+# S4 method for DataMatrix,ANY,missing
+[[(x, i) &lt;- value
+
+# S4 method for DataMatrix,ANY,ANY
+[[(x, i, j) &lt;- value</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +175,21 @@ elements. An empty index (a comma separated blank) indicates that all
 entries in that dimension are selected.</p></td>
     </tr>
     <tr>
+      <th>...</th>
+      <td><p>Currently not used.</p></td>
+    </tr>
+    <tr>
+      <th>drop</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the result be coerced to
+the lowest possible dimension? This only works for extracting elements,
+not for the replacement.</p></td>
+    </tr>
+    <tr>
+      <th>exact</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should partial matching be used?
+If <code>TRUE</code> (the default), no partial matching is allowed.</p></td>
+    </tr>
+    <tr>
       <th>value</th>
       <td><p>A possible value for the element(s) of <code>x</code>.</p></td>
     </tr>
@@ -152,67 +197,106 @@ entries in that dimension are selected.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A subsetted object.</p>
+    <p>A subsetted object of the same sort as <code>x</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other mutator: 
 <code><a href='mutator.html'>mutator</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Create a count data matrix</span>
-<span class='no'>A1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>10</span>)
-
+    <pre class="examples"><div class='input'><span class='co'>## Create an incidence (presence/absence) matrix</span>
+<span class='co'>## Data will be coerced with as.logical()</span>
+<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>/<span class='fl'>3</span>)), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
+<span class='co'>## Create a count data matrix</span>
+<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
+<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>B</span>)</div><div class='output co'>#&gt; [1] "f0bf7b08-7266-46cd-863a-56dff33cd4a2"</div><div class='input'>
 <span class='co'>## Access</span>
-<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>A1</span>)</div><div class='output co'>#&gt; [1] "b58a0e95-cf3e-4feb-a8fe-d0f8590b2a4d"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>A1</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 10 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>11</span>:<span class='fl'>20</span>] <span class='co'># Set the column names</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt;  [1] "k" "l" "m" "n" "o" "p" "q" "r" "s" "t"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='kw'>&lt;-</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>10</span>] <span class='co'># Set the row names</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>A1</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J"</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>B</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 20  5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/row.html'>row</a></span>(<span class='no'>B</span>) <span class='co'># Get the row indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
+#&gt;  [1,]    1    1    1    1    1
+#&gt;  [2,]    2    2    2    2    2
+#&gt;  [3,]    3    3    3    3    3
+#&gt;  [4,]    4    4    4    4    4
+#&gt;  [5,]    5    5    5    5    5
+#&gt;  [6,]    6    6    6    6    6
+#&gt;  [7,]    7    7    7    7    7
+#&gt;  [8,]    8    8    8    8    8
+#&gt;  [9,]    9    9    9    9    9
+#&gt; [10,]   10   10   10   10   10
+#&gt; [11,]   11   11   11   11   11
+#&gt; [12,]   12   12   12   12   12
+#&gt; [13,]   13   13   13   13   13
+#&gt; [14,]   14   14   14   14   14
+#&gt; [15,]   15   15   15   15   15
+#&gt; [16,]   16   16   16   16   16
+#&gt; [17,]   17   17   17   17   17
+#&gt; [18,]   18   18   18   18   18
+#&gt; [19,]   19   19   19   19   19
+#&gt; [20,]   20   20   20   20   20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/col.html'>col</a></span>(<span class='no'>B</span>, <span class='kw'>as.factor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='co'># Get the column indexes</span></div><div class='output co'>#&gt;       [,1]   [,2]   [,3]   [,4]   [,5]  
+#&gt;  [1,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [2,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [3,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [4,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [5,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [6,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [7,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [8,] "col1" "col2" "col3" "col4" "col5"
+#&gt;  [9,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [10,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [11,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [12,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [13,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [14,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [15,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [16,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [17,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [18,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [19,] "col1" "col2" "col3" "col4" "col5"
+#&gt; [20,] "col1" "col2" "col3" "col4" "col5"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='no'>B</span>) <span class='co'># Get the number of rows</span></div><div class='output co'>#&gt; [1] 20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span>(<span class='no'>B</span>) <span class='co'># Get the number of columns</span></div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></span>(<span class='no'>B</span>) <span class='co'># Get the dimension names</span></div><div class='output co'>#&gt; [[1]]
+#&gt;  [1] "row1"  "row2"  "row3"  "row4"  "row5"  "row6"  "row7"  "row8"  "row9" 
+#&gt; [10] "row10" "row11" "row12" "row13" "row14" "row15" "row16" "row17" "row18"
+#&gt; [19] "row19" "row20"
+#&gt; 
+#&gt; [[2]]
+#&gt; [1] "col1" "col2" "col3" "col4" "col5"
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>B</span>) <span class='kw'>&lt;-</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>20</span>] <span class='co'># Set the row names</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>B</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S"
+#&gt; [20] "T"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>B</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>21</span>:<span class='fl'>25</span>] <span class='co'># Set the column names</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>B</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
-<span class='no'>A1</span><span class='kw'>[[</span><span class='fl'>1</span>]] <span class='co'># Get the first value</span></div><div class='output co'>#&gt; [1] 2</div><div class='input'><span class='no'>A1</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt;   k  l m  n  o  p q r  s  t
-#&gt; A 2  8 7  9  4  9 8 3  7  6
-#&gt; B 0  6 6  9 10  0 2 0  7  8
-#&gt; C 9  0 4 10  1  6 7 9  8  9
-#&gt; D 8  6 4  5  2  1 3 4  5 10
-#&gt; E 0  4 8 10  1  6 9 0 10 10
-#&gt; F 7  9 0  4  9  3 8 0  0  9
-#&gt; G 3  3 5  3  4  6 7 9  8  2
-#&gt; H 1 10 2  5  6  2 0 6  6  4
-#&gt; I 9  8 4  4  0  2 2 5  2  6
-#&gt; J 1  9 3  0  5 10 6 8  7  9</div><div class='input'><span class='no'>A1</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt; k l m n o p q r s t 
-#&gt; 2 8 7 9 4 9 8 3 7 6 </div><div class='input'><span class='no'>A1</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt;   k l m  n  o p q r s t
-#&gt; A 2 8 7  9  4 9 8 3 7 6
-#&gt; B 0 6 6  9 10 0 2 0 7 8
-#&gt; C 9 0 4 10  1 6 7 9 8 9</div><div class='input'><span class='no'>A1</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), <span class='fl'>1</span>] <span class='co'># Get the first three rows of the first column</span></div><div class='output co'>#&gt; A B C 
-#&gt; 2 0 9 </div><div class='input'><span class='no'>A1</span>[, <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;   k
-#&gt; A 2
-#&gt; B 0
-#&gt; C 9
-#&gt; D 8
-#&gt; E 0
-#&gt; F 7
-#&gt; G 3
-#&gt; H 1
-#&gt; I 9
-#&gt; J 1</div><div class='input'>
-<span class='co'>## Coerce counts to relative frequencies</span>
-<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_abundance</a></span>(<span class='no'>A1</span>)
-<span class='co'>## Row sums are internally stored before coercing to a frequency matrix</span>
-<span class='fu'><a href='mutator.html'>get_totals</a></span>(<span class='no'>B</span>) <span class='co'># Get row sums</span></div><div class='output co'>#&gt;  A  B  C  D  E  F  G  H  I  J 
-#&gt; 63 48 63 48 58 49 50 42 42 58 </div><div class='input'><span class='co'>## This allows to restore the source data</span>
-<span class='no'>A2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_count</a></span>(<span class='no'>B</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='no'>A1</span> <span class='kw'>==</span> <span class='no'>A2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'>## Coerce to a co-occurrence matrix</span>
-<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_occurrence</a></span>(<span class='no'>A1</span>)</div></pre>
+<span class='no'>B</span><span class='kw'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span>]] <span class='co'># Get the first value</span></div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='no'>B</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt;    u v  w x  y
+#&gt; A  7 7  1 8 10
+#&gt; B  7 0  9 5  3
+#&gt; C  8 9 10 5  2
+#&gt; D  9 5  2 3  0
+#&gt; E  7 9  6 3  6
+#&gt; F  4 8  0 1  9
+#&gt; G  2 1  8 2  4
+#&gt; H 10 5  7 7  7
+#&gt; I  4 4  5 6  7
+#&gt; J  8 8  2 9  9
+#&gt; K  3 5  8 2 10
+#&gt; L  3 4  5 7  0
+#&gt; M  4 0  1 8  0
+#&gt; N  6 3  8 8  6
+#&gt; O  8 8  3 6  2
+#&gt; P  7 2  2 8  8
+#&gt; Q  2 6 10 8  6
+#&gt; R  6 5  1 8  0
+#&gt; S 10 8  0 2  1
+#&gt; T  7 2  8 1  9</div><div class='input'><span class='no'>B</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt;  u  v  w  x  y 
+#&gt;  7  7  1  8 10 </div><div class='input'><span class='no'>B</span>[, <span class='fl'>1</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;  A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+#&gt;  7  7  8  9  7  4  2 10  4  8  3  3  4  6  8  7  2  6 10  7 </div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt;   u v  w x  y
+#&gt; A 7 7  1 8 10
+#&gt; B 7 0  9 5  3
+#&gt; C 8 9 10 5  2</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get the first 3 rows of the first column</span></div><div class='output co'>#&gt;   u
+#&gt; A 7
+#&gt; B 7
+#&gt; C 8</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>N. Frerebeau</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -223,7 +307,7 @@ entries in that dimension are selected.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

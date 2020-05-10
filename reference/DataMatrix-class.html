@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Similarity Matrix — SimilarityMatrix-class • arkhe</title>
+<title>Data Matrix — DataMatrix-class • arkhe</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Similarity Matrix — SimilarityMatrix-class" />
-<meta property="og:description" content="An S4 class to represent a (dis)similarity matrix." />
+<meta property="og:title" content="Data Matrix — DataMatrix-class" />
+<meta property="og:description" content="A virtual S4 class to represent a data matrix." />
 
 
 
@@ -114,24 +114,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Similarity Matrix</h1>
+    <h1>Data Matrix</h1>
     <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
-    <div class="hidden name"><code>SimilarityMatrix-class.Rd</code></div>
+    <div class="hidden name"><code>DataMatrix-class.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>An S4 class to represent a (dis)similarity matrix.</p>
+    <p>A virtual S4 class to represent a data matrix.</p>
     </div>
 
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>A data vector.</p></td>
+    </tr>
+    <tr>
+      <th>nrow</th>
+      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> value giving the desired number of rows.</p></td>
+    </tr>
+    <tr>
+      <th>ncol</th>
+      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> value giving the desired number of
+columns.</p></td>
+    </tr>
+    <tr>
+      <th>byrow</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the matrix be filled by
+rows? If <code>FALSE</code> (the default) the matrix is filled by columns.</p></td>
+    </tr>
+    <tr>
+      <th>dimnames</th>
+      <td><p>A list of length 2 giving the row and column names
+respectively. If <code>NULL</code> (the default) dimension names will be created.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<dl>
+  <dt><code>IntegerMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code>
+  as by <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code>.</p></dd>
+  <dt><code>NumericMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>
+  as by <code><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></code>.</p></dd>
+  <dt><code>LogicalMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code>
+  as by <code><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></code>.</p></dd>
+ 
+</dl>
 
     <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
     
 
 <dl>
-<dt><code>method</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the distance
-method used.</p></dd>
+<dt><code>data</code></dt><dd><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code>, a <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> or a
+<code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector (see details).</p></dd>
 
 </dl>
     <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
@@ -195,14 +235,14 @@ method used.</p></dd>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='DataMatrix-class.html'>NumericMatrix</a></p>
+    <div class='dont-index'><p><a href='GenericMatrix-class.html'>GenericMatrix</a></p>
 <p>Other matrix: 
 <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
 <code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
+<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
 <code><a href='coerce.html'>coerce</a>()</code></p></div>
 

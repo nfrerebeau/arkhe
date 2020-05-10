@@ -10,16 +10,13 @@
     <loc>http://arkhe.archaeo.science/reference/CountMatrix-class.html</loc>
   </url>
   <url>
+    <loc>http://arkhe.archaeo.science/reference/DataMatrix-class.html</loc>
+  </url>
+  <url>
+    <loc>http://arkhe.archaeo.science/reference/GenericMatrix-class.html</loc>
+  </url>
+  <url>
     <loc>http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html</loc>
-  </url>
-  <url>
-    <loc>http://arkhe.archaeo.science/reference/LogicalMatrix-class.html</loc>
-  </url>
-  <url>
-    <loc>http://arkhe.archaeo.science/reference/Matrix-class.html</loc>
-  </url>
-  <url>
-    <loc>http://arkhe.archaeo.science/reference/NumericMatrix-class.html</loc>
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html</loc>
@@ -61,9 +58,6 @@
     <loc>http://arkhe.archaeo.science/reference/conditions.html</loc>
   </url>
   <url>
-    <loc>http://arkhe.archaeo.science/reference/deprecated.html</loc>
-  </url>
-  <url>
     <loc>http://arkhe.archaeo.science/reference/generate_uuid.html</loc>
   </url>
   <url>
@@ -71,6 +65,9 @@
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/mutator.html</loc>
+  </url>
+  <url>
+    <loc>http://arkhe.archaeo.science/reference/operator.html</loc>
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/predicate-graph.html</loc>
@@ -92,6 +89,9 @@
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/predicate-utils.html</loc>
+  </url>
+  <url>
+    <loc>http://arkhe.archaeo.science/reference/statistics.html</loc>
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/subset.html</loc>
