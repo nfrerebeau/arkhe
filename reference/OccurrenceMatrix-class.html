@@ -41,7 +41,7 @@
 
 <meta property="og:title" content="Co-Occurrence Matrix — OccurrenceMatrix-class" />
 <meta property="og:description" content="An S4 class to represent a co-occurrence matrix." />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
 <meta name="twitter:site" content="@nfrerebeau" />
 
@@ -211,7 +211,7 @@
 <span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>/<span class='fl'>3</span>)), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
 <span class='co'>## Create a count data matrix</span>
 <span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
-<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>B</span>)</div><div class='output co'>#&gt; [1] "b2519bfc-f09f-4dcd-8adb-50109c245fed"</div><div class='input'>
+<span class='fu'><a href='mutator.html'>get_id</a></span>(<span class='no'>B</span>)</div><div class='output co'>#&gt; [1] "5b0c9ed9-ec18-41ba-9877-6ccdf13ae15e"</div><div class='input'>
 <span class='co'>## Access</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>B</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 20  5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/row.html'>row</a></span>(<span class='no'>B</span>) <span class='co'># Get the row indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
 #&gt;  [1,]    1    1    1    1    1
