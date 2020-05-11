@@ -117,7 +117,7 @@
 <p><em>It assumes that you keep your data tidy</em>: each variable (taxon/type) must be saved in its own column and each observation (assemblage/sample) must be saved in its own row. Note that missing values are not allowed.</p>
 <p>The internal structure of S4 classes implemented in <strong>arkhe</strong> is depicted in the UML class diagram in the following figure.</p>
 <div class="figure">
-<img src="uml-1.png" alt="UML class diagram of the S4 classes structure." width="100%"><p class="caption">
+<img src="uml-1.png" alt="UML class diagram of the S4 classes structure." width="75%"><p class="caption">
 UML class diagram of the S4 classes structure.
 </p>
 </div>
@@ -181,6 +181,7 @@ UML class diagram of the S4 classes structure.
 <div id="usage" class="section level1">
 <h1 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h1>
+<p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>sum</code>, <code>any</code>, <code>all</code>…). In addition, all functions that call <code>as.matrix</code> first on their main argument should work (e. g. <code>apply</code>).</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="co"># Load packages</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">arkhe</span>)</pre></body></html></div>
 <div id="create" class="section level2">
@@ -189,6 +190,7 @@ UML class diagram of the S4 classes structure.
 <p>These new classes are of simple use, on the same way as the base <code>matrix</code>:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">12345</span>)
 <span class="co">## Create a count data matrix</span>
+<span class="co">## Data are rounded to zero decimal places, then coerced with as.integer</span>
 <span class="fu"><a href="../reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
             <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
 <span class="co">#&gt; &lt;CountMatrix: 10 x 10&gt;</span>
@@ -205,7 +207,7 @@ UML class diagram of the S4 classes structure.
 <span class="co">#&gt; row10    5    9    8    4    8    6   10    6    5     9</span>
 
 <span class="co">## Create an incidence (presence/absence) matrix</span>
-<span class="co">## Numeric values are coerced to logical as by as.logical</span>
+<span class="co">## Data are coerced to logical as by as.logical</span>
 <span class="fu"><a href="../reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
                 <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
 <span class="co">#&gt; &lt;IncidenceMatrix: 10 x 10&gt;</span>
