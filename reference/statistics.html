@@ -126,73 +126,17 @@
     <p>Computes statistics over <code>DataMatrix</code> margins.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rowAll</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colAll</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>rowAny</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colAny</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>rowQuantiles</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colQuantiles</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>rowRanges</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colRanges</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>rowRanks</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colRanks</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>rowVars</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>colVars</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>rowQuantiles</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0.25</span>),
-  <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>7</span>,
-  <span class='no'>...</span>
-)
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>colQuantiles</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0.25</span>),
-  <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>7</span>,
-  <span class='no'>...</span>
-)
-
-<span class='co'># S4 method for DataMatrix</span>
+    <pre class="usage"><span class='co'># S4 method for DataMatrix</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>rowRanges</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>colRanges</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for DataMatrix</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>rowVars</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>colVars</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -200,14 +144,6 @@
     <tr>
       <th>x</th>
       <td><p>A <a href='DataMatrix-class.html'>DataMatrix</a> object.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Further parameters to be passed to other methods.</p></td>
-    </tr>
-    <tr>
-      <th>probs, names, type</th>
-      <td><p>See <code><a href='https://rdrr.io/r/stats/quantile.html'>quantile</a></code>.</p></td>
     </tr>
     <tr>
       <th>na.rm</th>
@@ -235,52 +171,18 @@
     <pre class="examples"><div class='input'><span class='co'>## Create count data matrix</span>
 <span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
 
-<span class='fu'>rowAll</span>(<span class='no'>A</span>, <span class='kw'>f</span> <span class='kw'>=</span> <span class='no'>is_odd</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt; FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE 
-#&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt; FALSE FALSE FALSE FALSE FALSE FALSE FALSE </div><div class='input'><span class='fu'>rowAny</span>(<span class='no'>A</span>, <span class='kw'>f</span> <span class='kw'>=</span> <span class='no'>is_odd</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE 
-#&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE </div><div class='input'>
-<span class='co'>## Row and column quantiles</span>
-<span class='fu'>rowQuantiles</span>(<span class='no'>A</span>, <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.25</span>, <span class='fl'>0.50</span>, <span class='fl'>0.75</span>))</div><div class='output co'>#&gt;     row1 row2 row3 row4 row5 row6 row7 row8 row9 row10 row11 row12 row13 row14
-#&gt; 25%    3    0    2    5    1    2    3    4    1     4     3     1     3     2
-#&gt; 50%    6    7    3    6    8    7    6    4    3     7     6     8     6     4
-#&gt; 75%    9    8    5    6    9    8    8    8    6     8     9     8     7     5
-#&gt;     row15 row16 row17 row18 row19 row20
-#&gt; 25%     2     2     5     6     8     4
-#&gt; 50%     6     6     5     7     9     6
-#&gt; 75%     6     6     7     7    10    10</div><div class='input'><span class='fu'>colQuantiles</span>(<span class='no'>A</span>, <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.25</span>, <span class='fl'>0.50</span>, <span class='fl'>0.75</span>))</div><div class='output co'>#&gt;     col1 col2 col3 col4 col5
-#&gt; 25%    1 2.75 5.00 3.00 2.75
-#&gt; 50%    6 4.00 6.50 6.00 6.00
-#&gt; 75%    8 7.25 8.25 8.25 7.25</div><div class='input'>
 <span class='co'>## Row and column means</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
 #&gt;   6.2   5.0   3.2   5.0   5.6   5.4   5.4   4.8   3.2   5.6   6.0   5.4   5.4 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
 #&gt;   4.6   4.6   4.2   5.0   6.6   8.0   6.6 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
 #&gt; 4.75 4.65 6.30 5.60 5.15 </div><div class='input'>
-<span class='co'>## Row and column ranges</span>
-<span class='fu'>rowRanges</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;      row1 row2 row3 row4 row5 row6 row7 row8 row9 row10 row11 row12 row13 row14
-#&gt; [1,]    3    0    0    0    0    0    1    0    0     1     3     0     3     2
-#&gt; [2,]   10   10    6    8   10   10    9    8    6     8     9    10     8    10
-#&gt;      row15 row16 row17 row18 row19 row20
-#&gt; [1,]     0     0     0     3     3     3
-#&gt; [2,]     9     7     8    10    10    10</div><div class='input'><span class='fu'>colRanges</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;      col1 col2 col3 col4 col5
-#&gt; [1,]    0    0    0    0    0
-#&gt; [2,]   10   10   10   10   10</div><div class='input'>
 <span class='co'>## Row and column sums</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
 #&gt;    31    25    16    25    28    27    27    24    16    28    30    27    27 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
 #&gt;    23    23    21    25    33    40    33 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt;   95   93  126  112  103 </div><div class='input'>
-<span class='co'>## Row and column variances</span>
-<span class='fu'>rowVars</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;  10.7  22.0   5.7   9.0  22.3  17.8  11.3  11.2   7.7   9.3   9.0  20.8   5.3 
-#&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;  10.8  12.8   9.2   9.5   6.3   8.5  10.8 </div><div class='input'><span class='fu'>colVars</span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;      col1      col2      col3      col4      col5 
-#&gt; 13.250000  9.397368  8.536842 11.936842  9.607895 </div></pre>
+#&gt;   95   93  126  112  103 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
