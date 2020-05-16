@@ -155,19 +155,6 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    
-<dl>
-  <dt><code>IntegerMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code>
-  as by <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code>.</p></dd>
-  <dt><code>NumericMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>
-  as by <code><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></code>.</p></dd>
-  <dt><code>LogicalMatrix</code></dt><dd><p>Values are coerced to <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code>
-  as by <code><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></code>.</p></dd>
- 
-</dl>
-
     <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
     
@@ -177,34 +164,12 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector (see details).</p></dd>
 
 </dl>
-    <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
-
-    
-
-<p>When a matrix is first created, an identifier is generated (UUID v4).
- This ID is preserved when coercing to another class. Thus, the object ID is
- unique within the same class, but two objects of different classes can have
- the same ID. This makes it possible to identify objects representing the
- same initial data and associate them with the results of specific
- computations.</p>
-    <h2 class="hasAnchor" id="get-and-set"><a class="anchor" href="#get-and-set"></a>Get and set</h2>
-
-    
-
-<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
-  <dt><code><a href='mutator.html'>get_id(x)</a></code></dt><dd><p>Get the ID of <code>x</code>.</p></dd>
-  <dt><code><a href='chronology.html'>get_dates(x)</a></code> and <code>set_dates(x) &lt;- value</code></dt><dd><p>Get or set
-  the dates of <code>x</code>.</p></dd>
-  <dt><code><a href='geography.html'>get_coordinates(x)</a></code> and <code>set_coordinates(x) &lt;- value</code></dt><dd><p>Get
-  or set the geographical coordinates of <code>x</code>.</p></dd>
- 
-</dl>
-
     <h2 class="hasAnchor" id="access"><a class="anchor" href="#access"></a>Access</h2>
 
     
 
 <p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
+  <dt><code><a href='https://rdrr.io/r/base/length.html'>length(x)</a></code></dt><dd><p>Returns the length of <code>x</code>.</p></dd>
   <dt><code><a href='https://rdrr.io/r/base/dim.html'>dim(x)</a></code></dt><dd><p>Returns the dimension of <code>x</code>.</p></dd>
   <dt><code><a href='https://rdrr.io/r/base/nrow.html'>nrow(x)</a></code></dt><dd><p>Returns the number of rows present in <code>x</code>.</p></dd>
   <dt><code><a href='https://rdrr.io/r/base/nrow.html'>ncol(x)</a></code></dt><dd><p>Returns the number of columns present in <code>x</code>.</p></dd>
@@ -222,13 +187,13 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
     
 
 <p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
-  <dt><code>x[i, j]</code></dt><dd><p>Extracts elements selected by subscripts <code>i</code>
-  and <code>j</code>. Indices are <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code>, <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> or
+  <dt><code>x[i, j, ..., drop]</code></dt><dd><p>Extracts elements selected by subscripts
+  <code>i</code> and <code>j</code>. Indices are <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> or
   <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vectors or empty (missing) or <code>NULL</code>.
   Numeric values are coerced to <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> as by
   <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code> (and hence truncated towards zero).
-  Character vectors will be matched to the name of the elements.
-  An empty index (a comma separated blank) indicates that all
+  Character vectors will be matched to the <code><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></code> of the
+  object. An empty index (a comma separated blank) indicates that all
   entries in that dimension are selected.
   Returns an object of the same class as <code>x</code>.</p></dd>
   <dt><code>x[[i]]</code></dt><dd><p>Extracts a single element selected by subscript
@@ -238,8 +203,7 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='GenericMatrix-class.html'>GenericMatrix</a></p>
-<p>Other matrix: 
+    <div class='dont-index'><p>Other matrix: 
 <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
 <code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
