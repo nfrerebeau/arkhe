@@ -134,16 +134,6 @@
  stratigraphic units. A stratigraphic matrix is an adjacency matrix (a non
  symmetric square matrix with zeros on its main diagonal), suitable to build
  a directed acyclic graph (DAG).</p>
-    <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
-
-    
-
-<p>When a matrix is first created, an identifier is generated (UUID v4).
- This ID is preserved when coercing to another class. Thus, the object ID is
- unique within the same class, but two objects of different classes can have
- the same ID. This makes it possible to identify objects representing the
- same initial data and associate them with the results of specific
- computations.</p>
     <h2 class="hasAnchor" id="get-and-set"><a class="anchor" href="#get-and-set"></a>Get and set</h2>
 
     
@@ -227,8 +217,7 @@
   <span class='kw'>dimnames</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"lower"</span>, <span class='st'>"upper"</span>))
 )
 
-<span class='no'>strati</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_stratigraphy</a></span>(<span class='no'>harris</span>)
-<span class='fu'><a href='mutator.html'>get_units</a></span>(<span class='no'>strati</span>)</div><div class='output co'>#&gt; [1] "1" "2" "3" "4" "5" "6" "7" "8" "9"</div></pre>
+<span class='no'>strati</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_stratigraphy</a></span>(<span class='no'>harris</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
