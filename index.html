@@ -109,8 +109,6 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="co"># Load the package</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">arkhe</span>)</pre></div>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="co"># See the vignette</span>
-<span class="kw pkg">utils</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"arkhe"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"arkhe"</span>)</pre></div>
 <p><strong>arkhe</strong> provides a set of S4 classes that represent different special types of matrix.</p>
 <ul>
 <li>Numeric matrix:
@@ -136,7 +134,7 @@
 </ul>
 <p><em>It assumes that you keep your data tidy</em>: each variable (type/taxa) must be saved in its own column and each observation (assemblage/sample) must be saved in its own row.</p>
 <p>These new classes are of simple use, on the same way as the base <code>matrix</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="co"># Define a count data matrix</span>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="co"># Define a count data matrix</span>
 <span class="co"># (data will be rounded to zero decimal places, then coerced with as.integer)</span>
 <span class="no">quanti</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
 
@@ -144,7 +142,7 @@
 <span class="co"># (data will be coerced with as.logical)</span>
 <span class="no">quali</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
 <p><strong>arkhe</strong> uses coercing mechanisms (with validation methods) for data type conversions:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="co">## Create a count matrix</span>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="co">## Create a count matrix</span>
 <span class="no">A0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
 
 <span class="co">## Coerce to absolute frequencies</span>
@@ -166,7 +164,7 @@
 <span class="co">## Coerce to a co-occurrence matrix</span>
 <span class="no">D</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_occurrence</a></span>(<span class="no">A1</span>)</pre></div>
 <p>Represent stratigraphic relationships:</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="co"># Principles of Archaeological Stratigraphy, fig. 12</span>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="co"># Principles of Archaeological Stratigraphy, fig. 12</span>
 <span class="no">harris</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span>(
   <span class="kw">header</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
   <span class="kw">text</span> <span class="kw">=</span> <span class="st">"lower upper
@@ -186,13 +184,11 @@
 )
 
 <span class="no">S</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_stratigraphy</a></span>(<span class="no">harris</span>)</pre></div>
-<p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>sum</code>, <code>any</code>, <code>all</code>…). In addition, all functions that call <code>as.matrix</code> first on their main argument should work (e. g. <code>apply</code>).</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="no">A0</span>)
-<span class="co">#&gt; [1] 10 10</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(<span class="no">A0</span>)
-<span class="co">#&gt;  [1] 58 50 66 40 62 71 45 46 57 44</span>
+<p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>sum</code>, <code>any</code>, <code>all</code>…). In addition, all functions that call <code>as.matrix</code> or <code>as.data.frame</code> first on their main argument should work (e. g. <code>apply</code>).</p>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(<span class="no">A0</span>)
+<span class="co">#&gt;  [1] 26 59 59 59 28 33 40 48 58 41</span>
 <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="kw">X</span> <span class="kw">=</span> <span class="no">A0</span>, <span class="kw">MARGIN</span> <span class="kw">=</span> <span class="fl">1</span>, <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">sum</span>)
-<span class="co">#&gt;  [1] 58 50 66 40 62 71 45 46 57 44</span></pre></div>
+<span class="co">#&gt;  [1] 26 59 59 59 28 33 40 48 58 41</span></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
