@@ -138,15 +138,6 @@ matrix objects.</p>
 <dt><code>id</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string specifying the unique
 identifier of the matrix (UUID v4).</p></dd>
 
-<dt><code>size</code></dt><dd><p>A length-two <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector giving the dimension
-of the matrix.</p></dd>
-
-<dt><code>row_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector specifying the row names of
-the matrix.</p></dd>
-
-<dt><code>column_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector specifying the column
-names of the matrix.</p></dd>
-
 <dt><code>dates</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> giving the dates of each assemblage.</p></dd>
 
 <dt><code>coordinates</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/list.html'>list</a></code> giving the geographical coordinates of
@@ -154,6 +145,10 @@ each assemblage (must considered as experimental and subject to major
 changes in a future release).</p></dd>
 
 </dl>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Please note that all this class extends the R base <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>,
+ but the S3 part of the object <em>does not</em> store the data.</p>
     <h2 class="hasAnchor" id="matrix-id"><a class="anchor" href="#matrix-id"></a>Matrix ID</h2>
 
     
