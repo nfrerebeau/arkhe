@@ -216,10 +216,10 @@ the original ordering is preserved.</p></td>
  to a stratigraphic (adjacency) matrix. <code>from</code> can be a
  <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>, <code><a href='https://rdrr.io/r/base/list.html'>list</a></code>, or <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>:
  the first column/component is assumed to contain the bottom units and the
- second the top units.</p>
-<p><code>as_features</code> converts an Matrix object to a
- collection of features (i.e. a<code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with
- dates and coordinates columns).</p>
+ second the top units (adjacency).</p>
+<p><code>as_features</code> converts an <a href='DataMatrix-class.html'>DataMatrix</a> object to a
+ collection of features: a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with all informations
+ as extra columns (result may differ according to the class of <code>from</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other matrix: 

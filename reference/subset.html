@@ -247,35 +247,35 @@ If <code>TRUE</code> (the default), no partial matching is allowed.</p></td>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>B</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='no'>B</span><span class='kw'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span>]] <span class='co'># Get the first value</span></div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='no'>B</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;    u v  w x  y
-#&gt; A  7 7  1 8 10
-#&gt; B  7 0  9 5  3
-#&gt; C  8 9 10 5  2
-#&gt; D  9 5  2 3  0
-#&gt; E  7 9  6 3  6
-#&gt; F  4 8  0 1  9
-#&gt; G  2 1  8 2  4
-#&gt; H 10 5  7 7  7
-#&gt; I  4 4  5 6  7
-#&gt; J  8 8  2 9  9
-#&gt; K  3 5  8 2 10
-#&gt; L  3 4  5 7  0
-#&gt; M  4 0  1 8  0
-#&gt; N  6 3  8 8  6
-#&gt; O  8 8  3 6  2
-#&gt; P  7 2  2 8  8
-#&gt; Q  2 6 10 8  6
-#&gt; R  6 5  1 8  0
-#&gt; S 10 8  0 2  1
-#&gt; T  7 2  8 1  9</div><div class='input'><span class='no'>B</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt; [1]  7  7  1  8 10</div><div class='input'><span class='no'>B</span>[, <span class='fl'>1</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;  [1]  7  7  8  9  7  4  2 10  4  8  3  3  4  6  8  7  2  6 10  7</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
-#&gt;   u v  w x  y
-#&gt; A 7 7  1 8 10
-#&gt; B 7 0  9 5  3
-#&gt; C 8 9 10 5  2</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
-#&gt;   u
-#&gt; D 9
-#&gt; E 7
-#&gt; F 4</div></pre>
+#&gt;    u  v  w  x  y
+#&gt; A  7  6  2  0  9
+#&gt; B  3  0  7  6  6
+#&gt; C  1  7  5  5  8
+#&gt; D  3 10  3  7  6
+#&gt; E 10  8 10  9 10
+#&gt; F  8  6  4 10 10
+#&gt; G  3 10  9  6  3
+#&gt; H  8  0  0  7 10
+#&gt; I  0  5  6  3  2
+#&gt; J  6  8  5  0  6
+#&gt; K  0  8 10  9  1
+#&gt; L 10  2  8  0  7
+#&gt; M  3  1  8  6  9
+#&gt; N  0  8  4  4  8
+#&gt; O  1  6  6  0  3
+#&gt; P  8  4  8  1  7
+#&gt; Q  9  3  9  3  6
+#&gt; R  1  0  8  8 10
+#&gt; S  7  3  3  6  8
+#&gt; T  2  4  5 10  2</div><div class='input'><span class='no'>B</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt; [1] 7 6 2 0 9</div><div class='input'><span class='no'>B</span>[, <span class='fl'>1</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;  [1]  7  3  1  3 10  8  3  8  0  6  0 10  3  0  1  8  9  1  7  2</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
+#&gt;   u v w x y
+#&gt; A 7 6 2 0 9
+#&gt; B 3 0 7 6 6
+#&gt; C 1 7 5 5 8</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
+#&gt;    u
+#&gt; D  3
+#&gt; E 10
+#&gt; F  8</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
