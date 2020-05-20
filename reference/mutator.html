@@ -167,8 +167,7 @@
     </tr>
     <tr>
       <th>value</th>
-      <td><p>A possible value for the element(s) of <code>object</code> (see
-below).</p></td>
+      <td><p>A possible value for the element(s) of <code>object</code>.</p></td>
     </tr>
     </table>
 
@@ -186,7 +185,7 @@ below).</p></td>
 <span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>/<span class='fl'>3</span>)), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
 <span class='co'>## Create a count data matrix</span>
 <span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
-<span class='fu'>get_id</span>(<span class='no'>B</span>)</div><div class='output co'>#&gt; character(0)</div><div class='input'>
+
 <span class='co'>## Access</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>B</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 20  5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/row.html'>row</a></span>(<span class='no'>B</span>) <span class='co'># Get the row indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
 #&gt;  [1,]    1    1    1    1    1
@@ -266,11 +265,11 @@ below).</p></td>
 #&gt;   u v w x  y
 #&gt; A 0 5 2 3 10
 #&gt; B 8 3 0 3  9
-#&gt; C 0 3 5 1  0</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get the first 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
+#&gt; C 0 3 5 1  0</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
 #&gt;   u
-#&gt; A 0
-#&gt; B 8
-#&gt; C 0</div></pre>
+#&gt; D 8
+#&gt; E 9
+#&gt; F 1</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
