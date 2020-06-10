@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Representation of Archaeological Data • arkhe</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -14,12 +20,13 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Representation of Archaeological Data">
 <meta property="og:description" content="A collection of classes that represent
     archaeological data. This package provides a set of S4 classes that
-    represent different special types of matrix (absolute/relative frequency,
-    presence/absence data, co-occurrence matrix, etc.) upon which package
-    developers can build subclasses. It also provides a set of generic
-    methods (mutators and coercion mechanisms) and functions (e.g.
-    predicates). In addition, a few classes of general interest (e.g. that
-    represent stratigraphic relationships) are implemented.">
+    represent different special types of matrix (absolute/relative
+    frequency, presence/absence data, co-occurrence matrix, etc.) upon
+    which package developers can build subclasses. It also provides a set
+    of generic methods (mutators and coercion mechanisms) and functions
+    (e.g.  predicates). In addition, a few classes of general interest
+    (e.g. that represent stratigraphic relationships) are implemented.">
+<meta property="og:image" content="http://arkhe.archaeo.science/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@nfrerebeau">
 <meta name="twitter:site" content="@nfrerebeau">
@@ -82,9 +89,10 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="arkhe" class="section level1">
+<div id="arkhe-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#arkhe" class="anchor"></a>arkhe</h1></div>
+<a href="#arkhe-" class="anchor"></a>arkhe <img width="120px" src="reference/figures/logo.png" align="right">
+</h1></div>
 <!-- badges: start -->
 
 <p><a href="https://cran.r-project.org/package=arkhe"><img src="http://www.r-pkg.org/badges/version/arkhe" alt="CRAN Version"></a> <a href="https://cran.r-project.org/web/checks/check_results_arkhe.html"><img src="https://cranchecks.info/badges/worst/arkhe" alt="CRAN checks"></a> <a href="https://cran.r-project.org/package=arkhe"><img src="http://cranlogs.r-pkg.org/badges/arkhe" alt="CRAN Downloads"></a></p>
@@ -170,14 +178,14 @@
 <p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>Arith</code>, <code>Compare</code>, <code>Logic</code>…). In addition, all functions that call <code>as.matrix</code> or <code>as.data.frame</code> first on their main argument should work (e. g. <code>apply</code>).</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(<span class="no">A1</span>)
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 </span>
-<span class="co">#&gt;    44    57    56    40    53    58    42    61    55    54</span>
+<span class="co">#&gt;    40    50    39    49    49    49    42    58    61    52</span>
 <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="kw">X</span> <span class="kw">=</span> <span class="no">A1</span>, <span class="kw">MARGIN</span> <span class="kw">=</span> <span class="fl">1</span>, <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">sum</span>)
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 </span>
-<span class="co">#&gt;    44    57    56    40    53    58    42    61    55    54</span></pre></div>
+<span class="co">#&gt;    40    50    39    49    49    49    42    58    61    52</span></pre></div>
 <p>Please note that all <code>*Matrix</code> classes extend the R base <code>matrix</code>, but the S3 part of the object <strong>does not</strong> store the data. Values are stored in a specific slot (allowing type checking).</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">X</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">25</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>)
 
-<span class="co">## Get the S3 object</span>
+<span class="co">## Get the S3 part</span>
 <span class="fu">S3Part</span>(<span class="no">X</span>, <span class="kw">strictS3</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 <span class="co">#&gt;      col1 col2 col3 col4 col5</span>
 <span class="co">#&gt; row1    1    6   11   16   21</span>
@@ -189,11 +197,11 @@
 <span class="co">## Coerce to an S3 matrix</span>
 <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="no">X</span>)
 <span class="co">#&gt;      col1 col2 col3 col4 col5</span>
-<span class="co">#&gt; row1    5    3    1    0    5</span>
-<span class="co">#&gt; row2    9    2    5    0    7</span>
-<span class="co">#&gt; row3    4    7    0    3   10</span>
-<span class="co">#&gt; row4    9   10    2    3    3</span>
-<span class="co">#&gt; row5    5    9    3    9    9</span></pre></div>
+<span class="co">#&gt; row1    7    2    9    8    9</span>
+<span class="co">#&gt; row2    1    8   10   10    3</span>
+<span class="co">#&gt; row3    7    3    9    2    6</span>
+<span class="co">#&gt; row4    9    0    0    6    5</span>
+<span class="co">#&gt; row5    5    9    7    2    3</span></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
@@ -239,6 +247,7 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Nicolas Frerebeau <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-5759-4944" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 
