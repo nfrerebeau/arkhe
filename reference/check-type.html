@@ -136,7 +136,7 @@
 
     <pre class="usage"><span class='fu'>check_type</span>(<span class='no'>x</span>, <span class='no'>expected</span>)
 
-<span class='fu'>check_scalar</span>(<span class='no'>x</span>, <span class='no'>expected</span>)</pre>
+<span class='fu'>check_scalar</span>(<span class='no'>x</span>, <span class='no'>expected</span>, <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,6 +151,11 @@
 type. It must be one of "<code>list</code>", "<code>atomic</code>", "<code>vector</code>",
 "<code>numeric</code>", "<code>integer</code>", "<code>double</code>", "<code>character</code>"
 or "<code>logical</code>".</p></td>
+    </tr>
+    <tr>
+      <th>strict</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should length-zero object be
+tested?</p></td>
     </tr>
     </table>
 

@@ -134,15 +134,15 @@
     <p>Removes row/column with missing values or zeros.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>remove_missing</span>(<span class='no'>object</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>remove_NA</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='fu'>remove_zero</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for matrix</span>
-<span class='fu'>remove_missing</span>(<span class='no'>object</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='fu'>remove_NA</span>(<span class='no'>object</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># S4 method for data.frame</span>
-<span class='fu'>remove_missing</span>(<span class='no'>object</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='fu'>remove_NA</span>(<span class='no'>object</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># S4 method for matrix</span>
 <span class='fu'>remove_zero</span>(<span class='no'>object</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>1</span>)
@@ -166,6 +166,11 @@
       <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the subscripts which the
 cleaning will be applied over (\(1\) indicates rows, \(2\) indicates
 columns).</p></td>
+    </tr>
+    <tr>
+      <th>finite</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should non-<code><a href='https://rdrr.io/r/base/is.finite.html'>finite</a></code>
+values also be removed?</p></td>
     </tr>
     </table>
 

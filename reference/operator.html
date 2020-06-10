@@ -140,6 +140,9 @@
 <span class='co'># S4 method for DataMatrix,numeric</span>
 <span class='fu'>Arith</span>(<span class='no'>e1</span>, <span class='no'>e2</span>)
 
+<span class='co'># S4 method for DataMatrix,logical</span>
+<span class='fu'>Arith</span>(<span class='no'>e1</span>, <span class='no'>e2</span>)
+
 <span class='co'># S4 method for DataMatrix,DataMatrix</span>
 <span class='fu'>Compare</span>(<span class='no'>e1</span>, <span class='no'>e2</span>)
 
@@ -156,7 +159,13 @@
 <span class='fu'><a href='https://rdrr.io/r/base/Logic.html'>Logic</a></span>(<span class='no'>e1</span>, <span class='no'>e2</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/groupGeneric.html'>Summary</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/groupGeneric.html'>Math</a></span>(<span class='no'>x</span>)
+
+<span class='co'># S4 method for DataMatrix</span>
+<span class='fu'>Math2</span>(<span class='no'>x</span>, <span class='no'>digits</span>)
+
+<span class='co'># S4 method for DataMatrix</span>
+<span class='fu'><a href='https://rdrr.io/r/base/groupGeneric.html'>Summary</a></span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,9 +175,18 @@
       <td><p>An object (typically a <a href='DataMatrix-class.html'>DataMatrix</a> object).</p></td>
     </tr>
     <tr>
+      <th>digits</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> value giving number of digits to be
+used in <code>round</code> or <code>signif</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Further arguments passed to or from methods.</p></td>
+    </tr>
+    <tr>
       <th>na.rm</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should missing values
-(including <code>NaN</code>) be omitted from the calculations?</p></td>
+be removed?</p></td>
     </tr>
     </table>
 
@@ -184,6 +202,16 @@
   "<code>&lt;=</code>", "<code>&gt;=</code>"</p></dd>
   <dt><code>Logic</code></dt><dd><p>"<code>&amp;</code>", "<code>|</code>"</p></dd>
   <dt><code>Ops</code></dt><dd><p>"<code>Arith</code>", "<code>Compare</code>", "<code>Logic</code>"</p></dd>
+  <dt><code>Math</code></dt><dd><p>"<code>abs</code>", "<code>sign</code>", "<code>sqrt</code>",
+  "<code>ceiling</code>", "<code>floor</code>", "<code>trunc</code>", "<code>cummax</code>",
+  "<code>cummin</code>", "<code>cumprod</code>", "<code>cumsum</code>", "<code>log</code>",
+  "<code>log10</code>", "<code>log2</code>", "<code>log1p</code>", "<code>acos</code>",
+  "<code>acosh</code>", "<code>asin</code>", "<code>asinh</code>", "<code>atan</code>",
+  "<code>atanh</code>", "<code>exp</code>", "<code>expm1</code>", "<code>cos</code>", "<code>cosh</code>",
+  "<code>cospi</code>", "<code>sin</code>", "<code>sinh</code>", "<code>sinpi</code>", "<code>tan</code>",
+  "<code>tanh</code>", "<code>tanpi</code>", "<code>gamma</code>", "<code>lgamma</code>",
+  "<code>digamma</code>", "<code>trigamma</code>"</p></dd>
+  <dt><code>Math2</code></dt><dd><p>"<code>round</code>", "<code>signif</code>"</p></dd>
   <dt><code>Summary</code></dt><dd><p>"<code>min</code>", "<code>max</code>", "<code>range</code>",
   "<code>prod</code>", "<code>sum</code>", "<code>any</code>", "<code>all</code>"</p></dd>
  
@@ -195,237 +223,259 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create count data matrix</span>
-<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
-<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
+<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
+<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
 
-<span class='co'>## Compare</span>
-<span class='no'>A</span> <span class='kw'>==</span> <span class='no'>B</span></div><div class='output co'>#&gt;        [,1]  [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [2,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [3,] FALSE FALSE FALSE  TRUE FALSE
-#&gt;  [4,] FALSE FALSE FALSE  TRUE  TRUE
-#&gt;  [5,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [6,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [7,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [8,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [9,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [10,] FALSE FALSE FALSE  TRUE FALSE
-#&gt; [11,] FALSE FALSE FALSE FALSE  TRUE
-#&gt; [12,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [13,] FALSE FALSE FALSE FALSE  TRUE
-#&gt; [14,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [15,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [16,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [17,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [18,] FALSE FALSE  TRUE FALSE FALSE
-#&gt; [19,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [20,]  TRUE FALSE FALSE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>!=</span> <span class='no'>B</span></div><div class='output co'>#&gt;        [,1] [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [2,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [3,]  TRUE TRUE  TRUE FALSE  TRUE
-#&gt;  [4,]  TRUE TRUE  TRUE FALSE FALSE
-#&gt;  [5,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [6,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [7,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [8,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt;  [9,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [10,]  TRUE TRUE  TRUE FALSE  TRUE
-#&gt; [11,]  TRUE TRUE  TRUE  TRUE FALSE
-#&gt; [12,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [13,]  TRUE TRUE  TRUE  TRUE FALSE
-#&gt; [14,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [15,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [16,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [17,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [18,]  TRUE TRUE FALSE  TRUE  TRUE
-#&gt; [19,]  TRUE TRUE  TRUE  TRUE  TRUE
-#&gt; [20,] FALSE TRUE  TRUE  TRUE  TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&gt;</span> <span class='fl'>5</span></div><div class='output co'>#&gt;        [,1]  [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,]  TRUE FALSE  TRUE FALSE  TRUE
-#&gt;  [2,]  TRUE  TRUE FALSE FALSE FALSE
-#&gt;  [3,] FALSE  TRUE  TRUE  TRUE  TRUE
-#&gt;  [4,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [5,]  TRUE  TRUE FALSE FALSE  TRUE
-#&gt;  [6,] FALSE  TRUE FALSE FALSE  TRUE
-#&gt;  [7,] FALSE  TRUE FALSE  TRUE FALSE
-#&gt;  [8,]  TRUE  TRUE FALSE FALSE  TRUE
-#&gt;  [9,] FALSE  TRUE FALSE  TRUE FALSE
-#&gt; [10,] FALSE  TRUE FALSE FALSE FALSE
-#&gt; [11,] FALSE  TRUE FALSE  TRUE  TRUE
-#&gt; [12,]  TRUE FALSE  TRUE  TRUE FALSE
-#&gt; [13,]  TRUE FALSE  TRUE  TRUE  TRUE
-#&gt; [14,] FALSE  TRUE  TRUE FALSE  TRUE
-#&gt; [15,]  TRUE  TRUE  TRUE FALSE FALSE
-#&gt; [16,]  TRUE FALSE FALSE FALSE  TRUE
-#&gt; [17,]  TRUE FALSE FALSE FALSE  TRUE
-#&gt; [18,]  TRUE  TRUE FALSE  TRUE FALSE
-#&gt; [19,] FALSE FALSE  TRUE  TRUE  TRUE
-#&gt; [20,]  TRUE  TRUE  TRUE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>&lt;</span> <span class='fl'>5</span></div><div class='output co'>#&gt;        [,1]  [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,] FALSE  TRUE FALSE  TRUE FALSE
-#&gt;  [2,] FALSE FALSE  TRUE  TRUE  TRUE
-#&gt;  [3,]  TRUE FALSE FALSE FALSE FALSE
-#&gt;  [4,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt;  [5,] FALSE FALSE  TRUE  TRUE FALSE
-#&gt;  [6,]  TRUE FALSE FALSE  TRUE FALSE
-#&gt;  [7,]  TRUE FALSE  TRUE FALSE  TRUE
-#&gt;  [8,] FALSE FALSE  TRUE  TRUE FALSE
-#&gt;  [9,]  TRUE FALSE  TRUE FALSE  TRUE
-#&gt; [10,]  TRUE FALSE  TRUE  TRUE FALSE
-#&gt; [11,]  TRUE FALSE  TRUE FALSE FALSE
-#&gt; [12,] FALSE  TRUE FALSE FALSE  TRUE
-#&gt; [13,] FALSE  TRUE FALSE FALSE FALSE
-#&gt; [14,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [15,] FALSE FALSE FALSE  TRUE  TRUE
-#&gt; [16,] FALSE  TRUE  TRUE  TRUE FALSE
-#&gt; [17,] FALSE  TRUE FALSE  TRUE FALSE
-#&gt; [18,] FALSE FALSE  TRUE FALSE  TRUE
-#&gt; [19,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [20,] FALSE FALSE FALSE  TRUE  TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&lt;=</span> <span class='fl'>10</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
-#&gt;  [1,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [2,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [3,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [4,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [5,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [6,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [7,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [8,] TRUE TRUE TRUE TRUE TRUE
-#&gt;  [9,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [10,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [11,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [12,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [13,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [14,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [15,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [16,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [17,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [18,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [19,] TRUE TRUE TRUE TRUE TRUE
-#&gt; [20,] TRUE TRUE TRUE TRUE TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&gt;=</span> <span class='fl'>10</span></div><div class='output co'>#&gt;        [,1]  [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [2,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [3,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [4,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [5,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [6,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [7,] FALSE FALSE FALSE  TRUE FALSE
-#&gt;  [8,] FALSE FALSE FALSE FALSE FALSE
-#&gt;  [9,] FALSE  TRUE FALSE FALSE FALSE
-#&gt; [10,] FALSE  TRUE FALSE FALSE FALSE
-#&gt; [11,] FALSE FALSE FALSE  TRUE FALSE
-#&gt; [12,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [13,] FALSE FALSE  TRUE FALSE FALSE
-#&gt; [14,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [15,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [16,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [17,] FALSE FALSE FALSE FALSE FALSE
-#&gt; [18,] FALSE FALSE FALSE  TRUE FALSE
-#&gt; [19,] FALSE FALSE FALSE  TRUE FALSE
-#&gt; [20,]  TRUE FALSE FALSE FALSE FALSE</div><div class='input'>
 <span class='co'>## Arith</span>
-<span class='no'>A</span> + <span class='no'>B</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
-#&gt;  [1,]   17    1   13   11   11
-#&gt;  [2,]   12   10    3   11    2
-#&gt;  [3,]    3    6    9   18    9
-#&gt;  [4,]    5    7    4    0    0
-#&gt;  [5,]   11   15    4   11   11
-#&gt;  [6,]    8   11   15   12   11
-#&gt;  [7,]    2   13    3   16    8
-#&gt;  [8,]   14   15    5    3    8
-#&gt;  [9,]   14   19   12   17    5
-#&gt; [10,]    2   14    9    4   14
-#&gt; [11,]    9   16    8   18   16
-#&gt; [12,]   12    7   13    7    4
-#&gt; [13,]   11   12   19   17   16
-#&gt; [14,]    5   16    6   13   10
-#&gt; [15,]   12   17   13    4    2
-#&gt; [16,]   13    5   10   11   16
-#&gt; [17,]   16   11   14    4   11
-#&gt; [18,]    8    7    6   16    5
-#&gt; [19,]   11   12   15   14   19
-#&gt; [20,]   20   17    8    2    8</div><div class='input'><span class='no'>A</span> * <span class='fl'>2</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
-#&gt;  [1,]   16    0   18    6   14
-#&gt;  [2,]   14   16    0    2    0
-#&gt;  [3,]    0   12   12   18   16
-#&gt;  [4,]    4    4    6    0    0
-#&gt;  [5,]   12   14    8    4   16
-#&gt;  [6,]    6   12   10    6   18
-#&gt;  [7,]    0   16    2   20    2
-#&gt;  [8,]   18   18    8    4   16
-#&gt;  [9,]    8   20    4   14    0
-#&gt; [10,]    0   20    6    4   10
-#&gt; [11,]    0   18    2   20   16
-#&gt; [12,]   18    4   18   14    2
-#&gt; [13,]   12    8   20   16   16
-#&gt; [14,]   10   12   12   10   18
-#&gt; [15,]   16   18   14    2    4
-#&gt; [16,]   14    2    6    2   18
-#&gt; [17,]   14    8   10    6   14
-#&gt; [18,]   16   14    6   20    6
-#&gt; [19,]   10   10   14   20   18
-#&gt; [20,]   20   16   12    0    0</div><div class='input'><span class='no'>A</span> ^ <span class='fl'>2</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
-#&gt;  [1,]   64    0   81    9   49
-#&gt;  [2,]   49   64    0    1    0
-#&gt;  [3,]    0   36   36   81   64
-#&gt;  [4,]    4    4    9    0    0
-#&gt;  [5,]   36   49   16    4   64
-#&gt;  [6,]    9   36   25    9   81
-#&gt;  [7,]    0   64    1  100    1
-#&gt;  [8,]   81   81   16    4   64
-#&gt;  [9,]   16  100    4   49    0
-#&gt; [10,]    0  100    9    4   25
-#&gt; [11,]    0   81    1  100   64
-#&gt; [12,]   81    4   81   49    1
-#&gt; [13,]   36   16  100   64   64
-#&gt; [14,]   25   36   36   25   81
-#&gt; [15,]   64   81   49    1    4
-#&gt; [16,]   49    1    9    1   81
-#&gt; [17,]   49   16   25    9   49
-#&gt; [18,]   64   49    9  100    9
-#&gt; [19,]   25   25   49  100   81
-#&gt; [20,]  100   64   36    0    0</div><div class='input'>
-<span class='co'>## Summary</span>
-<span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 0</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1]  0 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/prod.html'>prod</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 0</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 515</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='no'>A</span> + <span class='no'>B</span></div><div class='output co'>#&gt;       col1 col2 col3 col4 col5
+#&gt; row1    17    1   13   11   11
+#&gt; row2    12   10    3   11    2
+#&gt; row3     3    6    9   18    9
+#&gt; row4     5    7    4    0    0
+#&gt; row5    11   15    4   11   11
+#&gt; row6     8   11   15   12   11
+#&gt; row7     2   13    3   16    8
+#&gt; row8    14   15    5    3    8
+#&gt; row9    14   19   12   17    5
+#&gt; row10    2   14    9    4   14
+#&gt; row11    9   16    8   18   16
+#&gt; row12   12    7   13    7    4
+#&gt; row13   11   12   19   17   16
+#&gt; row14    5   16    6   13   10
+#&gt; row15   12   17   13    4    2
+#&gt; row16   13    5   10   11   16
+#&gt; row17   16   11   14    4   11
+#&gt; row18    8    7    6   16    5
+#&gt; row19   11   12   15   14   19
+#&gt; row20   20   17    8    2    8</div><div class='input'><span class='no'>A</span> * <span class='fl'>2</span></div><div class='output co'>#&gt;       col1 col2 col3 col4 col5
+#&gt; row1    16    0   18    6   14
+#&gt; row2    14   16    0    2    0
+#&gt; row3     0   12   12   18   16
+#&gt; row4     4    4    6    0    0
+#&gt; row5    12   14    8    4   16
+#&gt; row6     6   12   10    6   18
+#&gt; row7     0   16    2   20    2
+#&gt; row8    18   18    8    4   16
+#&gt; row9     8   20    4   14    0
+#&gt; row10    0   20    6    4   10
+#&gt; row11    0   18    2   20   16
+#&gt; row12   18    4   18   14    2
+#&gt; row13   12    8   20   16   16
+#&gt; row14   10   12   12   10   18
+#&gt; row15   16   18   14    2    4
+#&gt; row16   14    2    6    2   18
+#&gt; row17   14    8   10    6   14
+#&gt; row18   16   14    6   20    6
+#&gt; row19   10   10   14   20   18
+#&gt; row20   20   16   12    0    0</div><div class='input'><span class='no'>A</span> ^ <span class='fl'>2</span></div><div class='output co'>#&gt;       col1 col2 col3 col4 col5
+#&gt; row1    64    0   81    9   49
+#&gt; row2    49   64    0    1    0
+#&gt; row3     0   36   36   81   64
+#&gt; row4     4    4    9    0    0
+#&gt; row5    36   49   16    4   64
+#&gt; row6     9   36   25    9   81
+#&gt; row7     0   64    1  100    1
+#&gt; row8    81   81   16    4   64
+#&gt; row9    16  100    4   49    0
+#&gt; row10    0  100    9    4   25
+#&gt; row11    0   81    1  100   64
+#&gt; row12   81    4   81   49    1
+#&gt; row13   36   16  100   64   64
+#&gt; row14   25   36   36   25   81
+#&gt; row15   64   81   49    1    4
+#&gt; row16   49    1    9    1   81
+#&gt; row17   49   16   25    9   49
+#&gt; row18   64   49    9  100    9
+#&gt; row19   25   25   49  100   81
+#&gt; row20  100   64   36    0    0</div><div class='input'>
+<span class='co'>## Compare</span>
+<span class='no'>A</span> <span class='kw'>==</span> <span class='no'>B</span></div><div class='output co'>#&gt;        col1  col2  col3  col4  col5
+#&gt; row1  FALSE FALSE FALSE FALSE FALSE
+#&gt; row2  FALSE FALSE FALSE FALSE FALSE
+#&gt; row3  FALSE FALSE FALSE  TRUE FALSE
+#&gt; row4  FALSE FALSE FALSE  TRUE  TRUE
+#&gt; row5  FALSE FALSE FALSE FALSE FALSE
+#&gt; row6  FALSE FALSE FALSE FALSE FALSE
+#&gt; row7  FALSE FALSE FALSE FALSE FALSE
+#&gt; row8  FALSE FALSE FALSE FALSE FALSE
+#&gt; row9  FALSE FALSE FALSE FALSE FALSE
+#&gt; row10 FALSE FALSE FALSE  TRUE FALSE
+#&gt; row11 FALSE FALSE FALSE FALSE  TRUE
+#&gt; row12 FALSE FALSE FALSE FALSE FALSE
+#&gt; row13 FALSE FALSE FALSE FALSE  TRUE
+#&gt; row14 FALSE FALSE FALSE FALSE FALSE
+#&gt; row15 FALSE FALSE FALSE FALSE FALSE
+#&gt; row16 FALSE FALSE FALSE FALSE FALSE
+#&gt; row17 FALSE FALSE FALSE FALSE FALSE
+#&gt; row18 FALSE FALSE  TRUE FALSE FALSE
+#&gt; row19 FALSE FALSE FALSE FALSE FALSE
+#&gt; row20  TRUE FALSE FALSE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>!=</span> <span class='no'>B</span></div><div class='output co'>#&gt;        col1 col2  col3  col4  col5
+#&gt; row1   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row2   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row3   TRUE TRUE  TRUE FALSE  TRUE
+#&gt; row4   TRUE TRUE  TRUE FALSE FALSE
+#&gt; row5   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row6   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row7   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row8   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row9   TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row10  TRUE TRUE  TRUE FALSE  TRUE
+#&gt; row11  TRUE TRUE  TRUE  TRUE FALSE
+#&gt; row12  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row13  TRUE TRUE  TRUE  TRUE FALSE
+#&gt; row14  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row15  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row16  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row17  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row18  TRUE TRUE FALSE  TRUE  TRUE
+#&gt; row19  TRUE TRUE  TRUE  TRUE  TRUE
+#&gt; row20 FALSE TRUE  TRUE  TRUE  TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&gt;</span> <span class='fl'>5</span></div><div class='output co'>#&gt;        col1  col2  col3  col4  col5
+#&gt; row1   TRUE FALSE  TRUE FALSE  TRUE
+#&gt; row2   TRUE  TRUE FALSE FALSE FALSE
+#&gt; row3  FALSE  TRUE  TRUE  TRUE  TRUE
+#&gt; row4  FALSE FALSE FALSE FALSE FALSE
+#&gt; row5   TRUE  TRUE FALSE FALSE  TRUE
+#&gt; row6  FALSE  TRUE FALSE FALSE  TRUE
+#&gt; row7  FALSE  TRUE FALSE  TRUE FALSE
+#&gt; row8   TRUE  TRUE FALSE FALSE  TRUE
+#&gt; row9  FALSE  TRUE FALSE  TRUE FALSE
+#&gt; row10 FALSE  TRUE FALSE FALSE FALSE
+#&gt; row11 FALSE  TRUE FALSE  TRUE  TRUE
+#&gt; row12  TRUE FALSE  TRUE  TRUE FALSE
+#&gt; row13  TRUE FALSE  TRUE  TRUE  TRUE
+#&gt; row14 FALSE  TRUE  TRUE FALSE  TRUE
+#&gt; row15  TRUE  TRUE  TRUE FALSE FALSE
+#&gt; row16  TRUE FALSE FALSE FALSE  TRUE
+#&gt; row17  TRUE FALSE FALSE FALSE  TRUE
+#&gt; row18  TRUE  TRUE FALSE  TRUE FALSE
+#&gt; row19 FALSE FALSE  TRUE  TRUE  TRUE
+#&gt; row20  TRUE  TRUE  TRUE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>&lt;</span> <span class='fl'>5</span></div><div class='output co'>#&gt;        col1  col2  col3  col4  col5
+#&gt; row1  FALSE  TRUE FALSE  TRUE FALSE
+#&gt; row2  FALSE FALSE  TRUE  TRUE  TRUE
+#&gt; row3   TRUE FALSE FALSE FALSE FALSE
+#&gt; row4   TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row5  FALSE FALSE  TRUE  TRUE FALSE
+#&gt; row6   TRUE FALSE FALSE  TRUE FALSE
+#&gt; row7   TRUE FALSE  TRUE FALSE  TRUE
+#&gt; row8  FALSE FALSE  TRUE  TRUE FALSE
+#&gt; row9   TRUE FALSE  TRUE FALSE  TRUE
+#&gt; row10  TRUE FALSE  TRUE  TRUE FALSE
+#&gt; row11  TRUE FALSE  TRUE FALSE FALSE
+#&gt; row12 FALSE  TRUE FALSE FALSE  TRUE
+#&gt; row13 FALSE  TRUE FALSE FALSE FALSE
+#&gt; row14 FALSE FALSE FALSE FALSE FALSE
+#&gt; row15 FALSE FALSE FALSE  TRUE  TRUE
+#&gt; row16 FALSE  TRUE  TRUE  TRUE FALSE
+#&gt; row17 FALSE  TRUE FALSE  TRUE FALSE
+#&gt; row18 FALSE FALSE  TRUE FALSE  TRUE
+#&gt; row19 FALSE FALSE FALSE FALSE FALSE
+#&gt; row20 FALSE FALSE FALSE  TRUE  TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&lt;=</span> <span class='fl'>10</span></div><div class='output co'>#&gt;       col1 col2 col3 col4 col5
+#&gt; row1  TRUE TRUE TRUE TRUE TRUE
+#&gt; row2  TRUE TRUE TRUE TRUE TRUE
+#&gt; row3  TRUE TRUE TRUE TRUE TRUE
+#&gt; row4  TRUE TRUE TRUE TRUE TRUE
+#&gt; row5  TRUE TRUE TRUE TRUE TRUE
+#&gt; row6  TRUE TRUE TRUE TRUE TRUE
+#&gt; row7  TRUE TRUE TRUE TRUE TRUE
+#&gt; row8  TRUE TRUE TRUE TRUE TRUE
+#&gt; row9  TRUE TRUE TRUE TRUE TRUE
+#&gt; row10 TRUE TRUE TRUE TRUE TRUE
+#&gt; row11 TRUE TRUE TRUE TRUE TRUE
+#&gt; row12 TRUE TRUE TRUE TRUE TRUE
+#&gt; row13 TRUE TRUE TRUE TRUE TRUE
+#&gt; row14 TRUE TRUE TRUE TRUE TRUE
+#&gt; row15 TRUE TRUE TRUE TRUE TRUE
+#&gt; row16 TRUE TRUE TRUE TRUE TRUE
+#&gt; row17 TRUE TRUE TRUE TRUE TRUE
+#&gt; row18 TRUE TRUE TRUE TRUE TRUE
+#&gt; row19 TRUE TRUE TRUE TRUE TRUE
+#&gt; row20 TRUE TRUE TRUE TRUE TRUE</div><div class='input'><span class='no'>A</span> <span class='kw'>&gt;=</span> <span class='fl'>10</span></div><div class='output co'>#&gt;        col1  col2  col3  col4  col5
+#&gt; row1  FALSE FALSE FALSE FALSE FALSE
+#&gt; row2  FALSE FALSE FALSE FALSE FALSE
+#&gt; row3  FALSE FALSE FALSE FALSE FALSE
+#&gt; row4  FALSE FALSE FALSE FALSE FALSE
+#&gt; row5  FALSE FALSE FALSE FALSE FALSE
+#&gt; row6  FALSE FALSE FALSE FALSE FALSE
+#&gt; row7  FALSE FALSE FALSE  TRUE FALSE
+#&gt; row8  FALSE FALSE FALSE FALSE FALSE
+#&gt; row9  FALSE  TRUE FALSE FALSE FALSE
+#&gt; row10 FALSE  TRUE FALSE FALSE FALSE
+#&gt; row11 FALSE FALSE FALSE  TRUE FALSE
+#&gt; row12 FALSE FALSE FALSE FALSE FALSE
+#&gt; row13 FALSE FALSE  TRUE FALSE FALSE
+#&gt; row14 FALSE FALSE FALSE FALSE FALSE
+#&gt; row15 FALSE FALSE FALSE FALSE FALSE
+#&gt; row16 FALSE FALSE FALSE FALSE FALSE
+#&gt; row17 FALSE FALSE FALSE FALSE FALSE
+#&gt; row18 FALSE FALSE FALSE  TRUE FALSE
+#&gt; row19 FALSE FALSE FALSE  TRUE FALSE
+#&gt; row20  TRUE FALSE FALSE FALSE FALSE</div><div class='input'>
 <span class='co'>## Logic</span>
-<span class='no'>A</span> <span class='kw'>&amp;</span> <span class='no'>B</span></div><div class='output co'>#&gt;        [,1]  [,2]  [,3]  [,4]  [,5]
-#&gt;  [1,]  TRUE FALSE  TRUE  TRUE  TRUE
-#&gt;  [2,]  TRUE  TRUE FALSE  TRUE FALSE
-#&gt;  [3,] FALSE FALSE  TRUE  TRUE  TRUE
-#&gt;  [4,]  TRUE  TRUE  TRUE FALSE FALSE
-#&gt;  [5,]  TRUE  TRUE FALSE  TRUE  TRUE
-#&gt;  [6,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt;  [7,] FALSE  TRUE  TRUE  TRUE  TRUE
-#&gt;  [8,]  TRUE  TRUE  TRUE  TRUE FALSE
-#&gt;  [9,]  TRUE  TRUE  TRUE  TRUE FALSE
-#&gt; [10,] FALSE  TRUE  TRUE  TRUE  TRUE
-#&gt; [11,] FALSE  TRUE  TRUE  TRUE  TRUE
-#&gt; [12,]  TRUE  TRUE  TRUE FALSE  TRUE
-#&gt; [13,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt; [14,] FALSE  TRUE FALSE  TRUE  TRUE
-#&gt; [15,]  TRUE  TRUE  TRUE  TRUE FALSE
-#&gt; [16,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt; [17,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt; [18,] FALSE FALSE  TRUE  TRUE  TRUE
-#&gt; [19,]  TRUE  TRUE  TRUE  TRUE  TRUE
-#&gt; [20,]  TRUE  TRUE  TRUE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>|</span> <span class='no'>B</span></div><div class='output co'>#&gt;       [,1] [,2] [,3]  [,4]  [,5]
-#&gt;  [1,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [2,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [3,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [4,] TRUE TRUE TRUE FALSE FALSE
-#&gt;  [5,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [6,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [7,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [8,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt;  [9,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [10,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [11,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [12,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [13,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [14,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [15,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [16,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [17,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [18,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [19,] TRUE TRUE TRUE  TRUE  TRUE
-#&gt; [20,] TRUE TRUE TRUE  TRUE  TRUE</div></pre>
+<span class='no'>A</span> <span class='kw'>&amp;</span> <span class='no'>B</span></div><div class='output co'>#&gt;        col1  col2  col3  col4  col5
+#&gt; row1   TRUE FALSE  TRUE  TRUE  TRUE
+#&gt; row2   TRUE  TRUE FALSE  TRUE FALSE
+#&gt; row3  FALSE FALSE  TRUE  TRUE  TRUE
+#&gt; row4   TRUE  TRUE  TRUE FALSE FALSE
+#&gt; row5   TRUE  TRUE FALSE  TRUE  TRUE
+#&gt; row6   TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row7  FALSE  TRUE  TRUE  TRUE  TRUE
+#&gt; row8   TRUE  TRUE  TRUE  TRUE FALSE
+#&gt; row9   TRUE  TRUE  TRUE  TRUE FALSE
+#&gt; row10 FALSE  TRUE  TRUE  TRUE  TRUE
+#&gt; row11 FALSE  TRUE  TRUE  TRUE  TRUE
+#&gt; row12  TRUE  TRUE  TRUE FALSE  TRUE
+#&gt; row13  TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row14 FALSE  TRUE FALSE  TRUE  TRUE
+#&gt; row15  TRUE  TRUE  TRUE  TRUE FALSE
+#&gt; row16  TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row17  TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row18 FALSE FALSE  TRUE  TRUE  TRUE
+#&gt; row19  TRUE  TRUE  TRUE  TRUE  TRUE
+#&gt; row20  TRUE  TRUE  TRUE FALSE FALSE</div><div class='input'><span class='no'>A</span> <span class='kw'>|</span> <span class='no'>B</span></div><div class='output co'>#&gt;       col1 col2 col3  col4  col5
+#&gt; row1  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row2  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row3  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row4  TRUE TRUE TRUE FALSE FALSE
+#&gt; row5  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row6  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row7  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row8  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row9  TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row10 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row11 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row12 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row13 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row14 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row15 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row16 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row17 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row18 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row19 TRUE TRUE TRUE  TRUE  TRUE
+#&gt; row20 TRUE TRUE TRUE  TRUE  TRUE</div><div class='input'>
+<span class='co'>## Math</span>
+<span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;           col1     col2     col3     col4     col5
+#&gt; row1  2.828427 0.000000 3.000000 1.732051 2.645751
+#&gt; row2  2.645751 2.828427 0.000000 1.000000 0.000000
+#&gt; row3  0.000000 2.449490 2.449490 3.000000 2.828427
+#&gt; row4  1.414214 1.414214 1.732051 0.000000 0.000000
+#&gt; row5  2.449490 2.645751 2.000000 1.414214 2.828427
+#&gt; row6  1.732051 2.449490 2.236068 1.732051 3.000000
+#&gt; row7  0.000000 2.828427 1.000000 3.162278 1.000000
+#&gt; row8  3.000000 3.000000 2.000000 1.414214 2.828427
+#&gt; row9  2.000000 3.162278 1.414214 2.645751 0.000000
+#&gt; row10 0.000000 3.162278 1.732051 1.414214 2.236068
+#&gt; row11 0.000000 3.000000 1.000000 3.162278 2.828427
+#&gt; row12 3.000000 1.414214 3.000000 2.645751 1.000000
+#&gt; row13 2.449490 2.000000 3.162278 2.828427 2.828427
+#&gt; row14 2.236068 2.449490 2.449490 2.236068 3.000000
+#&gt; row15 2.828427 3.000000 2.645751 1.000000 1.414214
+#&gt; row16 2.645751 1.000000 1.732051 1.000000 3.000000
+#&gt; row17 2.645751 2.000000 2.236068 1.732051 2.645751
+#&gt; row18 2.828427 2.645751 1.732051 3.162278 1.732051
+#&gt; row19 2.236068 2.236068 2.645751 3.162278 3.000000
+#&gt; row20 3.162278 2.828427 2.449490 0.000000 0.000000</div><div class='input'>
+<span class='co'>## Summary</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 0</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1]  0 10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/prod.html'>prod</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 0</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] 515</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
