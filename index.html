@@ -33,7 +33,13 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
@@ -107,16 +113,22 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of <strong>arkhe</strong> from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"arkhe"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"arkhe"</span>)
+</pre></div>
 <p>Or install the development version from GitHub with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"nfrerebeau/arkhe"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"nfrerebeau/arkhe"</span>)
+</pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># Load the package</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">arkhe</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co"># Load the package</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://arkhe.archaeo.science">arkhe</a></span>)
+</pre></div>
 <p><strong>arkhe</strong> provides a set of S4 classes that represent different special types of matrix.</p>
 <ul>
 <li>Integer matrix:
@@ -146,47 +158,54 @@
 </ul>
 <p><em>It assumes that you keep your data tidy</em>: each variable (type/taxa) must be saved in its own column and each observation (assemblage/sample) must be saved in its own row.</p>
 <p>These new classes are of simple use, on the same way as the base <code>matrix</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="co"># Define a count data matrix</span>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="co"># Define a count data matrix</span>
 <span class="co"># (data will be rounded to zero decimal places, then coerced with as.integer)</span>
-<span class="no">quanti</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
+<span class="kw">quanti</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
 
 <span class="co"># Define a logical matrix</span>
 <span class="co"># (data will be coerced with as.logical)</span>
-<span class="no">quali</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
+<span class="kw">quali</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
+</pre></div>
 <p><strong>arkhe</strong> uses coercing mechanisms (with validation methods) for data type conversions:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="co">## Create a count matrix</span>
-<span class="no">A0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co">## Create a count matrix</span>
+<span class="kw">A0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
 
 <span class="co">## Coerce to absolute frequencies</span>
-<span class="no">A1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_count</a></span>(<span class="no">A0</span>)
+<span class="kw">A1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_count</a></span>(<span class="kw">A0</span>)
 
 <span class="co">## Coerce to relative frequencies</span>
-<span class="no">B</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_abundance</a></span>(<span class="no">A1</span>)
+<span class="kw">B</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_abundance</a></span>(<span class="kw">A1</span>)
 
 <span class="co">## Row sums are internally stored before coercing to a frequency matrix</span>
 <span class="co">## (use get_totals() to get these values)</span>
 <span class="co">## This allows to restore the source data</span>
-<span class="no">A2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_count</a></span>(<span class="no">B</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span>(<span class="no">A1</span> <span class="kw">==</span> <span class="no">A2</span>)
+<span class="kw">A2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_count</a></span>(<span class="kw">B</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span>(<span class="kw">A1</span> <span class="op">==</span> <span class="kw">A2</span>)
 <span class="co">#&gt; [1] TRUE</span>
 
 <span class="co">## Coerce to presence/absence</span>
-<span class="no">C</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_incidence</a></span>(<span class="no">A1</span>)
+<span class="kw">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_incidence</a></span>(<span class="kw">A1</span>)
 
 <span class="co">## Coerce to a co-occurrence matrix</span>
-<span class="no">D</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_occurrence</a></span>(<span class="no">A1</span>)</pre></div>
+<span class="kw">D</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/coerce.html">as_occurrence</a></span>(<span class="kw">A1</span>)
+</pre></div>
 <p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>Arith</code>, <code>Compare</code>, <code>Logic</code>…). In addition, all functions that call <code>as.matrix</code> or <code>as.data.frame</code> first on their main argument should work (e. g. <code>apply</code>).</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(<span class="no">A1</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(<span class="kw">A1</span>)
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 </span>
 <span class="co">#&gt;    40    50    39    49    49    49    42    58    61    52</span>
-<span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(<span class="kw">X</span> <span class="kw">=</span> <span class="no">A1</span>, <span class="kw">MARGIN</span> <span class="kw">=</span> <span class="fl">1</span>, <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">sum</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span>(X = <span class="kw">A1</span>, MARGIN = <span class="fl">1</span>, FUN = <span class="kw">sum</span>)
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 </span>
-<span class="co">#&gt;    40    50    39    49    49    49    42    58    61    52</span></pre></div>
+<span class="co">#&gt;    40    50    39    49    49    49    42    58    61    52</span>
+</pre></div>
 <p>Please note that all <code>*Matrix</code> classes extend the R base <code>matrix</code>, but the S3 part of the object <strong>does not</strong> store the data. Values are stored in a specific slot (allowing type checking).</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">X</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">25</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">5</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">5</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="kw">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/CountMatrix-class.html">CountMatrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">25</span>, <span class="fl">TRUE</span>), nrow = <span class="fl">5</span>, ncol = <span class="fl">5</span>)
 
 <span class="co">## Get the S3 part</span>
-<span class="fu">S3Part</span>(<span class="no">X</span>, <span class="kw">strictS3</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="fu">S3Part</span>(<span class="kw">X</span>, strictS3 = <span class="fl">TRUE</span>)
 <span class="co">#&gt;      col1 col2 col3 col4 col5</span>
 <span class="co">#&gt; row1    1    6   11   16   21</span>
 <span class="co">#&gt; row2    2    7   12   17   22</span>
@@ -195,13 +214,14 @@
 <span class="co">#&gt; row5    5   10   15   20   25</span>
 
 <span class="co">## Coerce to an S3 matrix</span>
-<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="no">X</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="kw">X</span>)
 <span class="co">#&gt;      col1 col2 col3 col4 col5</span>
 <span class="co">#&gt; row1    7    2    9    8    9</span>
 <span class="co">#&gt; row2    1    8   10   10    3</span>
 <span class="co">#&gt; row3    7    3    9    2    6</span>
 <span class="co">#&gt; row4    9    0    0    6    5</span>
-<span class="co">#&gt; row5    5    9    7    2    3</span></pre></div>
+<span class="co">#&gt; row5    5    9    7    2    3</span>
+</pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">

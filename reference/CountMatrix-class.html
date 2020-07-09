@@ -67,6 +67,16 @@ times a given datum occurs in a dataset)." />
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
+
 
   </head>
 
@@ -136,7 +146,7 @@ times a given datum occurs in a dataset)." />
 times a given datum occurs in a dataset).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>CountMatrix</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>byrow</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>dimnames</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix</a></span>(data = <span class='fl'>0</span>, nrow = <span class='fl'>1</span>, ncol = <span class='fl'>1</span>, byrow = <span class='fl'>FALSE</span>, dimnames = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -205,16 +215,16 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='coerce.html'>as_count</a></p>
+    <div class='dont-index'><p><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_count</a></p>
 <p>Other matrix: 
-<code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
-<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
-<code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
-<code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
-<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
-<code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
-<code><a href='coerce.html'>coerce</a>()</code></p></div>
+<code><a href='http://arkhe.archaeo.science/reference/AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/DataMatrix-class.html'>DataMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/GenericMatrix-class.html'>GenericMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/coerce.html'>coerce</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>N. Frerebeau</p>
@@ -222,12 +232,12 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create an incidence (presence/absence) matrix</span>
 <span class='co'>## Data will be coerced with as.logical()</span>
-<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>/<span class='fl'>3</span>)), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
+<span class='kw'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html'>IncidenceMatrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>/</span><span class='fl'>3</span>)), nrow = <span class='fl'>20</span>)
 <span class='co'>## Create a count data matrix</span>
-<span class='no'>B</span> <span class='kw'>&lt;-</span> <span class='fu'>CountMatrix</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>)
+<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), nrow = <span class='fl'>20</span>)
 
 <span class='co'>## Access</span>
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>B</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 20  5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/row.html'>row</a></span>(<span class='no'>B</span>) <span class='co'># Get the row indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>B</span>) <span class='co'># Get the matrix dimensions</span></div><div class='output co'>#&gt; [1] 20  5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/row.html'>row</a></span>(<span class='kw'>B</span>) <span class='co'># Get the row indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
 #&gt;  [1,]    1    1    1    1    1
 #&gt;  [2,]    2    2    2    2    2
 #&gt;  [3,]    3    3    3    3    3
@@ -247,7 +257,7 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 #&gt; [17,]   17   17   17   17   17
 #&gt; [18,]   18   18   18   18   18
 #&gt; [19,]   19   19   19   19   19
-#&gt; [20,]   20   20   20   20   20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/col.html'>col</a></span>(<span class='no'>B</span>, <span class='kw'>as.factor</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='co'># Get the column indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
+#&gt; [20,]   20   20   20   20   20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/col.html'>col</a></span>(<span class='kw'>B</span>, as.factor = <span class='fl'>TRUE</span>) <span class='co'># Get the column indexes</span></div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
 #&gt;  [1,] col1 col2 col3 col4 col5
 #&gt;  [2,] col1 col2 col3 col4 col5
 #&gt;  [3,] col1 col2 col3 col4 col5
@@ -268,19 +278,19 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 #&gt; [18,] col1 col2 col3 col4 col5
 #&gt; [19,] col1 col2 col3 col4 col5
 #&gt; [20,] col1 col2 col3 col4 col5
-#&gt; Levels: col1 col2 col3 col4 col5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='no'>B</span>) <span class='co'># Get the number of rows</span></div><div class='output co'>#&gt; [1] 20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span>(<span class='no'>B</span>) <span class='co'># Get the number of columns</span></div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></span>(<span class='no'>B</span>) <span class='co'># Get the dimension names</span></div><div class='output co'>#&gt; [[1]]
+#&gt; Levels: col1 col2 col3 col4 col5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='kw'>B</span>) <span class='co'># Get the number of rows</span></div><div class='output co'>#&gt; [1] 20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span>(<span class='kw'>B</span>) <span class='co'># Get the number of columns</span></div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></span>(<span class='kw'>B</span>) <span class='co'># Get the dimension names</span></div><div class='output co'>#&gt; [[1]]
 #&gt;  [1] "row1"  "row2"  "row3"  "row4"  "row5"  "row6"  "row7"  "row8"  "row9" 
 #&gt; [10] "row10" "row11" "row12" "row13" "row14" "row15" "row16" "row17" "row18"
 #&gt; [19] "row19" "row20"
 #&gt; 
 #&gt; [[2]]
 #&gt; [1] "col1" "col2" "col3" "col4" "col5"
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>B</span>) <span class='kw'>&lt;-</span> <span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>20</span>] <span class='co'># Set the row names</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>B</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S"
-#&gt; [20] "T"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>B</span>) <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>21</span>:<span class='fl'>25</span>] <span class='co'># Set the column names</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>B</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='kw'>B</span>) <span class='op'>&lt;-</span> <span class='kw'>LETTERS</span>[<span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span>] <span class='co'># Set the row names</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='kw'>B</span>) <span class='co'># Get the rownames</span></div><div class='output co'>#&gt;  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S"
+#&gt; [20] "T"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>B</span>) <span class='op'>&lt;-</span> <span class='kw'>letters</span>[<span class='fl'>21</span><span class='op'>:</span><span class='fl'>25</span>] <span class='co'># Set the column names</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>B</span>) <span class='co'># Get the column names</span></div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
-<span class='no'>B</span><span class='kw'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span>]] <span class='co'># Get the first value</span></div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='no'>B</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
+<span class='kw'>B</span>[[<span class='fl'>1</span>, <span class='fl'>1</span>]] <span class='co'># Get the first value</span></div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='kw'>B</span>[, ] <span class='co'># Get all values</span></div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
 #&gt;    u  v  w  x y
 #&gt; A  1  6 10  6 9
 #&gt; B  6  3  1 10 1
@@ -301,11 +311,11 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 #&gt; Q  7  5  3  6 8
 #&gt; R  1  4  1  6 4
 #&gt; S  3  7  7  3 7
-#&gt; T  4 10  6  6 5</div><div class='input'><span class='no'>B</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt; [1]  1  6 10  6  9</div><div class='input'><span class='no'>B</span>[, <span class='fl'>1</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;  [1]  1  6  2  9  7  2  0  0  8  9  9 10  4  1  9 10  7  1  3  4</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
+#&gt; T  4 10  6  6 5</div><div class='input'><span class='kw'>B</span>[<span class='fl'>1</span>, ] <span class='co'># Get the first row</span></div><div class='output co'>#&gt; [1]  1  6 10  6  9</div><div class='input'><span class='kw'>B</span>[, <span class='fl'>1</span>] <span class='co'># Get the first column</span></div><div class='output co'>#&gt;  [1]  1  6  2  9  7  2  0  0  8  9  9 10  4  1  9 10  7  1  3  4</div><div class='input'><span class='kw'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span>), ] <span class='co'># Get the first three rows</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
 #&gt;   u v  w  x y
 #&gt; A 1 6 10  6 9
 #&gt; B 6 3  1 10 1
-#&gt; C 2 3  9  9 8</div><div class='input'><span class='no'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span>), <span class='fl'>1</span>, <span class='kw'>drop</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>] <span class='co'># Get 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
+#&gt; C 2 3  9  9 8</div><div class='input'><span class='kw'>B</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span>), <span class='fl'>1</span>, drop = <span class='fl'>FALSE</span>] <span class='co'># Get 3 rows of the first column</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
 #&gt;   u
 #&gt; D 9
 #&gt; E 7

@@ -66,6 +66,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
+
 
   </head>
 
@@ -181,24 +191,24 @@
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='coerce.html'>as_stratigraphy</a></p>
+    <div class='dont-index'><p><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_stratigraphy</a></p>
 <p>Other matrix: 
-<code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
-<code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
-<code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
-<code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
-<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
-<code><a href='coerce.html'>coerce</a>()</code></p></div>
+<code><a href='http://arkhe.archaeo.science/reference/AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/DataMatrix-class.html'>DataMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/GenericMatrix-class.html'>GenericMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
+<code><a href='http://arkhe.archaeo.science/reference/coerce.html'>coerce</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Principles of Archaeological Stratigraphy, fig. 12</span>
-<span class='no'>harris</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(
-  <span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>1</span>,
+<span class='kw'>harris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(
+  data = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>1</span>,
            <span class='fl'>3</span>, <span class='fl'>1</span>,
            <span class='fl'>4</span>, <span class='fl'>1</span>,
            <span class='fl'>5</span>, <span class='fl'>2</span>,
@@ -211,12 +221,12 @@
            <span class='fl'>8</span>, <span class='fl'>6</span>,
            <span class='fl'>9</span>, <span class='fl'>7</span>,
            <span class='fl'>9</span>, <span class='fl'>8</span>),
-  <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>byrow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>dimnames</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"lower"</span>, <span class='st'>"upper"</span>))
+  ncol = <span class='fl'>2</span>,
+  byrow = <span class='fl'>TRUE</span>,
+  dimnames = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>NULL</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"lower"</span>, <span class='st'>"upper"</span>))
 )
 
-<span class='no'>strati</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_stratigraphy</a></span>(<span class='no'>harris</span>)</div></pre>
+<span class='kw'>strati</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_stratigraphy</a></span>(<span class='kw'>harris</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

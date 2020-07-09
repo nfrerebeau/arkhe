@@ -26,7 +26,13 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
@@ -80,13 +86,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="arkhe_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-06-10</h4>
+            <h4 class="date">2020-07-09</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nfrerebeau/arkhe/blob/master/vignettes/arkhe.Rmd"><code>vignettes/arkhe.Rmd</code></a></small>
       <div class="hidden name"><code>arkhe.Rmd</code></div>
@@ -189,17 +195,20 @@ UML class diagram of the S4 classes structure.
 <h1 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h1>
 <p>Many familiar methods and group generic functions are available for all <code>*Matrix</code> classes (such as <code>length</code>, <code>dim</code>, <code>rowSums</code>, <code>rowMeans</code>, <code>sum</code>, <code>any</code>, <code>all</code>…). In addition, all functions that call <code>as.matrix</code> first on their main argument should work (e. g. <code>apply</code>).</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="co"># Load packages</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">arkhe</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># Load packages</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://arkhe.archaeo.science">arkhe</a></span>)
+</pre></div>
 <div id="create" class="section level2">
 <h2 class="hasAnchor">
 <a href="#create" class="anchor"></a>Create</h2>
 <p>These new classes are of simple use, on the same way as the base <code>matrix</code>:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">12345</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">12345</span>)
 <span class="co">## Create a count data matrix</span>
 <span class="co">## Data are rounded to zero decimal places, then coerced with as.integer</span>
-<span class="fu"><a href="../reference/CountMatrix-class.html">CountMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
-            <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
+<span class="fu"><a href="../reference/CountMatrix-class.html">CountMatrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
+            nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
 <span class="co">#&gt; &lt;CountMatrix: 10 x 10&gt;</span>
 <span class="co">#&gt;       col1 col2 col3 col4 col5 col6 col7 col8 col9 col10</span>
 <span class="co">#&gt; row1     2    6    2    3    9    7    9    3    3     6</span>
@@ -215,8 +224,8 @@ UML class diagram of the S4 classes structure.
 
 <span class="co">## Create an incidence (presence/absence) matrix</span>
 <span class="co">## Data are coerced to logical as by as.logical</span>
-<span class="fu"><a href="../reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
-                <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
+<span class="fu"><a href="../reference/IncidenceMatrix-class.html">IncidenceMatrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>),
+                nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
 <span class="co">#&gt; &lt;IncidenceMatrix: 10 x 10&gt;</span>
 <span class="co">#&gt;        col1  col2  col3  col4  col5  col6  col7  col8  col9 col10</span>
 <span class="co">#&gt; row1   TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE</span>
@@ -228,34 +237,37 @@ UML class diagram of the S4 classes structure.
 <span class="co">#&gt; row7   TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE</span>
 <span class="co">#&gt; row8  FALSE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span>
 <span class="co">#&gt; row9  FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE</span>
-<span class="co">#&gt; row10  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></pre></body></html></div>
+<span class="co">#&gt; row10  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span>
+</pre></div>
 <p>Note that an <code>AbundanceMatrix</code> can only be created by coercion (see below).</p>
 </div>
 <div id="coerce" class="section level2">
 <h2 class="hasAnchor">
 <a href="#coerce" class="anchor"></a>Coerce</h2>
 <p><strong>arkhe</strong> uses coercing mechanisms (with validation methods) for data type conversions:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## Create a count matrix</span>
-<span class="no">A0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span>:<span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), <span class="kw">nrow</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">10</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co">## Create a count matrix</span>
+<span class="kw">A0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(data = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">TRUE</span>), nrow = <span class="fl">10</span>, ncol = <span class="fl">10</span>)
 
 <span class="co">## Coerce to absolute frequencies</span>
-<span class="no">A1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_count</a></span>(<span class="no">A0</span>)
+<span class="kw">A1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_count</a></span>(<span class="kw">A0</span>)
 
 <span class="co">## Coerce to relative frequencies</span>
-<span class="no">B</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_abundance</a></span>(<span class="no">A1</span>)
+<span class="kw">B</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_abundance</a></span>(<span class="kw">A1</span>)
 
 <span class="co">## Row sums are internally stored before coercing to a frequency matrix</span>
 <span class="co">## (use get_totals() to get these values)</span>
 <span class="co">## This allows to restore the source data</span>
-<span class="no">A2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_count</a></span>(<span class="no">B</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span>(<span class="no">A1</span> <span class="kw">==</span> <span class="no">A2</span>)
+<span class="kw">A2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_count</a></span>(<span class="kw">B</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span>(<span class="kw">A1</span> <span class="op">==</span> <span class="kw">A2</span>)
 <span class="co">#&gt; [1] TRUE</span>
 
 <span class="co">## Coerce to presence/absence</span>
-<span class="no">C</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_incidence</a></span>(<span class="no">A1</span>)
+<span class="kw">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_incidence</a></span>(<span class="kw">A1</span>)
 
 <span class="co">## Coerce to a co-occurrence matrix</span>
-<span class="no">D</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_occurrence</a></span>(<span class="no">A1</span>)</pre></body></html></div>
+<span class="kw">D</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_occurrence</a></span>(<span class="kw">A1</span>)
+</pre></div>
 </div>
 </div>
   </div>

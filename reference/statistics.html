@@ -66,6 +66,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
+
 
   </head>
 
@@ -135,23 +145,23 @@
     </div>
 
     <pre class="usage"><span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='kw'>x</span>, na.rm = <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='kw'>x</span>, na.rm = <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='kw'>x</span>, na.rm = <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='kw'>x</span>, na.rm = <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A <a href='DataMatrix-class.html'>DataMatrix</a> object.</p></td>
+      <td><p>A <a href='http://arkhe.archaeo.science/reference/DataMatrix-class.html'>DataMatrix</a> object.</p></td>
     </tr>
     <tr>
       <th>na.rm</th>
@@ -175,19 +185,19 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create count data matrix</span>
-<span class='no'>A</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>5</span>)
+<span class='kw'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), nrow = <span class='fl'>20</span>, ncol = <span class='fl'>5</span>)
 
 <span class='co'>## Row and column means</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
 #&gt;   4.6   5.2   3.4   2.2   3.0   1.6   4.6   6.4   3.8   7.2   4.0   3.2   5.6 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;   3.6   5.4   2.0   5.4   4.6   5.2   2.2 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
+#&gt;   3.6   5.4   2.0   5.4   4.6   5.2   2.2 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
 #&gt; 5.25 4.05 4.25 3.55 3.70 </div><div class='input'>
 <span class='co'>## Row and column sums</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
+<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
 #&gt;    23    26    17    11    15     8    23    32    19    36    20    16    28 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;    18    27    10    27    23    26    11 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='no'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
+#&gt;    18    27    10    27    23    26    11 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
 #&gt;  105   81   85   71   74 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

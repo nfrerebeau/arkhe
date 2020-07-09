@@ -67,6 +67,16 @@ error action." />
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172160955-3');
+</script>
+
 
   </head>
 
@@ -136,11 +146,11 @@ error action." />
 error action.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>throw_error</span>(<span class='no'>.subclass</span>, <span class='no'>message</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'><a href='http://arkhe.archaeo.science/reference/conditions.html'>throw_error</a></span>(<span class='kw'>.subclass</span>, <span class='kw'>message</span>, call = <span class='kw'>NULL</span>, <span class='kw'>...</span>)
 
-<span class='fu'>throw_warning</span>(<span class='no'>.subclass</span>, <span class='no'>message</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+<span class='fu'><a href='http://arkhe.archaeo.science/reference/conditions.html'>throw_warning</a></span>(<span class='kw'>.subclass</span>, <span class='kw'>message</span>, call = <span class='kw'>NULL</span>, <span class='kw'>...</span>)
 
-<span class='fu'>catch_conditions</span>(<span class='no'>expr</span>)</pre>
+<span class='fu'><a href='http://arkhe.archaeo.science/reference/conditions.html'>catch_conditions</a></span>(<span class='kw'>expr</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
