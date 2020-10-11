@@ -146,15 +146,15 @@ object." />
 object.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>object</span>)
+    <pre class="usage"><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
-<span class='fu'>set_dates</span>(<span class='kw'>object</span>) <span class='op'>&lt;-</span> <span class='kw'>value</span>
-
-<span class='co'># S4 method for GenericMatrix</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>object</span>)
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
 
 <span class='co'># S4 method for GenericMatrix</span>
-<span class='fu'>set_dates</span>(<span class='kw'>object</span>) <span class='op'>&lt;-</span> <span class='kw'>value</span></pre>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
+
+<span class='co'># S4 method for GenericMatrix</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -197,13 +197,14 @@ below).</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create a count data matrix</span>
-<span class='kw'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), nrow = <span class='fl'>10</span>, ncol = <span class='fl'>10</span>,
-                 dimnames = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>LETTERS</span>[<span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>], <span class='kw'>NULL</span>))
+<span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>10</span>,
+                 dimnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>LETTERS</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'>## Set dates as a matrix</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>20</span>, <span class='fl'>TRUE</span>), nrow = <span class='fl'>10</span>, ncol = <span class='fl'>2</span>)
-<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>B</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;   value error
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>20</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   value error
 #&gt; A     6     7
 #&gt; B     2     2
 #&gt; C     7     6
@@ -215,10 +216,11 @@ below).</p></td>
 #&gt; I     4     5
 #&gt; J     3     1</div><div class='input'>
 <span class='co'>## Set dates as a data.frame</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='fl'>TRUE</span>), <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='fl'>TRUE</span>),
-                row.names = <span class='kw'>LETTERS</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>2</span>)])
-<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>B</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;   value error
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='cn'>TRUE</span><span class='op'>)</span>,
+                row.names <span class='op'>=</span> <span class='va'>LETTERS</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   value error
 #&gt; A     5     0
 #&gt; B    NA    NA
 #&gt; C     9     1
@@ -230,9 +232,10 @@ below).</p></td>
 #&gt; I     4     5
 #&gt; J    NA    NA</div><div class='input'>
 <span class='co'>## Set dates as a list</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(value = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>TRUE</span>), error = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>TRUE</span>))
-<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>B</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;   value error
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>value <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   value error
 #&gt; A     8     4
 #&gt; B     1     7
 #&gt; C     5     9
@@ -244,9 +247,10 @@ below).</p></td>
 #&gt; I     8     5
 #&gt; J     6     0</div><div class='input'>
 <span class='co'>## Set dates as a numeric vector</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>TRUE</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/warning.html'>suppressWarnings</a></span>(<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>B</span>)
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;   value error
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/warning.html'>suppressWarnings</a></span><span class='op'>(</span><span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span><span class='op'>)</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   value error
 #&gt; A     5    NA
 #&gt; B     5    NA
 #&gt; C    10    NA
@@ -258,9 +262,10 @@ below).</p></td>
 #&gt; I     2    NA
 #&gt; J     6    NA</div><div class='input'>
 <span class='co'>## Set dates as a character vector</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"X"</span>, <span class='st'>"IX"</span>, <span class='st'>"VIII"</span>, <span class='st'>"VII"</span>, <span class='st'>"VI"</span>, <span class='st'>"V"</span>, <span class='st'>"IV"</span>, <span class='st'>"III"</span>, <span class='st'>"II"</span>, <span class='st'>"I"</span>)
-<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>B</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt;   value error
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>"IX"</span>, <span class='st'>"VIII"</span>, <span class='st'>"VII"</span>, <span class='st'>"VI"</span>, <span class='st'>"V"</span>, <span class='st'>"IV"</span>, <span class='st'>"III"</span>, <span class='st'>"II"</span>, <span class='st'>"I"</span><span class='op'>)</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   value error
 #&gt; A    10    NA
 #&gt; B     9    NA
 #&gt; C     8    NA
@@ -272,8 +277,9 @@ below).</p></td>
 #&gt; I     2    NA
 #&gt; J     1    NA</div><div class='input'>
 <span class='co'>## Unset dates</span>
-<span class='fu'>set_dates</span>(<span class='kw'>A</span>) <span class='op'>&lt;-</span> <span class='kw'>NULL</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/chronology.html'>get_dates</a></span>(<span class='kw'>A</span>)</div><div class='output co'>#&gt; [1] value error
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='cn'>NULL</span>
+<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] value error
 #&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -290,7 +296,7 @@ below).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

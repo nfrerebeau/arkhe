@@ -144,45 +144,45 @@
     <p>Coerce</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_long</a></span>(<span class='kw'>from</span>, <span class='kw'>...</span>)
+    <pre class="usage"><span class='fu'>as_long</span><span class='op'>(</span><span class='va'>from</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_count</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_count</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_abundance</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_incidence</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_incidence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_occurrence</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_similarity</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_similarity</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_features</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_features</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_stratigraphy</a></span>(<span class='kw'>from</span>)
-
-<span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_count</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_stratigraphy</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_abundance</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_count</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_similarity</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_occurrence</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_similarity</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_incidence</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_stratigraphy</a></span>(<span class='kw'>from</span>)
+<span class='fu'>as_incidence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
+
+<span class='co'># S4 method for ANY</span>
+<span class='fu'>as_stratigraphy</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_long</a></span>(<span class='kw'>from</span>, as_factor = <span class='fl'>FALSE</span>)
+<span class='fu'>as_long</span><span class='op'>(</span><span class='va'>from</span>, as_factor <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_features</a></span>(<span class='kw'>from</span>)</pre>
+<span class='fu'>as_features</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -211,12 +211,12 @@ the original ordering is preserved.</p></td>
     <p>The following methods coerce an object to a <code>Matrix</code> object:</p>
 <p></p><table class='table'>
 <tr><td><strong>Method</strong></td><td><strong>Target</strong></td><td><strong>Details</strong></td></tr>
-<tr><td><code>as_count</code></td><td><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix</a></td><td>absolute frequency data</td></tr>
-<tr><td><code>as_abundance</code></td><td><a href='http://arkhe.archaeo.science/reference/AbundanceMatrix-class.html'>AbundanceMatrix</a></td><td>relative frequency data</td></tr>
-<tr><td><code>as_incidence</code></td><td><a href='http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html'>IncidenceMatrix</a></td><td>presence/absence data</td></tr>
-<tr><td><code>as_occurrence</code></td><td><a href='http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html'>OccurrenceMatrix</a></td><td>co-occurrence</td></tr>
-<tr><td><code>as_similarity</code></td><td><a href='http://arkhe.archaeo.science/reference/SimilarityMatrix-class.html'>SimilarityMatrix</a></td><td>(dis)similarity</td></tr>
-<tr><td><code>as_stratigraphy</code></td><td><a href='http://arkhe.archaeo.science/reference/StratigraphicMatrix-class.html'>StratigraphicMatrix</a></td><td>stratigraphic relationships</td></tr>
+<tr><td><code>as_count</code></td><td><a href='CountMatrix-class.html'>CountMatrix</a></td><td>absolute frequency data</td></tr>
+<tr><td><code>as_abundance</code></td><td><a href='AbundanceMatrix-class.html'>AbundanceMatrix</a></td><td>relative frequency data</td></tr>
+<tr><td><code>as_incidence</code></td><td><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></td><td>presence/absence data</td></tr>
+<tr><td><code>as_occurrence</code></td><td><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix</a></td><td>co-occurrence</td></tr>
+<tr><td><code>as_similarity</code></td><td><a href='SimilarityMatrix-class.html'>SimilarityMatrix</a></td><td>(dis)similarity</td></tr>
+<tr><td><code>as_stratigraphy</code></td><td><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix</a></td><td>stratigraphic relationships</td></tr>
 </table>
 
 
@@ -235,50 +235,53 @@ the original ordering is preserved.</p></td>
  <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>, <code><a href='https://rdrr.io/r/base/list.html'>list</a></code>, or <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>:
  the first column/component is assumed to contain the bottom units and the
  second the top units (adjacency).</p>
-<p><code>as_features</code> converts an <a href='http://arkhe.archaeo.science/reference/DataMatrix-class.html'>DataMatrix</a> object to a
+<p><code>as_features</code> converts an <a href='DataMatrix-class.html'>DataMatrix</a> object to a
  collection of features: a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with all informations
  as extra columns (result may differ according to the class of <code>from</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other matrix: 
-<code><a href='http://arkhe.archaeo.science/reference/AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/CountMatrix-class.html'>CountMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/GenericMatrix-class.html'>GenericMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
-<code><a href='http://arkhe.archaeo.science/reference/StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code></p></div>
+<code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+<code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
+<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
+<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
+<code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
+<code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
+<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
+<code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>N. Frerebeau</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create a count matrix</span>
-<span class='kw'>A0</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(data = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='fl'>TRUE</span>), nrow = <span class='fl'>10</span>, ncol = <span class='fl'>5</span>)
+<span class='va'>A0</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
 
 <span class='co'>## Coerce to absolute frequencies</span>
-<span class='kw'>A1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_count</a></span>(<span class='kw'>A0</span>)
+<span class='va'>A1</span> <span class='op'>&lt;-</span> <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>A0</span><span class='op'>)</span>
 
 <span class='co'>## Coerce to relative frequencies</span>
-<span class='kw'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_abundance</a></span>(<span class='kw'>A1</span>)
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 
 <span class='co'>## Row sums are internally stored before coercing to relative frequencies</span>
 <span class='co'>## (use get_totals() to retrieve these values)</span>
 <span class='co'>## This allows to restore the source data</span>
-<span class='kw'>A2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_count</a></span>(<span class='kw'>B</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='kw'>A1</span> <span class='op'>==</span> <span class='kw'>A2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='va'>A2</span> <span class='op'>&lt;-</span> <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>B</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span><span class='op'>(</span><span class='va'>A1</span> <span class='op'>==</span> <span class='va'>A2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Coerce to presence/absence</span>
-<span class='kw'>C</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_incidence</a></span>(<span class='kw'>A1</span>)
+<span class='va'>C</span> <span class='op'>&lt;-</span> <span class='fu'>as_incidence</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 
 <span class='co'>## Coerce to a co-occurrence matrix</span>
-<span class='kw'>D</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://arkhe.archaeo.science/reference/coerce.html'>as_occurrence</a></span>(<span class='kw'>A1</span>)
+<span class='va'>D</span> <span class='op'>&lt;-</span> <span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 
 <span class='co'>## Coerce to an S3 matrix or data.frame</span>
-<span class='kw'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span>(<span class='kw'>A1</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='kw'>A0</span> <span class='op'>==</span> <span class='kw'>X</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='kw'>Y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>A1</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>Y</span>)</div><div class='output co'>#&gt;      col1 col2 col3 col4 col5
+<span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span><span class='op'>(</span><span class='va'>A0</span> <span class='op'>==</span> <span class='va'>X</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='va'>Y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>Y</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;      col1 col2 col3 col4 col5
 #&gt; row1    7    8    6    2    1
 #&gt; row2    6    8    3    6    1
 #&gt; row3    4    7    6    6    4
@@ -288,7 +291,8 @@ the original ordering is preserved.</p></td>
 <span class='co'>## Collection of features</span>
 <span class='co'># set_dates(A1) &lt;- matrix(sample(0:10, 20, TRUE), nrow = 10, ncol = 2)</span>
 <span class='co'># set_coordinates(A1) &lt;- matrix(sample(0:10, 30, TRUE), nrow = 10, ncol = 3)</span>
-<span class='co'># as_features(A1)</span></div></pre>
+<span class='co'># as_features(A1)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -304,7 +308,7 @@ the original ordering is preserved.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
