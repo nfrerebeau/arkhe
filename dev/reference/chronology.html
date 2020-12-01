@@ -153,7 +153,22 @@ object.</p>
 <span class='co'># S4 method for GenericMatrix</span>
 <span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
-<span class='co'># S4 method for GenericMatrix</span>
+<span class='co'># S4 method for GenericMatrix,`NULL`</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='co'># S4 method for GenericMatrix,numeric</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='co'># S4 method for GenericMatrix,character</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='co'># S4 method for GenericMatrix,list</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='co'># S4 method for GenericMatrix,data.frame</span>
+<span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='co'># S4 method for GenericMatrix,matrix</span>
 <span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -186,7 +201,7 @@ below).</p></td>
   these are used to define dates and corresponding errors.</p></dd>
   <dt><code>matrix</code> or <code>data.frame</code> with two or more columns</dt><dd><p>the
   first is assumed to contain the dates and the second the error values.
-  <em>Note</em> that if <code>value</code> has columns named "<code>value</code>" and
+  Note that if <code>value</code> has columns named "<code>value</code>" and
   "<code>error</code>", these columns will be used.</p></dd>
  
 </dl>
@@ -203,7 +218,7 @@ below).</p></td>
 <span class='co'>## Set dates as a matrix</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>20</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
 <span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
-<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>10 dates were set.</span></div><div class='input'><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    values errors
 #&gt; 1       6      7
 #&gt; 2       2      2
@@ -219,22 +234,22 @@ below).</p></td>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>5</span>, <span class='cn'>TRUE</span><span class='op'>)</span>,
                 row.names <span class='op'>=</span> <span class='va'>LETTERS</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>10</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
 <span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
-<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   values errors
-#&gt; A      5      0
-#&gt; B     NA     NA
-#&gt; C      9      1
-#&gt; D     NA     NA
-#&gt; E     10      0
-#&gt; F     NA     NA
-#&gt; G      7      2
-#&gt; H     NA     NA
-#&gt; I      4      5
-#&gt; J     NA     NA</div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>5 dates were set.</span></div><div class='input'><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    values errors
+#&gt; 1       5      0
+#&gt; 2      NA     NA
+#&gt; 3       9      1
+#&gt; 4      NA     NA
+#&gt; 5      10      0
+#&gt; 6      NA     NA
+#&gt; 7       7      2
+#&gt; 8      NA     NA
+#&gt; 9       4      5
+#&gt; 10     NA     NA</div><div class='input'>
 <span class='co'>## Set dates as a list</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>value <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
-<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>10 dates were set.</span></div><div class='input'><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    values errors
 #&gt; 1       8      4
 #&gt; 2       1      7
@@ -249,7 +264,7 @@ below).</p></td>
 <span class='co'>## Set dates as a numeric vector</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>10</span>, <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/warning.html'>suppressWarnings</a></span><span class='op'>(</span><span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span><span class='op'>)</span>
-<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Errors are missing, NA generated.</span></div><div class='output co'>#&gt; <span class='message'>10 dates were set.</span></div><div class='input'><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    values errors
 #&gt; 1       5     NA
 #&gt; 2       5     NA
@@ -264,7 +279,7 @@ below).</p></td>
 <span class='co'>## Set dates as a character vector</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>"IX"</span>, <span class='st'>"VIII"</span>, <span class='st'>"VII"</span>, <span class='st'>"VI"</span>, <span class='st'>"V"</span>, <span class='st'>"IV"</span>, <span class='st'>"III"</span>, <span class='st'>"II"</span>, <span class='st'>"I"</span><span class='op'>)</span>
 <span class='fu'>set_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>B</span>
-<span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Errors are missing, NA generated.</span></div><div class='output co'>#&gt; <span class='message'>10 dates were set.</span></div><div class='input'><span class='fu'>get_dates</span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    values errors
 #&gt; 1      10     NA
 #&gt; 2       9     NA
