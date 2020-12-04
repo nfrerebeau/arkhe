@@ -144,7 +144,10 @@
     <p>Computes statistics over <code>DataMatrix</code> margins.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S4 method for DataMatrix</span>
+    <pre class="usage"><span class='co'># S4 method for AbundanceMatrix</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='co'># S4 method for DataMatrix</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for DataMatrix</span>
@@ -202,7 +205,14 @@
 #&gt; row14 row15 row16 row17 row18 row19 row20 
 #&gt;    18    27    10    27    23    26    11 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt;  105   81   85   71   74 </div></pre>
+#&gt;  105   81   85   71   74 </div><div class='input'>
+<span class='co'>## Create relative frequencies</span>
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='coerce.html'>as_abundance</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>0 dates were set.</span></div><div class='input'>
+<span class='co'>## Compositional mean (Aitchison 1986)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>B</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;      col1      col2      col3      col4      col5 
+#&gt; 0.2599617 0.1828601 0.1802882 0.1863155 0.1905744 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
