@@ -87,7 +87,7 @@
 
       
 
-      </header><link href="arkhe_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+      </header><script src="arkhe_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="arkhe_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
 <script src="arkhe_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -147,14 +147,24 @@ UML class diagram of the S4 classes structure.
 <h3 class="hasAnchor">
 <a href="#absolute-frequency-matrix-countmatrix" class="anchor"></a>Absolute frequency matrix (<code>CountMatrix</code>)</h3>
 <p>We denote the <span class="math inline">\(m \times p\)</span> count matrix by <span class="math inline">\(A = \left[ a_{ij} \right] ~\forall i \in \left[ 1,m \right], j \in \left[ 1,p \right]\)</span> with row and column sums:</p>
-
+<p><span class="math display">\[\begin{align}
+ a_{i \cdot} = \sum_{j = 1}^{p} a_{ij} &amp;&amp;
+ a_{\cdot j} = \sum_{i = 1}^{m} a_{ij} &amp;&amp;
+ a_{\cdot \cdot} = \sum_{i = 1}^{m} \sum_{j = 1}^{p} a_{ij} &amp;&amp;
+ \forall a_{ij} \in \mathbb{N}
+\end{align}\]</span></p>
 </div>
 <div id="relative-frequency-matrix-abundancematrix" class="section level3">
 <h3 class="hasAnchor">
 <a href="#relative-frequency-matrix-abundancematrix" class="anchor"></a>Relative frequency matrix (<code>AbundanceMatrix</code>)</h3>
 <p>A frequency matrix represents relative abundances.</p>
 <p>We denote the <span class="math inline">\(m \times p\)</span> frequency matrix by <span class="math inline">\(B = \left[ b_{ij} \right] ~\forall i \in \left[ 1,m \right], j \in \left[ 1,p \right]\)</span> with row and column sums:</p>
-
+<p><span class="math display">\[\begin{align}
+ b_{i \cdot} = \sum_{j = 1}^{p} b_{ij} = 1 &amp;&amp;
+ b_{\cdot j} = \sum_{i = 1}^{m} b_{ij} &amp;&amp;
+ b_{\cdot \cdot} = \sum_{i = 1}^{m} \sum_{j = 1}^{p} b_{ij} &amp;&amp;
+ \forall b_{ij} \in \left[ 0,1 \right]
+\end{align}\]</span></p>
 </div>
 <div id="co-occurrence-matrix-occurrencematrix" class="section level3">
 <h3 class="hasAnchor">
@@ -163,7 +173,12 @@ UML class diagram of the S4 classes structure.
 <p>The <span class="math inline">\(p \times p\)</span> co-occurrence matrix <span class="math inline">\(D = \left[ d_{i,j} \right] ~\forall i,j \in \left[ 1,p \right]\)</span> is defined over an <span class="math inline">\(m \times p\)</span> abundance matrix <span class="math inline">\(A = \left[ a_{x,y} \right] ~\forall x \in \left[ 1,m \right], y \in \left[ 1,p \right]\)</span> as:</p>
 <p><span class="math display">\[ d_{i,j} = \sum_{x = 1}^{m} \bigcap_{y = i}^{j} a_{xy} \]</span></p>
 <p>with row and column sums:</p>
-
+<p><span class="math display">\[\begin{align}
+  d_{i \cdot} = \sum_{j \geqslant i}^{p} d_{ij} &amp;&amp;
+  d_{\cdot j} = \sum_{i \leqslant j}^{p} d_{ij} &amp;&amp;
+  d_{\cdot \cdot} = \sum_{i = 1}^{p} \sum_{j \geqslant i}^{p} d_{ij} &amp;&amp;
+  \forall d_{ij} \in \mathbb{N}
+\end{align}\]</span></p>
 </div>
 </div>
 <div id="logical-matrix" class="section level2">
@@ -173,7 +188,12 @@ UML class diagram of the S4 classes structure.
 <h3 class="hasAnchor">
 <a href="#incidence-matrix-incidencematrix" class="anchor"></a>Incidence matrix (<code>IncidenceMatrix</code>)</h3>
 <p>We denote the <span class="math inline">\(m \times p\)</span> incidence matrix by <span class="math inline">\(C = \left[ c_{ij} \right] ~\forall i \in \left[ 1,m \right], j \in \left[ 1,p \right]\)</span> with row and column sums:</p>
-
+<p><span class="math display">\[\begin{align}
+ c_{i \cdot} = \sum_{j = 1}^{p} c_{ij} &amp;&amp;
+ c_{\cdot j} = \sum_{i = 1}^{m} c_{ij} &amp;&amp;
+ c_{\cdot \cdot} = \sum_{i = 1}^{m} \sum_{j = 1}^{p} c_{ij} &amp;&amp;
+ \forall c_{ij} \in \lbrace 0,1 \rbrace
+\end{align}\]</span></p>
 </div>
 </div>
 </div>
