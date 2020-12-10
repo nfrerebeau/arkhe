@@ -108,14 +108,18 @@
 <a href="#definitions" class="anchor"></a>Definitions</h1>
 <p>The <strong>arkhe</strong> package provides a set of S4 classes for archaeological data matrices. These new classes represent different special types of matrix.</p>
 <ul>
-<li>Numeric matrix:
+<li>Integer matrix:
 <ul>
 <li>
 <code>CountMatrix</code> represents absolute frequency data,</li>
 <li>
-<code>AbundanceMatrix</code> represents relative frequency data,</li>
-<li>
 <code>OccurrenceMatrix</code> represents a co-occurrence matrix,</li>
+</ul>
+</li>
+<li>Numeric matrix:
+<ul>
+<li>
+<code>AbundanceMatrix</code> represents relative frequency data,</li>
 <li>
 <code>SimilarityMatrix</code> represents a (dis)similarity matrix,</li>
 </ul>
@@ -155,7 +159,7 @@ UML class diagram of the S4 classes structure.
 <div id="co-occurrence-matrix-occurrencematrix" class="section level3">
 <h3 class="hasAnchor">
 <a href="#co-occurrence-matrix-occurrencematrix" class="anchor"></a>Co-occurrence matrix (<code>OccurrenceMatrix</code>)</h3>
-<p>A co-occurrence matrix is a symmetric matrix with zeros on its main diagonal, which works out how many times (expressed in percent) each pairs of taxa occur together in at least one sample.</p>
+<p>A co-occurrence matrix is a symmetric matrix with zeros on its main diagonal, which works out how many times each pairs of taxa occur together in at least one sample.</p>
 <p>The <span class="math inline">\(p \times p\)</span> co-occurrence matrix <span class="math inline">\(D = \left[ d_{i,j} \right] ~\forall i,j \in \left[ 1,p \right]\)</span> is defined over an <span class="math inline">\(m \times p\)</span> abundance matrix <span class="math inline">\(A = \left[ a_{x,y} \right] ~\forall x \in \left[ 1,m \right], y \in \left[ 1,p \right]\)</span> as:</p>
 <p><span class="math display">\[ d_{i,j} = \sum_{x = 1}^{m} \bigcap_{y = i}^{j} a_{xy} \]</span></p>
 <p>with row and column sums:</p>

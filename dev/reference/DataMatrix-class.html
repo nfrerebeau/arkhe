@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Data Matrix — DataMatrix-class" />
-<meta property="og:description" content="A virtual S4 class to represent a data matrix." />
+<meta property="og:description" content="Virtual S4 classes that represent a \(m \times p\) matrix." />
 <meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -141,7 +141,7 @@
     </div>
 
     <div class="ref-description">
-    <p>A virtual S4 class to represent a data matrix.</p>
+    <p>Virtual S4 classes that represent a \(m \times p\) matrix.</p>
     </div>
 
 
@@ -173,15 +173,38 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><code>DataMatrix</code> is the mother class of all matrix objects.</p>
+<p>The <code>values</code> slot is defined in <code>IntegerMatrix</code>,
+ <code>NumericMatrix</code> and <code>LogicalMatrix</code> classes.</p>
     <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
     
 
 <dl>
+<dt><code>size</code></dt><dd><p>A length-two <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> vector.</p></dd>
+
+<dt><code>row_names</code></dt><dd><p>A length-\(m\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
+
+<dt><code>column_names</code></dt><dd><p>A length-\(p\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
+
+<dt><code>group_names</code></dt><dd><p>A length-\(m\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
+
 <dt><code>values</code></dt><dd><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code>, a <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> or a
 <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> vector (see details).</p></dd>
 
 </dl>
+    <h2 class="hasAnchor" id="get-and-set"><a class="anchor" href="#get-and-set"></a>Get and set</h2>
+
+    
+
+<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
+  <dt><code><a href='mutator.html'>get_groups(x)</a></code> and <code>set_groups(x) &lt;- value</code></dt><dd><p>Get or set
+  the sample names of <code>x</code>.</p></dd>
+ 
+</dl>
+
     <h2 class="hasAnchor" id="access"><a class="anchor" href="#access"></a>Access</h2>
 
     
@@ -224,7 +247,6 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
     <div class='dont-index'><p>Other matrix: 
 <code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='MatrixSummary-class.html'>MatrixSummary-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
