@@ -295,55 +295,55 @@ not for the replacement.</p></td>
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
+</div><div class='output co'>#&gt; [1] 8</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 8</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;    u  v  w  x  y
-#&gt; A  7  6  2  0  9
-#&gt; B  3  0  7  6  6
-#&gt; C  1  7  5  5  8
-#&gt; D  3 10  3  7  6
-#&gt; E 10  8 10  9 10
-#&gt; F  8  6  4 10 10
-#&gt; G  3 10  9  6  3
-#&gt; H  8  0  0  7 10
-#&gt; I  0  5  6  3  2
-#&gt; J  6  8  5  0  6
-#&gt; K  0  8 10  9  1
-#&gt; L 10  2  8  0  7
-#&gt; M  3  1  8  6  9
-#&gt; N  0  8  4  4  8
-#&gt; O  1  6  6  0  3
-#&gt; P  8  4  8  1  7
-#&gt; Q  9  3  9  3  6
-#&gt; R  1  0  8  8 10
-#&gt; S  7  3  3  6  8
-#&gt; T  2  4  5 10  2</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+#&gt;    u v w  x  y
+#&gt; A  8 1 9  4  9
+#&gt; B  5 3 4  3  1
+#&gt; C  9 7 8 10  7
+#&gt; D  0 3 3  0  2
+#&gt; E  3 8 3  7  6
+#&gt; F  8 6 5  3  0
+#&gt; G  9 4 1  1  7
+#&gt; H  0 0 3  3 10
+#&gt; I  2 3 5 10  8
+#&gt; J  4 6 8  8  6
+#&gt; K  7 2 3  3 10
+#&gt; L  2 4 0  8  0
+#&gt; M  0 8 6  0  5
+#&gt; N 10 0 4  6  8
+#&gt; O  8 3 0  0  8
+#&gt; P  2 9 4 10  2
+#&gt; Q 10 0 9  3  1
+#&gt; R  0 6 6  0  8
+#&gt; S  4 1 2  1  6
+#&gt; T  6 4 8  8  4</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
 #&gt;   u v w x y
-#&gt; A 7 6 2 0 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+#&gt; A 8 1 9 4 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
-#&gt;    u  v  w
-#&gt; A  7  6  2
-#&gt; B  3  0  7
-#&gt; C  1  7  5
-#&gt; D  3 10  3
-#&gt; E 10  8 10
-#&gt; F  8  6  4
-#&gt; G  3 10  9
-#&gt; H  8  0  0
-#&gt; I  0  5  6
-#&gt; J  6  8  5
-#&gt; K  0  8 10
-#&gt; L 10  2  8
-#&gt; M  3  1  8
-#&gt; N  0  8  4
-#&gt; O  1  6  6
-#&gt; P  8  4  8
-#&gt; Q  9  3  9
-#&gt; R  1  0  8
-#&gt; S  7  3  3
-#&gt; T  2  4  5</div></pre>
+#&gt;    u v w
+#&gt; A  8 1 9
+#&gt; B  5 3 4
+#&gt; C  9 7 8
+#&gt; D  0 3 3
+#&gt; E  3 8 3
+#&gt; F  8 6 5
+#&gt; G  9 4 1
+#&gt; H  0 0 3
+#&gt; I  2 3 5
+#&gt; J  4 6 8
+#&gt; K  7 2 3
+#&gt; L  2 4 0
+#&gt; M  0 8 6
+#&gt; N 10 0 4
+#&gt; O  8 3 0
+#&gt; P  2 9 4
+#&gt; Q 10 0 9
+#&gt; R  0 6 6
+#&gt; S  4 1 2
+#&gt; T  6 4 8</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

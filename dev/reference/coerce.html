@@ -246,6 +246,7 @@ the original ordering is preserved.</p></td>
 <code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
 <code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
+<code><a href='MatrixSummary-class.html'>MatrixSummary-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
 <code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code></p></div>
@@ -262,19 +263,19 @@ the original ordering is preserved.</p></td>
 
 <span class='co'>## Coerce to relative frequencies</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>0 dates were set.</span></div><div class='input'>
+
 <span class='co'>## Row sums are internally stored before coercing to relative frequencies</span>
 <span class='co'>## (use get_totals() to retrieve these values)</span>
 <span class='co'>## This allows to restore the source data</span>
 <span class='va'>A2</span> <span class='op'>&lt;-</span> <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>B</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>0 dates were set.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span><span class='op'>(</span><span class='va'>A1</span> <span class='op'>==</span> <span class='va'>A2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span><span class='op'>(</span><span class='va'>A1</span> <span class='op'>==</span> <span class='va'>A2</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Coerce to presence/absence</span>
 <span class='va'>C</span> <span class='op'>&lt;-</span> <span class='fu'>as_incidence</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>0 dates were set.</span></div><div class='input'>
+
 <span class='co'>## Coerce to a co-occurrence matrix</span>
 <span class='va'>D</span> <span class='op'>&lt;-</span> <span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>0 dates were set.</span></div><div class='input'>
+
 <span class='co'>## Coerce to an S3 matrix or data.frame</span>
 <span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span><span class='op'>(</span><span class='va'>A0</span> <span class='op'>==</span> <span class='va'>X</span><span class='op'>)</span>
@@ -282,12 +283,12 @@ the original ordering is preserved.</p></td>
 <span class='va'>Y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>Y</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;      col1 col2 col3 col4 col5
-#&gt; row1    7    8    6    2    1
-#&gt; row2    6    8    3    6    1
-#&gt; row3    4    7    6    6    4
-#&gt; row4    5   10    0    4    4
-#&gt; row5    3    3    0    5    9
-#&gt; row6    3    7    7    7    2</div><div class='input'>
+#&gt; row1   10   10    1    9    1
+#&gt; row2    9    0    3    7    5
+#&gt; row3    3    4    9    0   10
+#&gt; row4    7    1    7    1    0
+#&gt; row5    6    8    6    3    2
+#&gt; row6    6    0    3    0    1</div><div class='input'>
 <span class='co'>## Collection of features</span>
 <span class='co'># set_dates(A1) &lt;- matrix(sample(0:10, 20, TRUE), nrow = 10, ncol = 2)</span>
 <span class='co'># set_coordinates(A1) &lt;- matrix(sample(0:10, 30, TRUE), nrow = 10, ncol = 3)</span>

@@ -144,28 +144,32 @@
     <p>Removes row/column with missing values or zeros.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S4 method for matrix</span>
-<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-
-<span class='co'># S4 method for data.frame</span>
-<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for matrix</span>
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for data.frame</span>
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
+<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='co'># S4 method for data.frame</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='co'># S4 method for DataMatrix</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code> or <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>.</p></td>
+      <th>x</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>, <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> or
+<a href='DataMatrix-class.html'>DataMatrix</a> object.</p></td>
     </tr>
     <tr>
       <th>...</th>

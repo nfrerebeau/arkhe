@@ -94,7 +94,7 @@
       <h1 data-toc-skip>Manual</h1>
                         <h4 class="author">N. Frerebeau</h4>
             
-            <h4 class="date">2020-12-04</h4>
+            <h4 class="date">2020-12-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nfrerebeau/arkhe/blob/master/vignettes/arkhe.Rmd"><code>vignettes/arkhe.Rmd</code></a></small>
       <div class="hidden name"><code>arkhe.Rmd</code></div>
@@ -234,23 +234,19 @@ UML class diagram of the S4 classes structure.
 
 <span class="co">## Coerce to relative frequencies</span>
 <span class="va">B</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_abundance</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span>
-<span class="co">#&gt; 0 dates were set.</span>
 
 <span class="co">## Row sums are internally stored before coercing to a frequency matrix</span>
 <span class="co">## (use get_totals() to get these values)</span>
 <span class="co">## This allows to restore the source data</span>
 <span class="va">A2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_count</a></span><span class="op">(</span><span class="va">B</span><span class="op">)</span>
-<span class="co">#&gt; 0 dates were set.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="va">A1</span> <span class="op">==</span> <span class="va">A2</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span>
 
 <span class="co">## Coerce to presence/absence</span>
 <span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_incidence</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span>
-<span class="co">#&gt; 0 dates were set.</span>
 
 <span class="co">## Coerce to a co-occurrence matrix</span>
-<span class="va">D</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_occurrence</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span>
-<span class="co">#&gt; 0 dates were set.</span></code></pre></div>
+<span class="va">D</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/coerce.html">as_occurrence</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
   </div>

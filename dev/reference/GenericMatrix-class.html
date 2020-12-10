@@ -47,8 +47,8 @@
 
 
 <meta property="og:title" content="Matrix — GenericMatrix-class" />
-<meta property="og:description" content="An S4 class to represent a matrix. This is the mother class of all
-matrix objects." />
+<meta property="og:description" content="An S4 class to represent a \(m \times p\) matrix. This is the mother
+class of all matrix objects." />
 <meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -142,8 +142,8 @@ matrix objects." />
     </div>
 
     <div class="ref-description">
-    <p>An S4 class to represent a matrix. This is the mother class of all
-matrix objects.</p>
+    <p>An S4 class to represent a \(m \times p\) matrix. This is the mother
+class of all matrix objects.</p>
     </div>
 
 
@@ -153,17 +153,13 @@ matrix objects.</p>
     
 
 <dl>
-<dt><code>size</code></dt><dd><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> vector.</p></dd>
+<dt><code>size</code></dt><dd><p>A length-two <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> vector.</p></dd>
 
-<dt><code>row_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
+<dt><code>row_names</code></dt><dd><p>A length-\(m\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
 
-<dt><code>column_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
+<dt><code>column_names</code></dt><dd><p>A length-\(p\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
 
-<dt><code>sample_names</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/factor.html'>factor</a></code> vector.</p></dd>
-
-<dt><code>date_values</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector.</p></dd>
-
-<dt><code>date_errors</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> vector.</p></dd>
+<dt><code>group_names</code></dt><dd><p>A length-\(m\) <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector.</p></dd>
 
 </dl>
     <h2 class="hasAnchor" id="get-and-set"><a class="anchor" href="#get-and-set"></a>Get and set</h2>
@@ -171,9 +167,7 @@ matrix objects.</p>
     
 
 <p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
-  <dt><code><a href='chronology.html'>get_dates(x)</a></code> and <code>set_dates(x) &lt;- value</code></dt><dd><p>Get or set
-  the dates of <code>x</code>.</p></dd>
-  <dt><code><a href='mutator.html'>get_samples(x)</a></code> and <code>set_samples(x) &lt;- value</code></dt><dd><p>Get or set
+  <dt><code><a href='mutator.html'>get_groups(x)</a></code> and <code>set_groups(x) &lt;- value</code></dt><dd><p>Get or set
   the sample names of <code>x</code>.</p></dd>
  
 </dl>
@@ -222,6 +216,7 @@ matrix objects.</p>
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
 <code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
+<code><a href='MatrixSummary-class.html'>MatrixSummary-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
 <code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,

@@ -19,6 +19,9 @@
     <loc>http://arkhe.archaeo.science/reference/IncidenceMatrix-class.html</loc>
   </url>
   <url>
+    <loc>http://arkhe.archaeo.science/reference/MatrixSummary-class.html</loc>
+  </url>
+  <url>
     <loc>http://arkhe.archaeo.science/reference/OccurrenceMatrix-class.html</loc>
   </url>
   <url>
@@ -49,9 +52,6 @@
     <loc>http://arkhe.archaeo.science/reference/check-type.html</loc>
   </url>
   <url>
-    <loc>http://arkhe.archaeo.science/reference/chronology.html</loc>
-  </url>
-  <url>
     <loc>http://arkhe.archaeo.science/reference/clean.html</loc>
   </url>
   <url>
@@ -59,6 +59,9 @@
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/conditions.html</loc>
+  </url>
+  <url>
+    <loc>http://arkhe.archaeo.science/reference/correlation.html</loc>
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/generate_uuid.html</loc>
@@ -95,6 +98,9 @@
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/reference/subset.html</loc>
+  </url>
+  <url>
+    <loc>http://arkhe.archaeo.science/reference/summary.html</loc>
   </url>
   <url>
     <loc>http://arkhe.archaeo.science/articles/arkhe.html</loc>

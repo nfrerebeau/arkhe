@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rowwise and Columnwise Statistics — statistics • arkhe</title>
+<title>Correlation, Variance and Covariance — correlation • arkhe</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Rowwise and Columnwise Statistics — statistics" />
-<meta property="og:description" content="Computes statistics over DataMatrix margins." />
+<meta property="og:title" content="Correlation, Variance and Covariance — correlation" />
+<meta property="og:description" content="Computes the variance, covariance or correlation of a DataMatrix." />
 <meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -135,26 +135,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Rowwise and Columnwise Statistics</h1>
+    <h1>Correlation, Variance and Covariance</h1>
     <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/statistics.R'><code>R/statistics.R</code></a></small>
-    <div class="hidden name"><code>statistics.Rd</code></div>
+    <div class="hidden name"><code>correlation.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Computes statistics over <code>DataMatrix</code> margins.</p>
+    <p>Computes the variance, covariance or correlation of a <code>DataMatrix</code>.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+    <pre class="usage"><span class='co'># S4 method for DataMatrix,missing</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='co'># S4 method for DataMatrix,missing</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>x</span>, use <span class='op'>=</span> <span class='st'>"everything"</span>, method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pearson"</span>, <span class='st'>"kendall"</span>, <span class='st'>"spearman"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>x</span>, na.rm <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+<span class='co'># S4 method for DataMatrix,missing</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>x</span>, use <span class='op'>=</span> <span class='st'>"everything"</span>, method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pearson"</span>, <span class='st'>"kendall"</span>, <span class='st'>"spearman"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,21 +165,24 @@
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should missing values
 (including <code>NaN</code>) be omitted from the calculations?</p></td>
     </tr>
+    <tr>
+      <th>use</th>
+      <td><p>An optional <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string giving a method for
+computing covariances in the presence of missing values (see
+<code><a href='https://rdrr.io/r/stats/cor.html'>cor</a></code>).</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> string indicating which correlation
+coefficient (or covariance) is to be computed (see
+<code><a href='https://rdrr.io/r/stats/cor.html'>cor</a></code>).</p></td>
+    </tr>
     </table>
-
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    
-<dl>
-  <dt><code>rowMeans</code> and <code>colMeans</code></dt><dd><p>Form row and column means.</p></dd>
-  <dt><code>rowSums</code> and <code>colSums</code></dt><dd><p>Form row and column sums.</p></dd>
- 
-</dl>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other statistics: 
-<code><a href='correlation.html'>correlation</a></code></p></div>
+<code><a href='statistics.html'>statistics</a></code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>N. Frerebeau</p>
@@ -194,39 +194,39 @@
 <span class='co'>## Row and column means</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;   5.6   4.8   5.0   1.8   3.2   4.8   5.0   2.6   7.0   6.6   7.8   3.6   6.4 
+#&gt;   5.6   5.4   7.2   3.4   3.6   5.0   5.8   3.2   6.0   5.2   6.0   4.4   6.8 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;   3.0   4.6   5.0   5.2   3.6   8.0   2.4 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+#&gt;   5.6   4.8   6.0   5.8   6.8   5.6   4.6 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt; 4.75 5.75 4.20 5.25 4.05 </div><div class='input'>
+#&gt; 4.75 5.15 5.60 5.80 5.40 </div><div class='input'>
 <span class='co'>## Row and column sums</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;    28    24    25     9    16    24    25    13    35    33    39    18    32 
+#&gt;    28    27    36    17    18    25    29    16    30    26    30    22    34 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;    15    23    25    26    18    40    12 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+#&gt;    28    24    30    29    34    28    23 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt;   95  115   84  105   81 </div><div class='input'>
+#&gt;   95  103  112  116  108 </div><div class='input'>
 <span class='co'>## Variance, covariance and correlation matrix</span>
 <span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           col1       col2       col3      col4       col5
-#&gt; col1 11.250000  2.4078947  4.7894737  1.486842  2.0131579
-#&gt; col2  2.407895 13.7763158  1.0000000 -4.934211 -0.4078947
-#&gt; col3  4.789474  1.0000000 10.9052632  1.263158  0.9894737
-#&gt; col4  1.486842 -4.9342105  1.2631579 11.986842  2.0921053
-#&gt; col5  2.013158 -0.4078947  0.9894737  2.092105  8.4710526</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           col1       col2       col3      col4       col5
-#&gt; col1 11.250000  2.4078947  4.7894737  1.486842  2.0131579
-#&gt; col2  2.407895 13.7763158  1.0000000 -4.934211 -0.4078947
-#&gt; col3  4.789474  1.0000000 10.9052632  1.263158  0.9894737
-#&gt; col4  1.486842 -4.9342105  1.2631579 11.986842  2.0921053
-#&gt; col5  2.013158 -0.4078947  0.9894737  2.092105  8.4710526</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;           col1        col2       col3       col4        col5
-#&gt; col1 1.0000000  0.19341702 0.43240774  0.1280372  0.20622100
-#&gt; col2 0.1934170  1.00000000 0.08158595 -0.3839713 -0.03775834
-#&gt; col3 0.4324077  0.08158595 1.00000000  0.1104809  0.10294790
-#&gt; col4 0.1280372 -0.38397128 0.11048089  1.0000000  0.20761678
-#&gt; col5 0.2062210 -0.03775834 0.10294790  0.2076168  1.00000000</div></pre>
+</div><div class='output co'>#&gt;            col1       col2       col3      col4      col5
+#&gt; col1  4.8289474  0.9342105 -0.2631579  1.105263  1.052632
+#&gt; col2  0.9342105 11.0815789 -0.9368421 -1.126316 -2.063158
+#&gt; col3 -0.2631579 -0.9368421  8.8842105 -4.715789 -1.042105
+#&gt; col4  1.1052632 -1.1263158 -4.7157895  7.431579  1.978947
+#&gt; col5  1.0526316 -2.0631579 -1.0421053  1.978947  8.042105</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;            col1       col2       col3      col4      col5
+#&gt; col1  4.8289474  0.9342105 -0.2631579  1.105263  1.052632
+#&gt; col2  0.9342105 11.0815789 -0.9368421 -1.126316 -2.063158
+#&gt; col3 -0.2631579 -0.9368421  8.8842105 -4.715789 -1.042105
+#&gt; col4  1.1052632 -1.1263158 -4.7157895  7.431579  1.978947
+#&gt; col5  1.0526316 -2.0631579 -1.0421053  1.978947  8.042105</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;            col1       col2       col3       col4       col5
+#&gt; col1  1.0000000  0.1277079 -0.0401773  0.1845011  0.1689139
+#&gt; col2  0.1277079  1.0000000 -0.0944183 -0.1241134 -0.2185480
+#&gt; col3 -0.0401773 -0.0944183  1.0000000 -0.5803693 -0.1232870
+#&gt; col4  0.1845011 -0.1241134 -0.5803693  1.0000000  0.2559816
+#&gt; col5  0.1689139 -0.2185480 -0.1232870  0.2559816  1.0000000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
