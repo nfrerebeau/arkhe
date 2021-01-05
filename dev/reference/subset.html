@@ -101,7 +101,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,7 +118,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -295,55 +295,55 @@ not for the replacement.</p></td>
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
+</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;   u  v  w  x  y
-#&gt; A 3  0  0  8 10
-#&gt; B 9  4 10  2  8
-#&gt; C 0  9  3  1  8
-#&gt; D 6  6  0  8  4
-#&gt; E 1  2  1  6  6
-#&gt; F 4  8  8  4  8
-#&gt; G 9  4  9  3  9
-#&gt; H 4  3  1  0  8
-#&gt; I 8 10  7  3  3
-#&gt; J 3  0  2  4  5
-#&gt; K 3  7  6  2  0
-#&gt; L 5  3  0  7  6
-#&gt; M 1  1  7  5  5
-#&gt; N 3  3 10  3  7
-#&gt; O 5 10  8 10  9
-#&gt; P 8  8  6  4 10
-#&gt; Q 3  3 10  9  6
-#&gt; R 0  8  0  0  7
-#&gt; S 6  0  5  6  3
-#&gt; T 4  6  8  5  0</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+#&gt;    u  v  w  x  y
+#&gt; A  7  7  4  0  7
+#&gt; B  6  7  2  0  5
+#&gt; C  9  9  0  6  6
+#&gt; D  2 10  4  5  2
+#&gt; E  7  0  9  6 10
+#&gt; F  8  0  0  6  8
+#&gt; G  8  6 10  9  8
+#&gt; H  6  2  0  3  8
+#&gt; I  8  8 10  2  3
+#&gt; J  8  6  3  1  1
+#&gt; K  8  0  2  8 10
+#&gt; L  2  1  6  4  5
+#&gt; M  1  9  4  7  1
+#&gt; N 10  4  2 10  3
+#&gt; O  3  5  5  6  9
+#&gt; P  2  4  9 10 10
+#&gt; Q  0  7  0  9  0
+#&gt; R  6  6  1  1  2
+#&gt; S  9  1  6  2  2
+#&gt; T  4  8  1  6  9</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
-#&gt;   u v w x  y
-#&gt; A 3 0 0 8 10</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+#&gt;   u v w x y
+#&gt; A 7 7 4 0 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
-#&gt;   u  v  w
-#&gt; A 3  0  0
-#&gt; B 9  4 10
-#&gt; C 0  9  3
-#&gt; D 6  6  0
-#&gt; E 1  2  1
-#&gt; F 4  8  8
-#&gt; G 9  4  9
-#&gt; H 4  3  1
-#&gt; I 8 10  7
-#&gt; J 3  0  2
-#&gt; K 3  7  6
-#&gt; L 5  3  0
-#&gt; M 1  1  7
-#&gt; N 3  3 10
-#&gt; O 5 10  8
-#&gt; P 8  8  6
-#&gt; Q 3  3 10
-#&gt; R 0  8  0
-#&gt; S 6  0  5
-#&gt; T 4  6  8</div></pre>
+#&gt;    u  v  w
+#&gt; A  7  7  4
+#&gt; B  6  7  2
+#&gt; C  9  9  0
+#&gt; D  2 10  4
+#&gt; E  7  0  9
+#&gt; F  8  0  0
+#&gt; G  8  6 10
+#&gt; H  6  2  0
+#&gt; I  8  8 10
+#&gt; J  8  6  3
+#&gt; K  8  0  2
+#&gt; L  2  1  6
+#&gt; M  1  9  4
+#&gt; N 10  4  2
+#&gt; O  3  5  5
+#&gt; P  2  4  9
+#&gt; Q  0  7  0
+#&gt; R  6  6  1
+#&gt; S  9  1  6
+#&gt; T  4  8  1</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

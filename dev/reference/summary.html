@@ -101,7 +101,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,7 +118,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -172,40 +172,40 @@
 <span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>45</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>15</span><span class='op'>)</span>
 <span class='fu'>summary</span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; --- All data (15 observations) -------------------------------------------------
-#&gt;       col1             col2           col3    
-#&gt;  Min.   : 1.000   Min.   : 1.0   Min.   :2.0  
-#&gt;  1st Qu.: 3.500   1st Qu.: 3.5   1st Qu.:4.5  
-#&gt;  Median : 7.000   Median : 7.0   Median :5.0  
-#&gt;  Mean   : 5.733   Mean   : 6.0   Mean   :5.4  
-#&gt;  3rd Qu.: 8.000   3rd Qu.: 8.0   3rd Qu.:6.5  
-#&gt;  Max.   :10.000   Max.   :10.0   Max.   :9.0  </div><div class='input'>
+#&gt;       col1             col2           col3       
+#&gt;  Min.   : 2.000   Min.   : 3.0   Min.   : 1.000  
+#&gt;  1st Qu.: 4.500   1st Qu.: 5.0   1st Qu.: 4.000  
+#&gt;  Median : 7.000   Median : 6.0   Median : 5.000  
+#&gt;  Mean   : 6.867   Mean   : 6.4   Mean   : 5.467  
+#&gt;  3rd Qu.: 9.000   3rd Qu.: 8.0   3rd Qu.: 7.000  
+#&gt;  Max.   :10.000   Max.   :10.0   Max.   :10.000  </div><div class='input'>
 <span class='co'>## Summary by groups</span>
 <span class='fu'>set_groups</span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span><span class='op'>)</span>, each <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
 <span class='fu'>summary</span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; --- A (5 observations) ---------------------------------------------------------
-#&gt;       col1           col2           col3    
-#&gt;  Min.   : 1.0   Min.   : 2.0   Min.   :2.0  
-#&gt;  1st Qu.: 1.0   1st Qu.: 7.0   1st Qu.:4.0  
-#&gt;  Median : 5.0   Median : 8.0   Median :5.0  
-#&gt;  Mean   : 4.8   Mean   : 7.2   Mean   :4.6  
-#&gt;  3rd Qu.: 7.0   3rd Qu.: 9.0   3rd Qu.:5.0  
-#&gt;  Max.   :10.0   Max.   :10.0   Max.   :7.0  
+#&gt;       col1          col2         col3   
+#&gt;  Min.   :4.0   Min.   : 3   Min.   : 4  
+#&gt;  1st Qu.:4.0   1st Qu.: 3   1st Qu.: 6  
+#&gt;  Median :5.0   Median : 6   Median : 6  
+#&gt;  Mean   :6.2   Mean   : 6   Mean   : 7  
+#&gt;  3rd Qu.:9.0   3rd Qu.: 8   3rd Qu.: 9  
+#&gt;  Max.   :9.0   Max.   :10   Max.   :10  
 #&gt; --- B (5 observations) ---------------------------------------------------------
-#&gt;       col1           col2          col3    
-#&gt;  Min.   : 2.0   Min.   :3.0   Min.   :3.0  
-#&gt;  1st Qu.: 4.0   1st Qu.:4.0   1st Qu.:5.0  
-#&gt;  Median : 7.0   Median :7.0   Median :6.0  
-#&gt;  Mean   : 6.4   Mean   :6.2   Mean   :5.8  
-#&gt;  3rd Qu.: 9.0   3rd Qu.:8.0   3rd Qu.:6.0  
-#&gt;  Max.   :10.0   Max.   :9.0   Max.   :9.0  
+#&gt;       col1         col2          col3    
+#&gt;  Min.   : 7   Min.   :5.0   Min.   :1.0  
+#&gt;  1st Qu.: 7   1st Qu.:5.0   1st Qu.:1.0  
+#&gt;  Median : 8   Median :6.0   Median :2.0  
+#&gt;  Mean   : 8   Mean   :6.4   Mean   :3.4  
+#&gt;  3rd Qu.: 8   3rd Qu.:8.0   3rd Qu.:5.0  
+#&gt;  Max.   :10   Max.   :8.0   Max.   :8.0  
 #&gt; --- C (5 observations) ---------------------------------------------------------
-#&gt;       col1        col2          col3    
-#&gt;  Min.   :3   Min.   :1.0   Min.   :2.0  
-#&gt;  1st Qu.:4   1st Qu.:3.0   1st Qu.:5.0  
-#&gt;  Median :7   Median :4.0   Median :6.0  
-#&gt;  Mean   :6   Mean   :4.6   Mean   :5.8  
-#&gt;  3rd Qu.:7   3rd Qu.:7.0   3rd Qu.:8.0  
-#&gt;  Max.   :9   Max.   :8.0   Max.   :8.0  </div></pre>
+#&gt;       col1           col2          col3   
+#&gt;  Min.   : 2.0   Min.   :5.0   Min.   : 4  
+#&gt;  1st Qu.: 4.0   1st Qu.:6.0   1st Qu.: 5  
+#&gt;  Median : 6.0   Median :7.0   Median : 5  
+#&gt;  Mean   : 6.4   Mean   :6.8   Mean   : 6  
+#&gt;  3rd Qu.:10.0   3rd Qu.:7.0   3rd Qu.: 6  
+#&gt;  Max.   :10.0   Max.   :9.0   Max.   :10  </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
