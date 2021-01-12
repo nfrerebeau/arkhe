@@ -151,6 +151,8 @@
     
 
 <dl>
+<dt><code>data</code></dt><dd><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code></p></dd>
+
 <dt><code>dimension</code></dt><dd><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the dimension of the
 solution.</p></dd>
 
@@ -255,13 +257,12 @@ values.</p></dd>
 #&gt; row7  3.59734279 26.5903101  3.67615525  1.9855391 17.34420818</div><div class='input'>
 <span class='co'>## Get eigenvalues</span>
 <span class='fu'><a href='correspondence.html'>get_eigenvalues</a></span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;      eigenvalues   percentage cumulative
-#&gt; CA1 1.268991e-01 5.158689e+01   51.58689
-#&gt; CA2 8.373617e-02 3.404034e+01   85.62722
-#&gt; CA3 2.246724e-02 9.133360e+00   94.76058
-#&gt; CA4 1.182612e-02 4.807541e+00   99.56813
-#&gt; CA5 1.062372e-03 4.318741e-01  100.00000
-#&gt; CA6 1.891555e-34 7.689528e-32  100.00000</div></pre>
+</div><div class='output co'>#&gt;     eigenvalues percentage cumulative
+#&gt; CA1 0.126899101 51.5868859   51.58689
+#&gt; CA2 0.083736173 34.0403390   85.62722
+#&gt; CA3 0.022467244  9.1333600   94.76058
+#&gt; CA4 0.011826118  4.8075409   99.56813
+#&gt; CA5 0.001062372  0.4318741  100.00000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

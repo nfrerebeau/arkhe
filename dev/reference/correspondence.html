@@ -159,7 +159,7 @@ decomposition.</p>
 <span class='fu'>get_inertia</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for CountMatrix</span>
-<span class='fu'>ca</span><span class='op'>(</span><span class='va'>object</span>, n <span class='op'>=</span> <span class='fl'>5</span>, sup_rows <span class='op'>=</span> <span class='cn'>NULL</span>, sup_columns <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+<span class='fu'>ca</span><span class='op'>(</span><span class='va'>object</span>, n <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>1</span><span class='op'>)</span>, sup_rows <span class='op'>=</span> <span class='cn'>NULL</span>, sup_columns <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='co'># S4 method for CA</span>
 <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>data</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
@@ -317,13 +317,12 @@ column to create for supplementary points attribution (see below).</p></td>
 #&gt; row7 37.2079640  3.2747312 11.0949460 7.416520e+00  0.05141889</div><div class='input'>
 <span class='co'>## Get eigenvalues</span>
 <span class='fu'>get_eigenvalues</span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;      eigenvalues   percentage cumulative
-#&gt; CA1 1.139637e-01 5.887723e+01   58.87723
-#&gt; CA2 3.876033e-02 2.002480e+01   78.90203
-#&gt; CA3 2.558700e-02 1.321905e+01   92.12108
-#&gt; CA4 1.260204e-02 6.510608e+00   98.63169
-#&gt; CA5 2.648530e-03 1.368313e+00  100.00000
-#&gt; CA6 1.605448e-33 8.294249e-31  100.00000</div></pre>
+</div><div class='output co'>#&gt;     eigenvalues percentage cumulative
+#&gt; CA1  0.11396373  58.877230   58.87723
+#&gt; CA2  0.03876033  20.024802   78.90203
+#&gt; CA3  0.02558700  13.219047   92.12108
+#&gt; CA4  0.01260204   6.510608   98.63169
+#&gt; CA5  0.00264853   1.368313  100.00000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
