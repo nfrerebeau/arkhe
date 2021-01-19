@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Data Cleaning — clean" />
-<meta property="og:description" content="Removes row/column with missing values or zeros." />
+<meta property="og:description" content="Removes empty row/column or row/column with missing values or zeros." />
 <meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -141,12 +141,22 @@
     </div>
 
     <div class="ref-description">
-    <p>Removes row/column with missing values or zeros.</p>
+    <p>Removes empty row/column or row/column with missing values or zeros.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>replace_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>remove_empty</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>replace_NA</span><span class='op'>(</span><span class='va'>x</span>, value <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
+
+<span class='co'># S4 method for DataMatrix</span>
+<span class='fu'>replace_NA</span><span class='op'>(</span><span class='va'>x</span>, value <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
 
 <span class='co'># S4 method for matrix</span>
 <span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
@@ -158,7 +168,13 @@
 <span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>remove_empty</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='co'># S4 method for DataMatrix</span>
+<span class='fu'>remove_empty</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -171,6 +187,10 @@
     <tr>
       <th>...</th>
       <td><p>Currently not used.</p></td>
+    </tr>
+    <tr>
+      <th>value</th>
+      <td><p>A possible value to replace missing values of <code>x</code>.</p></td>
     </tr>
     <tr>
       <th>margin</th>
@@ -203,13 +223,19 @@ values also be removed?</p></td>
 #&gt; row5    4    8    5    1    9</div><div class='input'>
 <span class='co'>## Remove row with zeros</span>
 <span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>A</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Removed 3 rows (zeros): row2 (1), row3 (1), row4 (1)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 2 x 5&gt;
+</div><div class='output co'>#&gt; <span class='message'>Removed 3 rows (zeros):</span>
+#&gt; <span class='message'>* row2 (1)</span>
+#&gt; <span class='message'>* row3 (1)</span>
+#&gt; <span class='message'>* row4 (1)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 2 x 5&gt;
 #&gt;      col1 col2 col3 col4 col5
 #&gt; row1    7    9    4    4    1
 #&gt; row5    4    8    5    1    9</div><div class='input'>
 <span class='co'>## Remove column with zeros</span>
 <span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>A</span>, margin <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Removed 3 columns (zeros): col1 (1), col2 (1), col5 (1)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 5 x 2&gt;
+</div><div class='output co'>#&gt; <span class='message'>Removed 3 columns (zeros):</span>
+#&gt; <span class='message'>* col1 (1)</span>
+#&gt; <span class='message'>* col2 (1)</span>
+#&gt; <span class='message'>* col5 (1)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 5 x 2&gt;
 #&gt;      col3 col4
 #&gt; row1    4    4
 #&gt; row2    8    7
