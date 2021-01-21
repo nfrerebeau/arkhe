@@ -263,66 +263,77 @@ column to create for supplementary points attribution (see below).</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create count data matrix</span>
 <span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>12</span><span class='op'>:</span><span class='fl'>20</span>, <span class='fl'>42</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>7</span>, ncol <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span>
 
 <span class='co'>## Compute correspondence analysis</span>
 <span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'>ca</span><span class='op'>(</span><span class='va'>A</span>, sup_rows <span class='op'>=</span> <span class='fl'>8</span><span class='op'>:</span><span class='fl'>10</span>, sup_columns <span class='op'>=</span> <span class='fl'>7</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
 
+<span class='co'>## Predict new row coordinates</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>B</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;               CA1          CA2          CA3        CA4           CA5
+#&gt; row1 -0.007820561 -0.090490566 -0.007455178 0.10919821  0.0009590692
+#&gt; row2 -0.215506980 -0.041050657 -0.012922626 0.02873122 -0.0487594129
+#&gt; row3 -0.101011488  0.008160103  0.059542122 0.22309978  0.0991063370
+#&gt; row4 -0.060603459 -0.078551810  0.014002693 0.09741182 -0.0396211920
+#&gt; row5 -0.131123926  0.079345693 -0.080528794 0.06485535  0.0559515390
+#&gt; row6  0.006139721 -0.082332451  0.034390111 0.05497076  0.1443931073
+#&gt; row7 -0.177653381  0.060753306 -0.073761414 0.08191048  0.0533543084</div><div class='input'>
 <span class='co'>## Get row coordinates</span>
 <span class='fu'>get_coordinates</span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, standard <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;               CA1         CA2         CA3           CA4          CA5  .sup
-#&gt; row1  -0.59793400  0.02311985 -0.22173614 -0.0225929706  0.012365165 FALSE
-#&gt; row2   0.06924897 -0.16821107  0.07923714 -0.1903558923 -0.041187663 FALSE
-#&gt; row3   0.11042978  0.41374923  0.16989414 -0.0759062505  0.060804969 FALSE
-#&gt; row4   0.18739403 -0.09254562 -0.10479707  0.0006301948  0.075693218 FALSE
-#&gt; row5  -0.27802363 -0.20677666  0.26713779  0.1493200023  0.019338981 FALSE
-#&gt; row6   0.02957397  0.19580564 -0.01545791  0.0934528748 -0.083156848 FALSE
-#&gt; row7   0.56564504 -0.09786430 -0.14635751  0.0839775475  0.003205579 FALSE
-#&gt; row8  -0.31550914 -0.05611258  0.12160459  0.2042344603 -0.243467759  TRUE
-#&gt; row9   0.15915746 -0.05682938  0.08768751 -0.2656492535 -0.240478031  TRUE
-#&gt; row10 -0.19077508  0.80593061 -0.29155015  0.1883550603 -0.258372237  TRUE</div><div class='input'>
+</div><div class='output co'>#&gt;                 CA1          CA2           CA3         CA4          CA5  .sup
+#&gt; row1  -0.0005820818  0.148394896 -0.2424179912 -0.07285316  0.002794611 FALSE
+#&gt; row2  -0.1025326962 -0.492290839 -0.0419879806 -0.02278684  0.027276041 FALSE
+#&gt; row3   0.2537238320 -0.111370511  0.0001890362  0.10206364 -0.004069772 FALSE
+#&gt; row4   0.4547949047 -0.003187552 -0.0317495436 -0.02701901 -0.027374085 FALSE
+#&gt; row5  -0.8866005980  0.155714766 -0.1005719584  0.05376078 -0.013059829 FALSE
+#&gt; row6   0.2068363684  0.444924973  0.1479724189  0.01321923  0.031994786 FALSE
+#&gt; row7  -0.2847068282 -0.081904440  0.3931354055 -0.06438232 -0.014341846 FALSE
+#&gt; row8   0.0771909194  0.101443929 -0.0249884596 -0.27053595 -0.279457477  TRUE
+#&gt; row9   0.1411873700  0.133236617  0.0094642916  0.42731515  0.183248323  TRUE
+#&gt; row10 -0.5593496194 -0.045845589 -0.3349975624 -0.19790245 -0.155992419  TRUE</div><div class='input'>
 <span class='co'>## Get column coordinates</span>
 <span class='fu'>get_coordinates</span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>2</span>, standard <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;                CA1          CA2         CA3         CA4           CA5  .sup
-#&gt; col1  -0.417652234  0.077013550  0.01140891 -0.07172461  0.0980896087 FALSE
-#&gt; col2   0.499704067 -0.027940016 -0.12570178 -0.16817672 -0.0003863714 FALSE
-#&gt; col3  -0.118844220  0.417059426 -0.02381107  0.02275026 -0.0573530879 FALSE
-#&gt; col4  -0.486254598 -0.271447890  0.02946775 -0.08021790 -0.0732371143 FALSE
-#&gt; col5   0.257015603 -0.040995272  0.28589256  0.05628556  0.0058385708 FALSE
-#&gt; col6   0.050873490 -0.108519837 -0.17721375  0.16262727  0.0109805976 FALSE
-#&gt; col7   0.044675354 -0.271869353 -0.02884261  0.05699291 -0.0581376643  TRUE
-#&gt; col8  -0.004794749  0.124514403  0.22050793 -0.04099506  0.1472645356  TRUE
-#&gt; col9  -0.205831532  0.117616969  0.08945914  0.17154530  0.0887241387  TRUE
-#&gt; col10  0.374717297 -0.004981155 -0.21657167  0.21086173  0.0418882853  TRUE</div><div class='input'>
+</div><div class='output co'>#&gt;              CA1         CA2           CA3         CA4           CA5  .sup
+#&gt; col1   0.1280548 -0.18180310  8.910881e-02 -0.05992428 -0.0283656300 FALSE
+#&gt; col2   0.3219454  0.01207608  8.975048e-05 -0.06592359  0.0323586478 FALSE
+#&gt; col3  -0.5328685  0.27810042  2.585591e-01  0.01529428  0.0043559177 FALSE
+#&gt; col4  -0.6106188 -0.10451705 -3.205783e-01 -0.01414365  0.0009023154 FALSE
+#&gt; col5   0.1279605 -0.41046012  6.943129e-02  0.11099659  0.0091322039 FALSE
+#&gt; col6   0.4093789  0.37795996 -1.408004e-01  0.05237479 -0.0127182629 FALSE
+#&gt; col7  -0.2301894 -0.12400165  8.420324e-02 -0.30372194 -0.0997613194  TRUE
+#&gt; col8   0.1258193  0.09918414  7.788190e-02  0.05853030  0.0645330146  TRUE
+#&gt; col9   0.4521520 -0.00210787  1.641146e-01  0.13553497  0.0289811417  TRUE
+#&gt; col10 -0.3037318  0.06146369  2.500790e-02 -0.08945515 -0.1101622013  TRUE</div><div class='input'>
 <span class='co'>## Get row distances to centroid</span>
 <span class='fu'>get_distances</span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;      row1      row2      row3      row4      row5      row6      row7      row8 
-#&gt; 0.6386625 0.2780300 0.4708569 0.2457509 0.4626951 0.2347380 0.5983433 0.4674084 
+#&gt; 0.2934336 0.5058552 0.2953181 0.4575325 0.9074598 0.5136475 0.4966614 0.4100731 
 #&gt;      row9     row10 
-#&gt; 0.4057696 0.9344274 </div><div class='input'>
+#&gt; 0.5039381 0.7004971 </div><div class='input'>
 <span class='co'>## Get row inertias</span>
 <span class='fu'>get_inertia</span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        row1        row2        row3        row4        row5        row6 
-#&gt; 0.062248250 0.013970006 0.024930816 0.007518869 0.028372947 0.009073006 
-#&gt;        row7        row8        row9       row10 
-#&gt; 0.047447739          NA          NA          NA </div><div class='input'>
+</div><div class='output co'>#&gt;       row1       row2       row3       row4       row5       row6       row7 
+#&gt; 0.01405767 0.03551119 0.01601867 0.03417730 0.09411237 0.03338305 0.02718432 
+#&gt;       row8       row9      row10 
+#&gt;         NA         NA         NA </div><div class='input'>
 <span class='co'>## Get row contributions</span>
 <span class='fu'>get_contributions</span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;             CA1        CA2        CA3          CA4         CA5
-#&gt; row1 47.8766877  0.2104586 29.3249840 6.181446e-01  0.88100679
-#&gt; row2  0.7604544 13.1927340  4.4345685 5.196429e+01 11.57557705
-#&gt; row3  1.2032739 49.6644452 12.6851634 5.141300e+00 15.69755477
-#&gt; row4  3.8362525  2.7509747  5.3436893 3.923477e-04 26.93217739
-#&gt; row5  8.9889995 14.6194199 36.9628806 2.344821e+01  1.87144446
-#&gt; row6  0.1263680 16.2872365  0.1537681 1.141114e+01 42.99082066
-#&gt; row7 37.2079640  3.2747312 11.0949460 7.416520e+00  0.05141889</div><div class='input'>
+</div><div class='output co'>#&gt;               CA1          CA2          CA3        CA4        CA5
+#&gt; row1 3.657732e-05  5.282074263 3.098720e+01 22.9223790  0.3175069
+#&gt; row2 9.646894e-01 49.411610396 7.901718e-01  1.9061185 25.7094115
+#&gt; row3 7.818418e+00  3.347029356 2.119802e-05 50.6124724  0.7575358
+#&gt; row4 2.232930e+01  0.002437143 5.315298e-01  3.1528385 30.4641995
+#&gt; row5 5.940157e+01  4.071216598 3.733400e+00  8.7375981  4.8538187
+#&gt; row6 3.579310e+00 36.799493677 8.947792e+00  0.5848936 32.2530409
+#&gt; row7 5.906679e+00  1.086138567 5.500988e+01 12.0837000  5.6444866</div><div class='input'>
 <span class='co'>## Get eigenvalues</span>
 <span class='fu'>get_eigenvalues</span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;     eigenvalues percentage cumulative
-#&gt; CA1  0.11396373  58.877230   58.87723
-#&gt; CA2  0.03876033  20.024802   78.90203
-#&gt; CA3  0.02558700  13.219047   92.12108
-#&gt; CA4  0.01260204   6.510608   98.63169
-#&gt; CA5  0.00264853   1.368313  100.00000</div></pre>
+</div><div class='output co'>#&gt;      eigenvalues percentage cumulative
+#&gt; CA1 0.1512342163 59.4369994   59.43700
+#&gt; CA2 0.0680655460 26.7506383   86.18764
+#&gt; CA3 0.0309628737 12.1688091   98.35645
+#&gt; CA4 0.0037803413  1.4857229   99.84217
+#&gt; CA5 0.0004015904  0.1578302  100.00000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

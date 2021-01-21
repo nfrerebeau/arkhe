@@ -292,55 +292,55 @@
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
+</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;    u v w  x  y
-#&gt; A  3 8 2  9  7
-#&gt; B  0 2 7 10  9
-#&gt; C  9 9 2  7  3
-#&gt; D  8 2 5  4  6
-#&gt; E  3 5 5  0 10
-#&gt; F  9 0 7  1  3
-#&gt; G  8 3 2  0  9
-#&gt; H  4 1 4  2  5
-#&gt; I  8 4 3  5  0
-#&gt; J  5 0 7  8  5
-#&gt; K  7 4 2  1  5
-#&gt; L 10 9 6  5 10
-#&gt; M  7 3 6  7  1
-#&gt; N  5 7 7  4  5
-#&gt; O  0 4 7  2  7
-#&gt; P  7 6 3  9 10
-#&gt; Q  7 0 8 10  5
-#&gt; R  1 0 5  8  2
-#&gt; S  0 4 1  6  6
-#&gt; T  8 6 5  4  7</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+#&gt;    u  v  w  x  y
+#&gt; A  5  4  7  6  1
+#&gt; B  9  7  6  3  1
+#&gt; C 10  9  4  6  4
+#&gt; D  7  3  5  0  4
+#&gt; E  4  6  3  0  9
+#&gt; F  0 10  3  7  2
+#&gt; G  1  3  8 10  4
+#&gt; H  0  9  3  2 10
+#&gt; I  2  5 10  9 10
+#&gt; J  5  0 10  8  1
+#&gt; K  8  5  8  2  3
+#&gt; L  1  5  8  6  8
+#&gt; M  5 10  7  6 10
+#&gt; N  7  1 10  4  8
+#&gt; O  4  5  3  5  3
+#&gt; P  2  7  7  7  3
+#&gt; Q  9 10  1  6  7
+#&gt; R 10  5  6  5  2
+#&gt; S  8  2  4  9  4
+#&gt; T  6  6  3  7  6</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
 #&gt;   u v w x y
-#&gt; A 3 8 2 9 7</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+#&gt; A 5 4 7 6 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
-#&gt;    u v w
-#&gt; A  3 8 2
-#&gt; B  0 2 7
-#&gt; C  9 9 2
-#&gt; D  8 2 5
-#&gt; E  3 5 5
-#&gt; F  9 0 7
-#&gt; G  8 3 2
-#&gt; H  4 1 4
-#&gt; I  8 4 3
-#&gt; J  5 0 7
-#&gt; K  7 4 2
-#&gt; L 10 9 6
-#&gt; M  7 3 6
-#&gt; N  5 7 7
-#&gt; O  0 4 7
-#&gt; P  7 6 3
-#&gt; Q  7 0 8
-#&gt; R  1 0 5
-#&gt; S  0 4 1
-#&gt; T  8 6 5</div></pre>
+#&gt;    u  v  w
+#&gt; A  5  4  7
+#&gt; B  9  7  6
+#&gt; C 10  9  4
+#&gt; D  7  3  5
+#&gt; E  4  6  3
+#&gt; F  0 10  3
+#&gt; G  1  3  8
+#&gt; H  0  9  3
+#&gt; I  2  5 10
+#&gt; J  5  0 10
+#&gt; K  8  5  8
+#&gt; L  1  5  8
+#&gt; M  5 10  7
+#&gt; N  7  1 10
+#&gt; O  4  5  3
+#&gt; P  2  7  7
+#&gt; Q  9 10  1
+#&gt; R 10  5  6
+#&gt; S  8  2  4
+#&gt; T  6  6  3</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

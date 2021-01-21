@@ -203,10 +203,21 @@ values.</p></dd>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create count data matrix</span>
 <span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>10</span>, ncol <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>12</span><span class='op'>:</span><span class='fl'>20</span>, <span class='fl'>42</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>7</span>, ncol <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span>
 
 <span class='co'>## Compute correspondence analysis</span>
 <span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='correspondence.html'>ca</a></span><span class='op'>(</span><span class='va'>A</span>, sup_rows <span class='op'>=</span> <span class='fl'>8</span><span class='op'>:</span><span class='fl'>10</span>, sup_columns <span class='op'>=</span> <span class='fl'>7</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span>
 
+<span class='co'>## Predict new row coordinates</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>B</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              CA1          CA2         CA3         CA4         CA5
+#&gt; row1 -0.12543741  0.014339648  0.14565297 -0.09512467 -0.06834950
+#&gt; row2 -0.09455240  0.034963945  0.08617148 -0.08997983 -0.08204821
+#&gt; row3  0.09158125 -0.039314454  0.02690288  0.16973343 -0.01233109
+#&gt; row4  0.08728856 -0.037300348  0.07762193 -0.01615904 -0.10832056
+#&gt; row5 -0.12666468  0.001070203  0.11756531 -0.03493385 -0.08020412
+#&gt; row6  0.11507025 -0.029812407 -0.02347400  0.06253515 -0.01430535
+#&gt; row7  0.05835536  0.103413165 -0.05178432 -0.02824795 -0.03998291</div><div class='input'>
 <span class='co'>## Get row coordinates</span>
 <span class='fu'><a href='correspondence.html'>get_coordinates</a></span><span class='op'>(</span><span class='va'>X</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, standard <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;                CA1         CA2          CA3         CA4          CA5  .sup
