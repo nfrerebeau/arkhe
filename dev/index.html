@@ -117,7 +117,7 @@
 <p>You can install the released version of <strong>arkhe</strong> from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"arkhe"</span><span class="op">)</span></code></pre></div>
-<p>Or install the development version from GitHub with:</p>
+<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"nfrerebeau/arkhe"</span><span class="op">)</span></code></pre></div>
@@ -192,43 +192,43 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span>
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 </span>
-<span class="co">#&gt;    30    30    22    23    20    14    25    21    24    21    24    15    22 </span>
+<span class="co">#&gt;    31    24    20    32    12    16    23    21    21    28    32     9    26 </span>
 <span class="co">#&gt; row14 row15 </span>
-<span class="co">#&gt;    35    18</span>
+<span class="co">#&gt;    25    27</span>
 <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span>X <span class="op">=</span> <span class="va">A1</span>, MARGIN <span class="op">=</span> <span class="fl">1</span>, FUN <span class="op">=</span> <span class="va">sum</span><span class="op">)</span>
 <span class="co">#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 </span>
-<span class="co">#&gt;    30    30    22    23    20    14    25    21    24    21    24    15    22 </span>
+<span class="co">#&gt;    31    24    20    32    12    16    23    21    21    28    32     9    26 </span>
 <span class="co">#&gt; row14 row15 </span>
-<span class="co">#&gt;    35    18</span></code></pre></div>
+<span class="co">#&gt;    25    27</span></code></pre></div>
 <p>Observations in <code>*Matrix</code> classes can be grouped, this can be useful for replicated measurements/observations or to group data by site/area.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Summary by groups</span>
 <span class="fu">set_groups</span><span class="op">(</span><span class="va">A1</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
 <span class="fu"><a href="reference/summary.html">summary</a></span><span class="op">(</span><span class="va">A1</span><span class="op">)</span>
 <span class="co">#&gt; --- A (5 observations) ---------------------------------------------------------</span>
-<span class="co">#&gt;       col1          col2           col3          col4          col5    </span>
-<span class="co">#&gt;  Min.   :0.0   Min.   : 0.0   Min.   :2.0   Min.   :3.0   Min.   :0.0  </span>
-<span class="co">#&gt;  1st Qu.:1.0   1st Qu.: 3.0   1st Qu.:3.0   1st Qu.:4.0   1st Qu.:3.0  </span>
-<span class="co">#&gt;  Median :6.0   Median : 4.0   Median :4.0   Median :8.0   Median :6.0  </span>
-<span class="co">#&gt;  Mean   :3.8   Mean   : 4.4   Mean   :4.8   Mean   :6.6   Mean   :5.4  </span>
-<span class="co">#&gt;  3rd Qu.:6.0   3rd Qu.: 5.0   3rd Qu.:7.0   3rd Qu.:9.0   3rd Qu.:9.0  </span>
-<span class="co">#&gt;  Max.   :6.0   Max.   :10.0   Max.   :8.0   Max.   :9.0   Max.   :9.0  </span>
+<span class="co">#&gt;       col1          col2           col3        col4          col5   </span>
+<span class="co">#&gt;  Min.   :5.0   Min.   : 0.0   Min.   :0   Min.   :0.0   Min.   : 0  </span>
+<span class="co">#&gt;  1st Qu.:6.0   1st Qu.: 3.0   1st Qu.:1   1st Qu.:0.0   1st Qu.: 3  </span>
+<span class="co">#&gt;  Median :6.0   Median : 4.0   Median :7   Median :2.0   Median : 5  </span>
+<span class="co">#&gt;  Mean   :6.8   Mean   : 4.8   Mean   :5   Mean   :2.2   Mean   : 5  </span>
+<span class="co">#&gt;  3rd Qu.:8.0   3rd Qu.: 7.0   3rd Qu.:8   3rd Qu.:4.0   3rd Qu.: 7  </span>
+<span class="co">#&gt;  Max.   :9.0   Max.   :10.0   Max.   :9   Max.   :5.0   Max.   :10  </span>
 <span class="co">#&gt; --- B (5 observations) ---------------------------------------------------------</span>
-<span class="co">#&gt;       col1        col2          col3          col4          col5     </span>
-<span class="co">#&gt;  Min.   :0   Min.   :0.0   Min.   :1.0   Min.   :0.0   Min.   : 1.0  </span>
-<span class="co">#&gt;  1st Qu.:1   1st Qu.:1.0   1st Qu.:6.0   1st Qu.:3.0   1st Qu.: 4.0  </span>
-<span class="co">#&gt;  Median :1   Median :2.0   Median :7.0   Median :3.0   Median : 8.0  </span>
-<span class="co">#&gt;  Mean   :3   Mean   :1.8   Mean   :6.2   Mean   :3.6   Mean   : 6.4  </span>
-<span class="co">#&gt;  3rd Qu.:4   3rd Qu.:3.0   3rd Qu.:8.0   3rd Qu.:5.0   3rd Qu.: 9.0  </span>
-<span class="co">#&gt;  Max.   :9   Max.   :3.0   Max.   :9.0   Max.   :7.0   Max.   :10.0  </span>
+<span class="co">#&gt;       col1          col2          col3          col4         col5    </span>
+<span class="co">#&gt;  Min.   :0.0   Min.   :1.0   Min.   :2.0   Min.   : 0   Min.   :3.0  </span>
+<span class="co">#&gt;  1st Qu.:2.0   1st Qu.:2.0   1st Qu.:2.0   1st Qu.: 1   1st Qu.:5.0  </span>
+<span class="co">#&gt;  Median :4.0   Median :4.0   Median :2.0   Median : 5   Median :5.0  </span>
+<span class="co">#&gt;  Mean   :3.8   Mean   :4.2   Mean   :3.6   Mean   : 5   Mean   :5.2  </span>
+<span class="co">#&gt;  3rd Qu.:6.0   3rd Qu.:7.0   3rd Qu.:5.0   3rd Qu.: 9   3rd Qu.:6.0  </span>
+<span class="co">#&gt;  Max.   :7.0   Max.   :7.0   Max.   :7.0   Max.   :10   Max.   :7.0  </span>
 <span class="co">#&gt; --- C (5 observations) ---------------------------------------------------------</span>
-<span class="co">#&gt;       col1          col2           col3        col4          col5  </span>
-<span class="co">#&gt;  Min.   :1.0   Min.   : 0.0   Min.   :1   Min.   :0.0   Min.   :0  </span>
-<span class="co">#&gt;  1st Qu.:2.0   1st Qu.: 2.0   1st Qu.:2   1st Qu.:3.0   1st Qu.:2  </span>
-<span class="co">#&gt;  Median :2.0   Median : 3.0   Median :6   Median :6.0   Median :5  </span>
-<span class="co">#&gt;  Mean   :3.8   Mean   : 4.6   Mean   :5   Mean   :5.4   Mean   :4  </span>
-<span class="co">#&gt;  3rd Qu.:7.0   3rd Qu.: 8.0   3rd Qu.:7   3rd Qu.:9.0   3rd Qu.:6  </span>
-<span class="co">#&gt;  Max.   :7.0   Max.   :10.0   Max.   :9   Max.   :9.0   Max.   :7</span></code></pre></div>
+<span class="co">#&gt;       col1          col2           col3           col4         col5    </span>
+<span class="co">#&gt;  Min.   :1.0   Min.   : 0.0   Min.   : 2.0   Min.   : 2   Min.   :1.0  </span>
+<span class="co">#&gt;  1st Qu.:1.0   1st Qu.: 0.0   1st Qu.: 6.0   1st Qu.: 2   1st Qu.:1.0  </span>
+<span class="co">#&gt;  Median :3.0   Median : 6.0   Median : 8.0   Median : 4   Median :5.0  </span>
+<span class="co">#&gt;  Mean   :3.4   Mean   : 4.8   Mean   : 6.8   Mean   : 5   Mean   :3.8  </span>
+<span class="co">#&gt;  3rd Qu.:4.0   3rd Qu.: 8.0   3rd Qu.: 8.0   3rd Qu.: 7   3rd Qu.:6.0  </span>
+<span class="co">#&gt;  Max.   :8.0   Max.   :10.0   Max.   :10.0   Max.   :10   Max.   :6.0</span></code></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
@@ -254,7 +254,7 @@
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
+<li><small>GPL (&gt;= 3)</small></li>
 </ul>
 </div>
 <div class="community">

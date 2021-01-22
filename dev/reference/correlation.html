@@ -194,39 +194,39 @@ coefficient (or covariance) is to be computed (see
 <span class='co'>## Row and column means</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;   7.0   4.2   7.0   3.6   5.4   3.8   4.2   5.2   3.8   6.6   5.6   5.0   5.8 
+#&gt;   4.4   5.0   4.8   5.8   6.8   4.6   4.8   4.6   5.0   6.0   5.8   5.8   5.4 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;   4.4   5.6   4.8   5.4   3.0   3.4   4.4 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+#&gt;   7.0   7.2   3.4   6.0   7.2   7.2   3.4 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt; 4.15 5.30 5.05 4.85 5.20 </div><div class='input'>
+#&gt; 4.75 5.60 5.50 6.40 5.30 </div><div class='input'>
 <span class='co'>## Row and column sums</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>rowSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  row1  row2  row3  row4  row5  row6  row7  row8  row9 row10 row11 row12 row13 
-#&gt;    35    21    35    18    27    19    21    26    19    33    28    25    29 
+#&gt;    22    25    24    29    34    23    24    23    25    30    29    29    27 
 #&gt; row14 row15 row16 row17 row18 row19 row20 
-#&gt;    22    28    24    27    15    17    22 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+#&gt;    35    36    17    30    36    36    17 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; col1 col2 col3 col4 col5 
-#&gt;   83  106  101   97  104 </div><div class='input'>
+#&gt;   95  112  110  128  106 </div><div class='input'>
 <span class='co'>## Variance, covariance and correlation matrix</span>
 <span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;            col1         col2       col3         col4        col5
-#&gt; col1 11.8184211 -3.521052632  0.7815789  1.813157895 -3.61052632
-#&gt; col2 -3.5210526  8.431578947 -3.0157895 -0.005263158 -0.01052632
-#&gt; col3  0.7815789 -3.015789474 11.7342105 -1.676315789 -4.32631579
-#&gt; col4  1.8131579 -0.005263158 -1.6763158 10.344736842  3.66315789
-#&gt; col5 -3.6105263 -0.010526316 -4.3263158  3.663157895 11.11578947</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;            col1         col2       col3         col4        col5
-#&gt; col1 11.8184211 -3.521052632  0.7815789  1.813157895 -3.61052632
-#&gt; col2 -3.5210526  8.431578947 -3.0157895 -0.005263158 -0.01052632
-#&gt; col3  0.7815789 -3.015789474 11.7342105 -1.676315789 -4.32631579
-#&gt; col4  1.8131579 -0.005263158 -1.6763158 10.344736842  3.66315789
-#&gt; col5 -3.6105263 -0.010526316 -4.3263158  3.663157895 11.11578947</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;             col1          col2        col3          col4         col5
-#&gt; col1  1.00000000 -0.3527266975  0.06636914  0.1639819975 -0.315007308
-#&gt; col2 -0.35272670  1.0000000000 -0.30319332 -0.0005635497 -0.001087306
-#&gt; col3  0.06636914 -0.3031933194  1.00000000 -0.1521490252 -0.378809727
-#&gt; col4  0.16398200 -0.0005635497 -0.15214903  1.0000000000  0.341606211
-#&gt; col5 -0.31500731 -0.0010873060 -0.37880973  0.3416062112  1.000000000</div></pre>
+</div><div class='output co'>#&gt;            col1        col2       col3       col4        col5
+#&gt; col1  8.1973684 -1.26315789  0.2368421 -1.1578947 -1.76315789
+#&gt; col2 -1.2631579 10.25263158 -1.5789474  1.3789474 -0.03157895
+#&gt; col3  0.2368421 -1.57894737  9.6315789  1.4736842  0.36842105
+#&gt; col4 -1.1578947  1.37894737  1.4736842  4.8842105 -0.75789474
+#&gt; col5 -1.7631579 -0.03157895  0.3684211 -0.7578947  8.11578947</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;            col1        col2       col3       col4        col5
+#&gt; col1  8.1973684 -1.26315789  0.2368421 -1.1578947 -1.76315789
+#&gt; col2 -1.2631579 10.25263158 -1.5789474  1.3789474 -0.03157895
+#&gt; col3  0.2368421 -1.57894737  9.6315789  1.4736842  0.36842105
+#&gt; col4 -1.1578947  1.37894737  1.4736842  4.8842105 -0.75789474
+#&gt; col5 -1.7631579 -0.03157895  0.3684211 -0.7578947  8.11578947</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>A</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;             col1         col2        col3       col4         col5
+#&gt; col1  1.00000000 -0.137785253  0.02665465 -0.1829931 -0.216166600
+#&gt; col2 -0.13778525  1.000000000 -0.15889171  0.1948645 -0.003461901
+#&gt; col3  0.02665465 -0.158891708  1.00000000  0.2148614  0.041670653
+#&gt; col4 -0.18299308  0.194864545  0.21486145  1.0000000 -0.120377776
+#&gt; col5 -0.21616660 -0.003461901  0.04167065 -0.1203778  1.000000000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

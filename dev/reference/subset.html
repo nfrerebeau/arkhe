@@ -162,9 +162,6 @@
 # S4 method for DataMatrix,numeric,numeric
 [[(x, i, j, ...)
 
-# S4 method for CA,ANY,ANY
-[[(x, i)
-
 # S4 method for DataMatrix,missing,missing
 [(x, i, j, ...) &lt;- value
 
@@ -298,55 +295,55 @@ not for the replacement.</p></td>
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
+</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;    u  v w x  y
-#&gt; A  9  5 4 9  1
-#&gt; B  7  4 2 4 10
-#&gt; C  7  6 6 1  5
-#&gt; D  6  6 9 6  0
-#&gt; E  1  8 2 8  9
-#&gt; F  9  8 8 9  5
-#&gt; G  3  3 0 4  7
-#&gt; H  5  5 8 0  7
-#&gt; I  9  9 4 7  9
-#&gt; J  9  5 0 1  9
-#&gt; K  5  0 3 9 10
-#&gt; L  2  4 1 9  3
-#&gt; M  2  7 5 2  9
-#&gt; N  7  0 8 4  9
-#&gt; O  7  1 5 0  7
-#&gt; P  7  3 0 2  3
-#&gt; Q  5  4 1 5  8
-#&gt; R 10 10 6 9  2
-#&gt; S  4  9 0 5  2
-#&gt; T  4  5 2 6  4</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+#&gt;    u  v  w  x  y
+#&gt; A  3  1  8  6  9
+#&gt; B  0  8  4  4  8
+#&gt; C  1  6  6  0  3
+#&gt; D  8  4  8  1  7
+#&gt; E  9  3  9  3  6
+#&gt; F  1  0  8  8 10
+#&gt; G  7  3  3  6  8
+#&gt; H  2  4  5 10  2
+#&gt; I  6  2  0  9  6
+#&gt; J  0  7  6  6  2
+#&gt; K  7  5  5  8  0
+#&gt; L 10  3  7  6  7
+#&gt; M  8 10  9 10  3
+#&gt; N  6  4 10 10  3
+#&gt; O 10  9  6  3  1
+#&gt; P  0  0  7 10  4
+#&gt; Q  5  6  3  2  6
+#&gt; R  8  5  0  6  4
+#&gt; S  8 10  9  1  8
+#&gt; T  2  8  0  7  5</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
 #&gt;   u v w x y
-#&gt; A 9 5 4 9 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+#&gt; A 3 1 8 6 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
-#&gt;    u  v w
-#&gt; A  9  5 4
-#&gt; B  7  4 2
-#&gt; C  7  6 6
-#&gt; D  6  6 9
-#&gt; E  1  8 2
-#&gt; F  9  8 8
-#&gt; G  3  3 0
-#&gt; H  5  5 8
-#&gt; I  9  9 4
-#&gt; J  9  5 0
-#&gt; K  5  0 3
-#&gt; L  2  4 1
-#&gt; M  2  7 5
-#&gt; N  7  0 8
-#&gt; O  7  1 5
-#&gt; P  7  3 0
-#&gt; Q  5  4 1
-#&gt; R 10 10 6
-#&gt; S  4  9 0
-#&gt; T  4  5 2</div></pre>
+#&gt;    u  v  w
+#&gt; A  3  1  8
+#&gt; B  0  8  4
+#&gt; C  1  6  6
+#&gt; D  8  4  8
+#&gt; E  9  3  9
+#&gt; F  1  0  8
+#&gt; G  7  3  3
+#&gt; H  2  4  5
+#&gt; I  6  2  0
+#&gt; J  0  7  6
+#&gt; K  7  5  5
+#&gt; L 10  3  7
+#&gt; M  8 10  9
+#&gt; N  6  4 10
+#&gt; O 10  9  6
+#&gt; P  0  0  7
+#&gt; Q  5  6  3
+#&gt; R  8  5  0
+#&gt; S  8 10  9
+#&gt; T  2  8  0</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
