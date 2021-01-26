@@ -3,8 +3,8 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   arkhe: arkhe.html
-last_built: 2021-01-22T14:48Z
+last_built: 2021-01-26T18:26Z
 urls:
-  reference: http://arkhe.archaeo.science/reference
-  article: http://arkhe.archaeo.science/articles
+  reference: http://arkhe.tesselle.org/reference
+  article: http://arkhe.tesselle.org/articles
 
