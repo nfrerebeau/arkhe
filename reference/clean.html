@@ -47,8 +47,8 @@
 
 
 <meta property="og:title" content="Data Cleaning — clean" />
-<meta property="og:description" content="Removes row/column with missing values or zeros." />
-<meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
+<meta property="og:description" content="Removes empty row/column or row/column with missing values or zeros." />
+<meta property="og:image" content="https://arkhe.tesselle.org/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
 <meta name="twitter:site" content="@nfrerebeau" />
@@ -65,16 +65,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-172160955-3');
-</script>
 
 
   </head>
@@ -93,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -101,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -117,8 +107,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tesselle/arkhe/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -136,45 +126,54 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Data Cleaning</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/clean.R'><code>R/clean.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tesselle/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/tesselle/arkhe/blob/master/R/clean.R'><code>R/clean.R</code></a></small>
     <div class="hidden name"><code>clean.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Removes row/column with missing values or zeros.</p>
+    <p>Removes empty row/column or row/column with missing values or zeros.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>replace_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span>
+<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S4 method for matrix</span>
-<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'>remove_empty</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='co'># S4 method for data.frame</span>
-<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for matrix</span>
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='fu'>replace_NA</span><span class='op'>(</span><span class='va'>x</span>, value <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
 
-<span class='co'># S4 method for data.frame</span>
-<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>object</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>remove_NA</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span>, finite <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>remove_empty</span><span class='op'>(</span><span class='va'>x</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code> or <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>.</p></td>
+      <th>x</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>, a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> or a
+<code>*Matrix</code> object.</p></td>
     </tr>
     <tr>
       <th>...</th>
       <td><p>Currently not used.</p></td>
     </tr>
     <tr>
+      <th>value</th>
+      <td><p>A possible value to replace missing values of <code>x</code>.</p></td>
+    </tr>
+    <tr>
       <th>margin</th>
-      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the subscripts which the
-cleaning will be applied over (\(1\) indicates rows, \(2\) indicates
+      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> giving the subscript which the
+cleaning will be applied over (<code>1</code> indicates rows, <code>2</code> indicates
 columns).</p></td>
     </tr>
     <tr>
@@ -188,6 +187,38 @@ values also be removed?</p></td>
 
     <p>N. Frerebeau</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'>## Create a count data matrix</span>
+<span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>25</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>5</span>, ncol <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+<span class='va'>A</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>25</span>, <span class='fl'>3</span>, <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>0L</span> <span class='co'># Add zeros</span>
+<span class='va'>A</span>
+</div><div class='output co'>#&gt; &lt;CountMatrix: 5 x 5&gt;
+#&gt;      col1 col2 col3 col4 col5
+#&gt; row1   10    5    2    1    8
+#&gt; row2    4    7    9   10    7
+#&gt; row3    8    0    1    2    0
+#&gt; row4    7    1    8    4    5
+#&gt; row5    7    5    3   10    0</div><div class='input'>
+<span class='co'>## Remove row with zeros</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>A</span>, margin <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Removed 2 rows (zeros):</span>
+#&gt; <span class='message'>* row3 (2)</span>
+#&gt; <span class='message'>* row5 (1)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
+#&gt;      col1 col2 col3 col4 col5
+#&gt; row1   10    5    2    1    8
+#&gt; row2    4    7    9   10    7
+#&gt; row4    7    1    8    4    5</div><div class='input'>
+<span class='co'>## Remove column with zeros</span>
+<span class='fu'>remove_zero</span><span class='op'>(</span><span class='va'>A</span>, margin <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Removed 2 columns (zeros):</span>
+#&gt; <span class='message'>* col2 (1)</span>
+#&gt; <span class='message'>* col5 (2)</span></div><div class='output co'>#&gt; &lt;CountMatrix: 5 x 3&gt;
+#&gt;      col1 col3 col4
+#&gt; row1   10    2    1
+#&gt; row2    4    9   10
+#&gt; row3    8    1    2
+#&gt; row4    7    8    4
+#&gt; row5    7    3   10</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

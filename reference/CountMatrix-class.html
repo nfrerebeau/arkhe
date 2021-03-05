@@ -49,7 +49,7 @@
 <meta property="og:title" content="Absolute Frequency Matrix — CountMatrix-class" />
 <meta property="og:description" content="An S4 class to represent an absolute frequency matrix (i.e. the number of
 times a given datum occurs in a dataset)." />
-<meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
+<meta property="og:image" content="https://arkhe.tesselle.org/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
 <meta name="twitter:site" content="@nfrerebeau" />
@@ -66,16 +66,6 @@ times a given datum occurs in a dataset)." />
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-172160955-3');
-</script>
 
 
   </head>
@@ -94,7 +84,7 @@ times a given datum occurs in a dataset)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -102,7 +92,7 @@ times a given datum occurs in a dataset)." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,8 +108,8 @@ times a given datum occurs in a dataset)." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tesselle/arkhe/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -137,7 +127,7 @@ times a given datum occurs in a dataset)." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Absolute Frequency Matrix</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/initialize.R'><code>R/initialize.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tesselle/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
     <div class="hidden name"><code>CountMatrix-class.Rd</code></div>
     </div>
 
@@ -153,76 +143,41 @@ times a given datum occurs in a dataset).</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>A data vector.</p></td>
+      <td><p>an optional data vector (including a list or
+    <code><a href='https://rdrr.io/r/base/expression.html'>expression</a></code> vector).  Non-atomic classed <span style="R">R</span> objects are
+    coerced by <code><a href='https://rdrr.io/r/base/vector.html'>as.vector</a></code> and all attributes discarded.</p></td>
     </tr>
     <tr>
       <th>nrow</th>
-      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> value giving the desired number of rows.</p></td>
+      <td><p>the desired number of rows.</p></td>
     </tr>
     <tr>
       <th>ncol</th>
-      <td><p>An <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> value giving the desired number of
-columns.</p></td>
+      <td><p>the desired number of columns.</p></td>
     </tr>
     <tr>
       <th>byrow</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the matrix be filled by
-rows? If <code>FALSE</code> (the default) the matrix is filled by columns.</p></td>
+      <td><p>logical. If <code>FALSE</code> (the default) the matrix is
+    filled by columns, otherwise the matrix is filled by rows.</p></td>
     </tr>
     <tr>
       <th>dimnames</th>
-      <td><p>A list of length 2 giving the row and column names
-respectively. If <code>NULL</code> (the default) dimension names will be created.</p></td>
+      <td><p>A <code><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></code> attribute for the matrix:
+    <code>NULL</code> or a <code>list</code> of length 2 giving the row and column
+    names respectively.  An empty list is treated as <code>NULL</code>, and a
+    list of length one as row names.  The list can be named, and the
+    list names will be used as names for the dimensions.</p></td>
     </tr>
     </table>
-
-    <h2 class="hasAnchor" id="access"><a class="anchor" href="#access"></a>Access</h2>
-
-    
-
-<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
-  <dt><code><a href='https://rdrr.io/r/base/length.html'>length(x)</a></code></dt><dd><p>Returns the length of <code>x</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/dim.html'>dim(x)</a></code></dt><dd><p>Returns the dimension of <code>x</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/nrow.html'>nrow(x)</a></code></dt><dd><p>Returns the number of rows present in <code>x</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/nrow.html'>ncol(x)</a></code></dt><dd><p>Returns the number of columns present in <code>x</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/dimnames.html'>dimnames(x)</a></code>, <code>dimnames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
-  the row dimnames of <code>x</code> according to <code>value</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/colnames.html'>rownames(x)</a></code>, <code>rownames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
-  the row names of <code>x</code> according to <code>value</code>.</p></dd>
-  <dt><code><a href='https://rdrr.io/r/base/colnames.html'>colnames(x)</a></code>, <code>colnames(x) &lt;- value</code></dt><dd><p>Retrieves or sets
-  the column names of <code>x</code> according to <code>value</code>.</p></dd>
- 
-</dl>
-
-    <h2 class="hasAnchor" id="subset"><a class="anchor" href="#subset"></a>Subset</h2>
-
-    
-
-<p>In the code snippets below, <code>x</code> is a <code>*Matrix</code> object.</p><dl>
-  <dt><code>x[i, j, ..., drop]</code></dt><dd><p>Extracts elements selected by subscripts
-  <code>i</code> and <code>j</code>. Indices are <code><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></code> or
-  <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vectors or empty (missing) or <code>NULL</code>.
-  Numeric values are coerced to <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code> as by
-  <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code> (and hence truncated towards zero).
-  Character vectors will be matched to the <code><a href='https://rdrr.io/r/base/dimnames.html'>dimnames</a></code> of the
-  object. An empty index (a comma separated blank) indicates that all
-  entries in that dimension are selected.
-  Returns an object of the same class as <code>x</code>.</p></dd>
-  <dt><code>x[[i]]</code></dt><dd><p>Extracts a single element selected by subscript
-  <code>i</code>.</p></dd>
- 
-</dl>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='coerce.html'>as_count</a></p>
 <p>Other matrix: 
-<code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
-<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
+<code><a href='CompositionMatrix-class.html'>CompositionMatrix-class</a></code>,
+<code><a href='DataMatrix.html'>DataMatrix</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
-<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
 <code><a href='coerce.html'>coerce</a>()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
@@ -299,6 +254,7 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
 </div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
 #&gt;    u  v  w  x y
@@ -321,19 +277,32 @@ respectively. If <code>NULL</code> (the default) dimension names will be created
 #&gt; Q  7  5  3  6 8
 #&gt; R  1  4  1  6 4
 #&gt; S  3  7  7  3 7
-#&gt; T  4 10  6  6 5</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, <span class='op'>]</span> <span class='co'># Get the first row</span>
-</div><div class='output co'>#&gt; [1]  1  6 10  6  9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first column</span>
-</div><div class='output co'>#&gt;  [1]  1  6  2  9  7  2  0  0  8  9  9 10  4  1  9 10  7  1  3  4</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"A"</span>, <span class='st'>"B"</span>, <span class='st'>"C"</span><span class='op'>)</span>, <span class='op'>]</span> <span class='co'># Get the first three rows</span>
-</div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 5&gt;
-#&gt;   u v  w  x y
-#&gt; A 1 6 10  6 9
-#&gt; B 6 3  1 10 1
-#&gt; C 2 3  9  9 8</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"D"</span>, <span class='st'>"E"</span>, <span class='st'>"F"</span><span class='op'>)</span>, <span class='fl'>1</span>, drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get 3 rows of the first column</span>
-</div><div class='output co'>#&gt; &lt;CountMatrix: 3 x 1&gt;
-#&gt;   u
-#&gt; D 9
-#&gt; E 7
-#&gt; F 2</div></pre>
+#&gt; T  4 10  6  6 5</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+</div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
+#&gt;   u v  w x y
+#&gt; A 1 6 10 6 9</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+</div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
+#&gt;    u  v  w
+#&gt; A  1  6 10
+#&gt; B  6  3  1
+#&gt; C  2  3  9
+#&gt; D  9  3 10
+#&gt; E  7  2  7
+#&gt; F  2  4  1
+#&gt; G  0  5  5
+#&gt; H  0  4  5
+#&gt; I  8  2  0
+#&gt; J  9  3  4
+#&gt; K  9  8  4
+#&gt; L 10  4  5
+#&gt; M  4  5  8
+#&gt; N  1  6  0
+#&gt; O  9  6  0
+#&gt; P 10  9  8
+#&gt; Q  7  5  3
+#&gt; R  1  4  1
+#&gt; S  3  7  7
+#&gt; T  4 10  6</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

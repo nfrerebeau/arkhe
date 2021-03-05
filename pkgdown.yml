@@ -1,10 +1,10 @@
-pandoc: '2.2'
+pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   arkhe: arkhe.html
-last_built: 2020-10-11T13:06Z
+last_built: 2021-03-05T14:28Z
 urls:
-  reference: http://arkhe.archaeo.science/reference
-  article: http://arkhe.archaeo.science/articles
+  reference: https://arkhe.tesselle.org/reference
+  article: https://arkhe.tesselle.org/articles
 

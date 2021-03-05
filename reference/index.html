@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Function reference" />
-<meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
+<meta property="og:image" content="https://arkhe.tesselle.org/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
 <meta name="twitter:site" content="@nfrerebeau" />
@@ -64,16 +64,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-172160955-3');
-</script>
 
 
   </head>
@@ -92,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -100,7 +90,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -116,8 +106,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tesselle/arkhe/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -160,7 +150,7 @@
       <tr>
         
         <td>
-          <p><code><a href="AbundanceMatrix-class.html">AbundanceMatrix()</a></code> </p>
+          <p><code><a href="CompositionMatrix-class.html">CompositionMatrix()</a></code> </p>
         </td>
         <td><p>Relative Frequency Matrix</p></td>
       </tr><tr>
@@ -184,19 +174,13 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="SimilarityMatrix-class.html">SimilarityMatrix-class</a></code> </p>
-        </td>
-        <td><p>Similarity Matrix</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="StratigraphicMatrix-class.html">StratigraphicMatrix-class</a></code> </p>
         </td>
         <td><p>Stratigraphic Matrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="coerce.html">as_long()</a></code> <code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_abundance()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_similarity()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
+          <p><code><a href="coerce.html">as_long()</a></code> <code><a href="coerce.html">as_count()</a></code> <code><a href="coerce.html">as_composition()</a></code> <code><a href="coerce.html">as_abundance()</a></code> <code><a href="coerce.html">as_incidence()</a></code> <code><a href="coerce.html">as_occurrence()</a></code> <code><a href="coerce.html">as_features()</a></code> <code><a href="coerce.html">as_stratigraphy()</a></code> </p>
         </td>
         <td><p>Coerce</p></td>
       </tr>
@@ -215,13 +199,13 @@
       <tr>
         
         <td>
-          <p><code><a href="mutator.html">get_id()</a></code> <code><a href="mutator.html">`set_id&lt;-`()</a></code> <code><a href="mutator.html">get_method()</a></code> <code><a href="mutator.html">`set_method&lt;-`()</a></code> <code><a href="mutator.html">get_units()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals&lt;-`()</a></code> </p>
+          <p><code><a href="mutator.html">get_groups()</a></code> <code><a href="mutator.html">has_groups()</a></code> <code><a href="mutator.html">`set_groups&lt;-`()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals&lt;-`()</a></code> </p>
         </td>
         <td><p>Get or Set Parts of an Object</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="subset.html">`[`(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[`(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[&lt;-`(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[&lt;-`(<i>&lt;DataMatrix&gt;</i>)</a></code> </p>
+          <p><code><a href="subset.html">`[`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;CompositionMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> </p>
         </td>
         <td><p>Extract or Replace Parts of an Object</p></td>
       </tr>
@@ -237,13 +221,7 @@
     </tbody><tbody>
       
       
-      <tr>
-        
-        <td>
-          <p><code><a href="operator.html">Arith(<i>&lt;DataMatrix&gt;</i>,<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="operator.html">Arith(<i>&lt;DataMatrix&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Arith(<i>&lt;DataMatrix&gt;</i>,<i>&lt;logical&gt;</i>)</a></code> <code><a href="operator.html">Compare(<i>&lt;DataMatrix&gt;</i>,<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="operator.html">Compare(<i>&lt;DataMatrix&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;DataMatrix&gt;</i>,<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;DataMatrix&gt;</i>,<i>&lt;numeric&gt;</i>)</a></code> <code><a href="operator.html">Logic(<i>&lt;DataMatrix&gt;</i>,<i>&lt;logical&gt;</i>)</a></code> <code><a href="operator.html">Math(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="operator.html">Math2(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="operator.html">Summary(<i>&lt;DataMatrix&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Common Operations on Matrix Objects</p></td>
-      </tr>
+      
     </tbody><tbody>
       <tr>
         <th colspan="2">
@@ -256,13 +234,20 @@
     </tbody><tbody>
       
       
+      
+    </tbody><tbody>
       <tr>
-        
-        <td>
-          <p><code><a href="statistics.html">rowMeans(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="statistics.html">colMeans(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="statistics.html">rowSums(<i>&lt;DataMatrix&gt;</i>)</a></code> <code><a href="statistics.html">colSums(<i>&lt;DataMatrix&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Rowwise and Columnwise Statistics</p></td>
+        <th colspan="2">
+          <h2 id="section-summary" class="hasAnchor"><a href="#section-summary" class="anchor"></a>Summary</h2>
+          <p class="section-desc"></p>
+        </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      
     </tbody><tbody>
       <tr>
         <th colspan="2">
@@ -278,28 +263,9 @@
       <tr>
         
         <td>
-          <p><code><a href="clean.html">remove_NA()</a></code> <code><a href="clean.html">remove_zero()</a></code> </p>
+          <p><code><a href="clean.html">replace_NA()</a></code> <code><a href="clean.html">remove_NA()</a></code> <code><a href="clean.html">remove_empty()</a></code> <code><a href="clean.html">remove_zero()</a></code> </p>
         </td>
         <td><p>Data Cleaning</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-chronology" class="hasAnchor"><a href="#section-chronology" class="anchor"></a>Chronology</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="chronology.html">get_dates()</a></code> <code><a href="chronology.html">`set_dates&lt;-`()</a></code> </p>
-        </td>
-        <td><p>Chronological Information</p></td>
       </tr>
     </tbody>
     </table>

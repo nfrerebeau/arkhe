@@ -48,7 +48,7 @@
 
 <meta property="og:title" content="Coerce — coerce" />
 <meta property="og:description" content="Coerce" />
-<meta property="og:image" content="http://arkhe.archaeo.science/logo.png" />
+<meta property="og:image" content="https://arkhe.tesselle.org/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
 <meta name="twitter:site" content="@nfrerebeau" />
@@ -65,16 +65,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172160955-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-172160955-3');
-</script>
 
 
   </head>
@@ -93,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">arkhe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -101,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -117,8 +107,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/nfrerebeau/arkhe/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tesselle/arkhe/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -136,7 +126,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Coerce</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/nfrerebeau/arkhe/blob/master/R/coerce.R'><code>R/coerce.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tesselle/arkhe/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/tesselle/arkhe/blob/master/R/coerce.R'><code>R/coerce.R</code></a></small>
     <div class="hidden name"><code>coerce.Rd</code></div>
     </div>
 
@@ -148,13 +138,13 @@
 
 <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
+<span class='fu'>as_composition</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
+
 <span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='fu'>as_incidence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
-
-<span class='fu'>as_similarity</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='fu'>as_features</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
@@ -164,10 +154,10 @@
 <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
+<span class='fu'>as_composition</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
-<span class='fu'>as_similarity</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
+<span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ANY</span>
 <span class='fu'>as_occurrence</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
@@ -178,10 +168,13 @@
 <span class='co'># S4 method for ANY</span>
 <span class='fu'>as_stratigraphy</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span>
 
-<span class='co'># S4 method for DataMatrix</span>
-<span class='fu'>as_long</span><span class='op'>(</span><span class='va'>from</span>, as_factor <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='co'># S4 method for matrix</span>
+<span class='fu'>as_long</span><span class='op'>(</span><span class='va'>from</span>, factor <span class='op'>=</span> <span class='cn'>FALSE</span>, reverse <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='co'># S4 method for DataMatrix</span>
+<span class='co'># S4 method for AbundanceMatrix</span>
+<span class='fu'>as_long</span><span class='op'>(</span><span class='va'>from</span>, factor <span class='op'>=</span> <span class='cn'>FALSE</span>, reverse <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='co'># S4 method for AbundanceMatrix</span>
 <span class='fu'>as_features</span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -196,10 +189,16 @@
       <td><p>Currently not used.</p></td>
     </tr>
     <tr>
-      <th>as_factor</th>
+      <th>factor</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should character string be
 coerced to <code><a href='https://rdrr.io/r/base/factor.html'>factor</a></code>? Default to <code>FALSE</code>, if <code>TRUE</code>
 the original ordering is preserved.</p></td>
+    </tr>
+    <tr>
+      <th>reverse</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> scalar: should the order of factor
+levels be reversed? Only used if <code>factor</code> is <code>TRUE</code>.
+Useful for plotting.</p></td>
     </tr>
     </table>
 
@@ -212,10 +211,10 @@ the original ordering is preserved.</p></td>
 <p></p><table class='table'>
 <tr><td><strong>Method</strong></td><td><strong>Target</strong></td><td><strong>Details</strong></td></tr>
 <tr><td><code>as_count</code></td><td><a href='CountMatrix-class.html'>CountMatrix</a></td><td>absolute frequency data</td></tr>
-<tr><td><code>as_abundance</code></td><td><a href='AbundanceMatrix-class.html'>AbundanceMatrix</a></td><td>relative frequency data</td></tr>
+<tr><td><code>as_composition</code></td><td><a href='CompositionMatrix-class.html'>CompositionMatrix</a></td><td>relative frequency data</td></tr>
+<tr><td><code>as_abundance</code></td><td><a href='CompositionMatrix-class.html'>CompositionMatrix</a></td><td>relative frequency data</td></tr>
 <tr><td><code>as_incidence</code></td><td><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></td><td>presence/absence data</td></tr>
 <tr><td><code>as_occurrence</code></td><td><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix</a></td><td>co-occurrence</td></tr>
-<tr><td><code>as_similarity</code></td><td><a href='SimilarityMatrix-class.html'>SimilarityMatrix</a></td><td>(dis)similarity</td></tr>
 <tr><td><code>as_stratigraphy</code></td><td><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix</a></td><td>stratigraphic relationships</td></tr>
 </table>
 
@@ -224,8 +223,6 @@ the original ordering is preserved.</p></td>
  then coerces to integer as by <code><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></code>.**</p>
 <p></p><table class='table'>
 <tr><td><strong>Method</strong></td><td><strong>Target</strong></td><td><strong>Details</strong></td></tr>
-<tr><td><code>as.matrix</code></td><td><code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code></td><td>S3 matrix</td></tr>
-<tr><td><code>as.data.frame</code></td><td><code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code></td><td>S3 data frame</td></tr>
 <tr><td><code>as_long</code></td><td><code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code></td><td>long S3 data frame</td></tr>
 </table>
 
@@ -235,19 +232,17 @@ the original ordering is preserved.</p></td>
  <code><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></code>, <code><a href='https://rdrr.io/r/base/list.html'>list</a></code>, or <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>:
  the first column/component is assumed to contain the bottom units and the
  second the top units (adjacency).</p>
-<p><code>as_features</code> converts an <a href='DataMatrix-class.html'>DataMatrix</a> object to a
+<p><code>as_features</code> converts an <code>*Matrix</code> object to a
  collection of features: a <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with all informations
  as extra columns (result may differ according to the class of <code>from</code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other matrix: 
-<code><a href='AbundanceMatrix-class.html'>AbundanceMatrix-class</a></code>,
+<code><a href='CompositionMatrix-class.html'>CompositionMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
-<code><a href='DataMatrix-class.html'>DataMatrix-class</a></code>,
-<code><a href='GenericMatrix-class.html'>GenericMatrix-class</a></code>,
+<code><a href='DataMatrix.html'>DataMatrix</a></code>,
 <code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
-<code><a href='SimilarityMatrix-class.html'>SimilarityMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
@@ -261,7 +256,7 @@ the original ordering is preserved.</p></td>
 <span class='va'>A1</span> <span class='op'>&lt;-</span> <span class='fu'>as_count</span><span class='op'>(</span><span class='va'>A0</span><span class='op'>)</span>
 
 <span class='co'>## Coerce to relative frequencies</span>
-<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'>as_abundance</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
+<span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'>as_composition</span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 
 <span class='co'>## Row sums are internally stored before coercing to relative frequencies</span>
 <span class='co'>## (use get_totals() to retrieve these values)</span>
@@ -282,12 +277,12 @@ the original ordering is preserved.</p></td>
 <span class='va'>Y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>A1</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>Y</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;      col1 col2 col3 col4 col5
-#&gt; row1    7    8    6    2    1
-#&gt; row2    6    8    3    6    1
-#&gt; row3    4    7    6    6    4
-#&gt; row4    5   10    0    4    4
-#&gt; row5    3    3    0    5    9
-#&gt; row6    3    7    7    7    2</div><div class='input'>
+#&gt; row1    0   10    2    0   10
+#&gt; row2    1    0    2    9    7
+#&gt; row3    3    2    4    8    5
+#&gt; row4    0    1    8    3    0
+#&gt; row5   10    9    9    9    7
+#&gt; row6    5    0    9    8    7</div><div class='input'>
 <span class='co'>## Collection of features</span>
 <span class='co'># set_dates(A1) &lt;- matrix(sample(0:10, 20, TRUE), nrow = 10, ncol = 2)</span>
 <span class='co'># set_coordinates(A1) &lt;- matrix(sample(0:10, 30, TRUE), nrow = 10, ncol = 3)</span>

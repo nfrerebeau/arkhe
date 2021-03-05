@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Incidence Matrix — IncidenceMatrix-class • arkhe</title>
+<title>Relative Frequency Matrix — CompositionMatrix-class • arkhe</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="Incidence Matrix — IncidenceMatrix-class" />
-<meta property="og:description" content="An S4 class to represent an incidence (presence/absence) matrix." />
+<meta property="og:title" content="Relative Frequency Matrix — CompositionMatrix-class" />
+<meta property="og:description" content="An S4 class to represent a relative frequency matrix (i.e. the fraction of
+times a given datum occurs in a dataset)." />
 <meta property="og:image" content="https://arkhe.tesselle.org/logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@nfrerebeau" />
@@ -125,22 +126,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Incidence Matrix</h1>
+    <h1>Relative Frequency Matrix</h1>
     <small class="dont-index">Source: <a href='https://github.com/tesselle/arkhe/blob/master/R/AllClasses.R'><code>R/AllClasses.R</code></a></small>
-    <div class="hidden name"><code>IncidenceMatrix-class.Rd</code></div>
+    <div class="hidden name"><code>CompositionMatrix-class.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>An S4 class to represent an incidence (presence/absence) matrix.</p>
+    <p>An S4 class to represent a relative frequency matrix (i.e. the fraction of
+times a given datum occurs in a dataset).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>IncidenceMatrix</span><span class='op'>(</span>
-  data <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  nrow <span class='op'>=</span> <span class='fl'>1</span>,
-  ncol <span class='op'>=</span> <span class='fl'>1</span>,
-  byrow <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  dimnames <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>CompositionMatrix</span><span class='op'>(</span>data <span class='op'>=</span> <span class='fl'>0</span>, nrow <span class='op'>=</span> <span class='fl'>1</span>, ncol <span class='op'>=</span> <span class='fl'>1</span>, byrow <span class='op'>=</span> <span class='cn'>FALSE</span>, dimnames <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,11 +172,11 @@
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='coerce.html'>as_incidence</a></p>
+    <div class='dont-index'><p><a href='coerce.html'>as_composition</a></p>
 <p>Other matrix: 
-<code><a href='CompositionMatrix-class.html'>CompositionMatrix-class</a></code>,
 <code><a href='CountMatrix-class.html'>CountMatrix-class</a></code>,
 <code><a href='DataMatrix.html'>DataMatrix</a></code>,
+<code><a href='IncidenceMatrix-class.html'>IncidenceMatrix-class</a></code>,
 <code><a href='OccurrenceMatrix-class.html'>OccurrenceMatrix-class</a></code>,
 <code><a href='StratigraphicMatrix-class.html'>StratigraphicMatrix-class</a></code>,
 <code><a href='coerce.html'>coerce</a>()</code></p></div>
@@ -191,7 +187,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Create an incidence (presence/absence) matrix</span>
 <span class='co'>## Data will be coerced with as.logical()</span>
-<span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'>IncidenceMatrix</span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>/</span><span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
+<span class='va'>A</span> <span class='op'>&lt;-</span> <span class='fu'><a href='IncidenceMatrix-class.html'>IncidenceMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>/</span><span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
 <span class='co'>## Create a count data matrix</span>
 <span class='va'>B</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CountMatrix-class.html'>CountMatrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>100</span>, <span class='cn'>TRUE</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
 
@@ -258,55 +254,55 @@
 </div><div class='output co'>#&gt; [1] "u" "v" "w" "x" "y"</div><div class='input'>
 <span class='co'>## Subset</span>
 <span class='va'>B</span><span class='op'>[[</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 4</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
-</div><div class='output co'>#&gt; [1] 4</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
+</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'># Get the first value</span>
+</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='op'>]</span> <span class='co'># Get all values</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 5&gt;
-#&gt;    u  v  w  x  y
-#&gt; A  4  9  9  3  4
-#&gt; B  8  9  1  7  1
-#&gt; C  5  0 10  5  7
-#&gt; D  9  3  3  5  4
-#&gt; E  0  8  9 10 10
-#&gt; F  8 10  1 10  3
-#&gt; G  3  0  7  8  2
-#&gt; H  5  1 10  6  3
-#&gt; I  5  2  7  6  0
-#&gt; J  0  1  3  1  6
-#&gt; K 10  0  7  3  0
-#&gt; L  2  7  8  3  4
-#&gt; M 10  8  1  6  5
-#&gt; N  0  6  3  8  9
-#&gt; O  8  4  4  3  6
-#&gt; P 10  1  7  4  2
-#&gt; Q  0  6  4  6  7
-#&gt; R  9  9  7  9  6
-#&gt; S  1  6  3  1  1
-#&gt; T  7  9  5 10  0</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
+#&gt;    u  v  w x y
+#&gt; A  1  6  1 3 8
+#&gt; B  5  6  2 1 0
+#&gt; C  6  7  2 5 6
+#&gt; D  9  1  0 4 3
+#&gt; E  5  7  9 9 7
+#&gt; F  4  8  6 9 9
+#&gt; G  6  2  4 2 7
+#&gt; H  2  8  3 3 6
+#&gt; I  0 10  0 5 8
+#&gt; J  4  5  2 1 8
+#&gt; K  0  8  6 8 9
+#&gt; L  5  4  0 4 8
+#&gt; M  0  2  5 2 2
+#&gt; N  0  1 10 1 8
+#&gt; O  1  6  6 4 2
+#&gt; P  4  3 10 9 0
+#&gt; Q  6 10  9 3 6
+#&gt; R 10  3  7 2 4
+#&gt; S  0  1  5 7 8
+#&gt; T  3  8  0 3 3</div><div class='input'><span class='va'>B</span><span class='op'>[</span><span class='fl'>1</span>, , drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span> <span class='co'># Get the first row</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 1 x 5&gt;
 #&gt;   u v w x y
-#&gt; A 4 9 9 3 4</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
+#&gt; A 1 6 1 3 8</div><div class='input'><span class='va'>B</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span> <span class='co'># Get the first three column</span>
 </div><div class='output co'>#&gt; &lt;CountMatrix: 20 x 3&gt;
 #&gt;    u  v  w
-#&gt; A  4  9  9
-#&gt; B  8  9  1
-#&gt; C  5  0 10
-#&gt; D  9  3  3
-#&gt; E  0  8  9
-#&gt; F  8 10  1
-#&gt; G  3  0  7
-#&gt; H  5  1 10
-#&gt; I  5  2  7
-#&gt; J  0  1  3
-#&gt; K 10  0  7
-#&gt; L  2  7  8
-#&gt; M 10  8  1
-#&gt; N  0  6  3
-#&gt; O  8  4  4
-#&gt; P 10  1  7
-#&gt; Q  0  6  4
-#&gt; R  9  9  7
-#&gt; S  1  6  3
-#&gt; T  7  9  5</div></pre>
+#&gt; A  1  6  1
+#&gt; B  5  6  2
+#&gt; C  6  7  2
+#&gt; D  9  1  0
+#&gt; E  5  7  9
+#&gt; F  4  8  6
+#&gt; G  6  2  4
+#&gt; H  2  8  3
+#&gt; I  0 10  0
+#&gt; J  4  5  2
+#&gt; K  0  8  6
+#&gt; L  5  4  0
+#&gt; M  0  2  5
+#&gt; N  0  1 10
+#&gt; O  1  6  6
+#&gt; P  4  3 10
+#&gt; Q  6 10  9
+#&gt; R 10  3  7
+#&gt; S  0  1  5
+#&gt; T  3  8  0</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
