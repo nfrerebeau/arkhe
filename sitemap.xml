@@ -46,9 +46,6 @@
     <loc>https://arkhe.tesselle.org/reference/check-type.html</loc>
   </url>
   <url>
-    <loc>https://arkhe.tesselle.org/reference/clean.html</loc>
-  </url>
-  <url>
     <loc>https://arkhe.tesselle.org/reference/coerce.html</loc>
   </url>
   <url>
@@ -80,6 +77,12 @@
   </url>
   <url>
     <loc>https://arkhe.tesselle.org/reference/predicate-utils.html</loc>
+  </url>
+  <url>
+    <loc>https://arkhe.tesselle.org/reference/remove.html</loc>
+  </url>
+  <url>
+    <loc>https://arkhe.tesselle.org/reference/replace.html</loc>
   </url>
   <url>
     <loc>https://arkhe.tesselle.org/reference/subset.html</loc>

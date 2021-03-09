@@ -199,59 +199,20 @@
       <tr>
         
         <td>
-          <p><code><a href="mutator.html">get_groups()</a></code> <code><a href="mutator.html">has_groups()</a></code> <code><a href="mutator.html">`set_groups&lt;-`()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals&lt;-`()</a></code> </p>
+          <p><code><a href="mutator.html">has_groups()</a></code> <code><a href="mutator.html">get_groups()</a></code> <code><a href="mutator.html">`set_groups&lt;-`()</a></code> <code><a href="mutator.html">get_samples()</a></code> <code><a href="mutator.html">`set_samples&lt;-`()</a></code> <code><a href="mutator.html">get_totals()</a></code> <code><a href="mutator.html">`set_totals&lt;-`()</a></code> </p>
         </td>
         <td><p>Get or Set Parts of an Object</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="subset.html">`[`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;CompositionMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> </p>
+          <p><code><a href="subset.html">`[`(<i>&lt;AbundanceMatrix&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;CompositionMatrix&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>)</a></code> <code><a href="subset.html">`[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> <code><a href="subset.html">`[[&lt;-`(<i>&lt;AbundanceMatrix&gt;</i>)</a></code> </p>
         </td>
         <td><p>Extract or Replace Parts of an Object</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-common-operations" class="hasAnchor"><a href="#section-common-operations" class="anchor"></a>Common Operations</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-statistics" class="hasAnchor"><a href="#section-statistics" class="anchor"></a>Statistics</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-summary" class="hasAnchor"><a href="#section-summary" class="anchor"></a>Summary</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
+          <h2 id="section-data-cleaning" class="hasAnchor"><a href="#section-data-cleaning" class="anchor"></a>Data cleaning</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -263,9 +224,58 @@
       <tr>
         
         <td>
-          <p><code><a href="clean.html">replace_NA()</a></code> <code><a href="clean.html">remove_NA()</a></code> <code><a href="clean.html">remove_empty()</a></code> <code><a href="clean.html">remove_zero()</a></code> </p>
+          <p><code><a href="remove.html">remove_NA()</a></code> <code><a href="remove.html">remove_empty()</a></code> <code><a href="remove.html">remove_zero()</a></code> </p>
         </td>
         <td><p>Data Cleaning</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="replace.html">replace_NA()</a></code> </p>
+        </td>
+        <td><p>Data Replacement</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-predicates" class="hasAnchor"><a href="#section-predicates" class="anchor"></a>Predicates</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="predicate-matrix.html">is_square()</a></code> <code><a href="predicate-matrix.html">is_symmetric()</a></code> </p>
+        </td>
+        <td><p>Matrix Predicates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="predicate-numeric.html">is_missing()</a></code> <code><a href="predicate-numeric.html">is_zero()</a></code> <code><a href="predicate-numeric.html">is_odd()</a></code> <code><a href="predicate-numeric.html">is_even()</a></code> <code><a href="predicate-numeric.html">is_positive()</a></code> <code><a href="predicate-numeric.html">is_negative()</a></code> <code><a href="predicate-numeric.html">is_whole()</a></code> </p>
+        </td>
+        <td><p>Numeric Predicates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="predicate-scalar.html">is_scalar_list()</a></code> <code><a href="predicate-scalar.html">is_scalar_atomic()</a></code> <code><a href="predicate-scalar.html">is_scalar_vector()</a></code> <code><a href="predicate-scalar.html">is_scalar_numeric()</a></code> <code><a href="predicate-scalar.html">is_scalar_integer()</a></code> <code><a href="predicate-scalar.html">is_scalar_double()</a></code> <code><a href="predicate-scalar.html">is_scalar_character()</a></code> <code><a href="predicate-scalar.html">is_scalar_logical()</a></code> </p>
+        </td>
+        <td><p>Scalar Type Predicates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="predicate-type.html">is_list()</a></code> <code><a href="predicate-type.html">is_atomic()</a></code> <code><a href="predicate-type.html">is_vector()</a></code> <code><a href="predicate-type.html">is_numeric()</a></code> <code><a href="predicate-type.html">is_integer()</a></code> <code><a href="predicate-type.html">is_double()</a></code> <code><a href="predicate-type.html">is_character()</a></code> <code><a href="predicate-type.html">is_logical()</a></code> <code><a href="predicate-type.html">is_error()</a></code> <code><a href="predicate-type.html">is_warning()</a></code> <code><a href="predicate-type.html">is_message()</a></code> </p>
+        </td>
+        <td><p>Type Predicates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="predicate-utils.html">is_empty()</a></code> <code><a href="predicate-utils.html">is_named()</a></code> <code><a href="predicate-utils.html">is_uuid()</a></code> </p>
+        </td>
+        <td><p>Utility Predicates</p></td>
       </tr>
     </tbody>
     </table>
